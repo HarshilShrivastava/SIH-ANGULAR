@@ -10,8 +10,8 @@
           </div>
           <div class="card_action">
             <ul class="collection answer">
-              <ng-container *ngFor ="let answer of question.Question; let i = index">
-                <li class="collection-item" (click)="Answer(answer.Weightage, answer.from_Domain)">{{answer.Answer_text}}</li>
+              <ng-container *ngFor ="let answer of question.Question_domain; let i = index">
+                <li class="collection-item" (click)="Answer(answer.Weightage, answer.Domain)">{{answer.Answer_text}}</li>
               </ng-container>
             </ul>
           </div>
