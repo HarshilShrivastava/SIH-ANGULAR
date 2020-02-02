@@ -9,6 +9,9 @@ import { QuizComponent } from './quiz/quiz.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ResultComponent } from './result/result.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MarketingComponent } from './marketing/marketing.component';
+import { TechnicalComponent } from './technical/technical.component';
+import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
 
 
 @NgModule({
@@ -17,13 +20,16 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     QuizComponent,
     NavbarComponent,
-    ResultComponent
+    ResultComponent,
+    MarketingComponent,
+    TechnicalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PasswordStrengthMeterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

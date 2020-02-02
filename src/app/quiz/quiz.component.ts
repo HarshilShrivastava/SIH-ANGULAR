@@ -22,9 +22,6 @@ export class QuizComponent implements OnInit {
     });
   }
 
-
-
-
   // tslint:disable-next-line: variable-name
   Answer(Weightage, from_Domain) {
     // console.log(Weightage);

@@ -24,5 +24,13 @@ export class QuizService {
     const reqheaders = new HttpHeaders({'Content-Type': 'application/json'});
     return this.http.post('http://harshraj.pythonanywhere.com/user/put-general-marks/' , body, {headers: reqheaders});
   }
+
+  TechData() {
+    return this.http.get('http://harshraj.pythonanywhere.com/user/api/get-domain-question/?Domain=1');
+  }
+  MarkData() {
+    return this.http.get('http://harshraj.pythonanywhere.com/user/api/get-domain-question/?Domain=2');
+  }
+
 }
 
