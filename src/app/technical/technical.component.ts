@@ -40,7 +40,7 @@ export class TechnicalComponent implements OnInit {
    }
 
   Answers() {
-    this.quizService.getResult().subscribe(
+    this.quizService.techResult().subscribe(
       res => {
         console.log(res);
       },

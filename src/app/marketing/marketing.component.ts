@@ -40,7 +40,7 @@ export class MarketingComponent implements OnInit {
   }
 
   Answers() {
-    this.quizService.getResult().subscribe(
+    this.quizService.markResult().subscribe(
       res => {
         console.log(res);
       },

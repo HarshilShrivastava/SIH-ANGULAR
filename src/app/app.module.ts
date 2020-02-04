@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MarketingComponent } from './marketing/marketing.component';
 import { TechnicalComponent } from './technical/technical.component';
 import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
+import { LoginComponent } from './login/login.component';
+import { SigninComponent } from './signin/signin.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
     NavbarComponent,
     ResultComponent,
     MarketingComponent,
-    TechnicalComponent
+    TechnicalComponent,
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

@@ -28,9 +28,26 @@ export class QuizService {
   TechData() {
     return this.http.get('http://harshraj.pythonanywhere.com/user/api/get-domain-question/?Domain=1');
   }
+
+  techResult() {
+    const body = {
+      Domain_final: this.Technical,
+      Total : this.Totalmarks
+    };
+    const reqheaders = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post('http://harshraj.pythonanywhere.com/user/put-domain-marks/' , body, {headers: reqheaders});
+  }
+
   MarkData() {
     return this.http.get('http://harshraj.pythonanywhere.com/user/api/get-domain-question/?Domain=2');
   }
-
+  markResult() {
+    const body = {
+      Domain_final: this.Marketing,
+      Total : this.Totalmarks
+    };
+    const reqheaders = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post('http://harshraj.pythonanywhere.com/user/put-domain-marks/' , body, {headers: reqheaders});
+  }
 }
 
