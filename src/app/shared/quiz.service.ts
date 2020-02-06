@@ -34,8 +34,8 @@ export class QuizService {
       Domain_final: this.Technical,
       Total : this.Totalmarks
     };
-    const reqheaders = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.http.post('http://harshraj.pythonanywhere.com/user/put-domain-marks/' , body, {headers: reqheaders});
+    const reqHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.post('http://harshraj.pythonanywhere.com/user/put-domain-marks/' , body, {headers: reqHeaders});
   }
 
   MarkData() {
