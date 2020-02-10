@@ -8,10 +8,15 @@
             <span class="card-title">#Q</span>
             <p>{{question.Question_text}}</p>
           </div>
-          <div class="card_action">
+          <div class="card_action white white-text">
             <ul class="collection answer">
               <ng-container *ngFor ="let answer of question.Question; let i = index">
-                <li class="collection-item" (click)="Answer(answer.Weightage, answer.from_Domain)">{{answer.Answer_text}}</li>
+               <li>
+                <label>
+                  <input type="checkbox" class="filled-in" (click)="Answer(answer.Weightage, answer.from_Domain)"/>
+                  <span>{{answer.Answer_text}}</span>
+                </label>
+               </li> 
               </ng-container>
             </ul>
           </div>
@@ -20,7 +25,7 @@
 </div>
 <div class="row">
   <div class="input-field col s12">
-    <button class="btn-large waves-effect waves-light" type="submit" name="action" (click)="Answers()">Submit
+    <button class="btn-large waves-effect waves-light" type="submit" name="action" (click)="Answers()">Proceed to next round
       <i class="material-icons right">send</i>
     </button>
   </div>

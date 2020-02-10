@@ -6,11 +6,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ResultComponent } from './result/result.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MarketingComponent } from './marketing/marketing.component';
 import { TechnicalComponent } from './technical/technical.component';
 import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { QuizService } from './shared/quiz.service';
+import { CreateviewComponent } from './createview/createview.component';
+import { OrgcreateComponent } from './orgcreate/orgcreate.component';
+import { JobsComponent } from './jobs/jobs.component';
+import { Level1Component } from './level1/level1.component';
+import { Level2Component } from './level2/level2.component';
+import { SignupComponent } from './signup/signup.component';
+import { CandidateComponent } from './candidate/candidate.component';
+import { OrcreateComponent } from './orcreate/orcreate.component';
+import { JobformComponent } from './jobform/jobform.component';
+import { OrviewComponent } from './orview/orview.component';
+import { JobviewComponent } from './jobview/jobview.component';
 
 
 @NgModule({
@@ -18,9 +31,21 @@ import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
     AppComponent,
     QuizComponent,
     NavbarComponent,
-    ResultComponent,
     MarketingComponent,
-    TechnicalComponent
+    TechnicalComponent,
+    RegisterComponent,
+    LoginComponent,
+    CreateviewComponent,
+    OrgcreateComponent,
+    JobsComponent,
+    Level1Component,
+    Level2Component,
+    SignupComponent,
+    CandidateComponent,
+    OrcreateComponent,
+    JobformComponent,
+    OrviewComponent,
+    JobviewComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +54,7 @@ import { PasswordStrengthMeterModule } from 'angular-password-strength-meter';
     HttpClientModule,
     PasswordStrengthMeterModule
   ],
-  providers: [],
+  providers: [QuizService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

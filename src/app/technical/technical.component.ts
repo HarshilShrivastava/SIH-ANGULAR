@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../shared/quiz.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-technical',
@@ -11,7 +12,7 @@ export class TechnicalComponent implements OnInit {
   tech = 0;
   mark = 0;
   marks = 0;
-  constructor(private quizService: QuizService) { }
+  constructor(private quizService: QuizService , private router: Router) { }
 
   ngOnInit() {
     this.TechContacts();
@@ -43,6 +44,11 @@ export class TechnicalComponent implements OnInit {
     this.quizService.techResult().subscribe(
       res => {
         console.log(res);
+        if (this.quizService.Totalmarks > 3) {
+          this.router.navigate(['/level2']);
+        } else {
+          this.router.navigate(['/level1']);
+        }
       },
       err => {
         console.log(err.message);
