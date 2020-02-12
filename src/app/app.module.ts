@@ -24,6 +24,8 @@ import { OrcreateComponent } from './orcreate/orcreate.component';
 import { JobformComponent } from './jobform/jobform.component';
 import { OrviewComponent } from './orview/orview.component';
 import { JobviewComponent } from './jobview/jobview.component';
+import { ResumeComponent } from './resume/resume.component';
+import { CandiviewComponent } from './candiview/candiview.component';
 
 
 @NgModule({
@@ -45,7 +47,9 @@ import { JobviewComponent } from './jobview/jobview.component';
     OrcreateComponent,
     JobformComponent,
     OrviewComponent,
-    JobviewComponent
+    JobviewComponent,
+    ResumeComponent,
+    CandiviewComponent
   ],
   imports: [
     BrowserModule,

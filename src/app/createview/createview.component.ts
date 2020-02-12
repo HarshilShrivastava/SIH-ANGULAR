@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService} from '../shared/quiz.service';
+import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-createview',
   templateUrl: './createview.component.html',
@@ -10,7 +12,7 @@ export class CreateviewComponent implements OnInit {
   imageUrl: string = '/assets/image/default-image.png';
   fileToUpload: File = null;
 
-  constructor(private quizService: QuizService) { }
+  constructor(private quizService: QuizService, private http: HttpClient) { }
 
   ngOnInit() {
   }
@@ -26,13 +28,15 @@ export class CreateviewComponent implements OnInit {
   }
 
   OnSubmit(Name, Address, Image) {
-   this.quizService.postFile(Name.value, Address.value , this.fileToUpload).subscribe(
+   this.quizService.postFile(Name.value, Address.value, this.fileToUpload).subscribe(
      data => {
-       console.log('done' , data);
+       console.log('done', data);
        Name.value = null;
+       Address.value = null;
        Image.value = null;
-       this.imageUrl = '/assets/img/default-image.png';
+       this.imageUrl = '/assets/image/default-image.png';
      }
    );
   }
+
 }

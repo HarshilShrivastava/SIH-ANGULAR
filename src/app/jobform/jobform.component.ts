@@ -35,11 +35,12 @@ export class JobformComponent implements OnInit {
     this.quizService.jobview(form.value).subscribe(
       res => {
         console.log(res);
+        this.router.navigate(['/jobview']);
       },
       err => {
         console.log(err.message);
       }
-    )
+    );
   }
 }
 

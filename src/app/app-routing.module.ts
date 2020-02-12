@@ -5,7 +5,6 @@ import { MarketingComponent } from './marketing/marketing.component';
 import { TechnicalComponent } from './technical/technical.component';
 import { LoginComponent } from './login/login.component';
 import { CreateviewComponent } from './createview/createview.component';
-import { OrgcreateComponent } from './orgcreate/orgcreate.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { Level1Component } from './level1/level1.component';
 import { Level2Component } from './level2/level2.component';
@@ -15,6 +14,8 @@ import { OrcreateComponent } from './orcreate/orcreate.component';
 import { JobformComponent } from './jobform/jobform.component';
 import { OrviewComponent } from './orview/orview.component';
 import { JobviewComponent } from './jobview/jobview.component';
+import { ResumeComponent } from './resume/resume.component';
+import { CandiviewComponent } from './candiview/candiview.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,9 @@ const routes: Routes = [
   {path: 'orview', component: OrviewComponent},
   {path: 'jobview', component: JobviewComponent},
   {path: 'signup', component: SignupComponent},
+  {path: 'resume', component: ResumeComponent},
+  {path: 'canview', component: CandiviewComponent},
+
 
 
 

@@ -24,9 +24,14 @@ export class LoginComponent implements OnInit {
       if (data.status === 200 ) {
         localStorage.setItem('token' , data.token );
         this.router.navigate(['/quiz']);
+        if (data.Is_Candidate === true) {
+          this.router.navigate(['/create']);
+        } else {
+          this.router.navigate(['/organ']);
+        }
         // this.toastr.success(data.message);
       } else {
-        alert(data.error_message);
+        alert('Not Successful');
       }
    },
    (err: HttpErrorResponse) => {

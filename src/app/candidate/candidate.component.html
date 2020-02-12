@@ -3,7 +3,7 @@
     <div class="col s8 offset-s2">
       <div class="card">
         <div class="sm-jumbotron center-align">
-          <h2>User Registration</h2>
+          <h2>Candidate Registration</h2>
         </div>
           <form class="col s12 white" #organRegistrationForm="ngForm" (ngSubmit)="OnSubmit(organRegistrationForm)">
             <div class="row">
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="row">
-              <h6>check these two option to confirm you are signing up as:</h6>
+              <h6>check these three option to confirm you are signing up as:</h6>
                 <p>
                   <label>
                     <input name="Is_University" #Is_University="ngModel" type="radio" id="jradio" value="false" [(ngModel)]="user.Is_University" required/>
@@ -53,7 +53,7 @@
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                  <button [disabled]="!organRegistrationForm.valid" class="btn-large btn-submit" type="submit">Register</button>
+                  <button [disabled]="!organRegistrationForm.valid" class="btn-large btn-submit" type="submit">Register As Candidate</button>
                 </div>
             </div>
           </form>

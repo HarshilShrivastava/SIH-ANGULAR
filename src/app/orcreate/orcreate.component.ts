@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 })
 export class OrcreateComponent implements OnInit {
   organ: Organ;
+  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+
   constructor(private quizService: QuizService , private router: Router) { }
 
   ngOnInit() {
@@ -39,7 +41,7 @@ export class OrcreateComponent implements OnInit {
     .subscribe(
       res => {
         console.log(res);
-        // this.router.navigate(['./read']);
+        this.router.navigate(['./orview']);
       },
       err => {
         console.log(err.message);

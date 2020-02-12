@@ -62,6 +62,11 @@ export class QuizService {
       .set('Authorization', 'token ' + localStorage.getItem('token'));
     return this.http.get('https://harshraj.pythonanywhere.com/organization/create/', {headers: Headers} );
   }
+  canView() {
+    const Headers = new HttpHeaders().set('Authorization', 'token ' + localStorage.getItem('token'));
+    return this.http.get('https://harshraj.pythonanywhere.com/candidate/create/', {headers: Headers} );
+  }
+
   jobView() {
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
@@ -101,15 +106,13 @@ export class QuizService {
     return this.http.post('https://harshraj.pythonanywhere.com/account/login/', data , { headers: reqheaders });
   }
 
-
-  postFile(name: string, address: string , fileToUpload: File) {
-    const endpoint = 'http://localhost:28101/api/UploadImage';
+  postFile(Name: string, Address: string ,  fileToUpload: File) {
     const formData: FormData = new FormData();
-    formData.append( '', address);
-    formData.append('Image', fileToUpload, fileToUpload.name);
-    formData.append('', name);
-    return this.http
-      .post(endpoint, formData);
+    formData.append('Resume', fileToUpload, fileToUpload.name);
+    formData.append('Name', Name);
+    formData.append('Address', Address);
+    const Headers = new HttpHeaders().set('Authorization', 'token ' + localStorage.getItem('token'));
+    return this.http.post('https://harshraj.pythonanywhere.com/candidate/create/', formData, {headers: Headers});
   }
 
 
