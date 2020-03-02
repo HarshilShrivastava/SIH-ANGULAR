@@ -19,6 +19,7 @@ export class ResumeComponent implements OnInit {
     console.log(event);
     this.selectedFile = event.target.files[0] as File;
   }
+
   onUpload() {
     const fd = new FormData();
     fd.append('file_op', this.selectedFile, this.selectedFile.name);

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { OrviewComponent } from './orview/orview.component';
 import { JobviewComponent } from './jobview/jobview.component';
 import { ResumeComponent } from './resume/resume.component';
 import { CandiviewComponent } from './candiview/candiview.component';
+import { MultiselectComponent } from './multiselect/multiselect.component';
 
 
 @NgModule({
@@ -49,12 +51,14 @@ import { CandiviewComponent } from './candiview/candiview.component';
     OrviewComponent,
     JobviewComponent,
     ResumeComponent,
-    CandiviewComponent
+    CandiviewComponent,
+    MultiselectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
     HttpClientModule,
     PasswordStrengthMeterModule
   ],
