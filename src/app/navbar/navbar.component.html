@@ -1,14 +1,13 @@
 <div class="navbar-fixed">
     <nav class="blue-grey">
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Logo</a>
+        <a [routerLink] = "['/quiz']" class="brand-logo"><img src="https://banner2.cleanpng.com/20180324/hrw/kisspng-steve-jobs-stay-hungry-stay-foolish-apple-worldwid-steve-jobs-5ab68b3a16ea91.4178725515219126340939.jpg"/></a>
         <ul class="right hide-on-med-and-down">
           <li><a [routerLink]="['/signup']">SignUp as Organisation</a></li>
           <li><a [routerLink]="['/candidate']">SignUp as Candidate</a></li>
-          <li><a [routerLink]="['/organ']">create profile as organisation</a></li>
-          <li><a [routerLink]="['/jobForm']">find a job</a></li>
-          <li><a [routerLink]="['/create']">create profile as Candidate</a></li>
-
+          <!-- <li><a [routerLink]="['/organ']">Create profile as organisation</a></li> -->
+          <li><a [routerLink]="['/jobForm']">Find a job</a></li>
+          <li><a [routerLink]="['/create']">Create profile as Candidate</a></li>
         </ul>
       </div>
     </nav>
@@ -16,7 +15,7 @@
   
 <div class="row">
   <div class="input-field col s12 offset-s1">
-    <button class="btn-large waves-effect waves-light" type="submit" name="action" [routerLink]="['/signup']">SignUp as Organisation
+    <!-- <button class="btn-large waves-effect waves-light" type="submit" name="action" [routerLink]="['/signup']">SignUp as Organisation
     </button>
     
     <button class="btn-large waves-effect waves-light" type="submit" name="action" [routerLink]="['/candidate']" >SignUp as Candidate
@@ -29,6 +28,6 @@
     </button>
     
     <button class="btn-large waves-effect waves-light" type="submit" name="action" [routerLink]="['/create']">create profile as Candidate
-    </button>
+    </button> -->
   </div>
 </div>
