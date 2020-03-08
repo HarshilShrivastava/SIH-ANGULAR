@@ -1,10 +1,4 @@
-  
-<div class="row">
-    <div class="col s8 offset-s2">
-      <div class="card">
-        <div class="sm-jumbotron center-align">
-          <h2>Organisation Registration</h2>
-        </div>
+
           <form class="col s12 white" #organRegistrationForm="ngForm" (ngSubmit)="OnSubmit(organRegistrationForm)">
             <div class="row">
                 <div class="input-field col s6">
@@ -55,8 +49,11 @@
                 <div class="input-field col s12">
                   <button [disabled]="!organRegistrationForm.valid" class="btn-large btn-submit" type="submit">Register As Organisation</button>
                 </div>
+
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <button class="btn-large btn-submit" type="submit" (click)="login()">Already a User, Login</button>
+              </div>
             </div>
           </form>
-      </div>
-    </div>
-  </div> 

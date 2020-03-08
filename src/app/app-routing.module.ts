@@ -8,14 +8,14 @@ import { CreateviewComponent } from './createview/createview.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { Level1Component } from './level1/level1.component';
 import { Level2Component } from './level2/level2.component';
-import { SignupComponent } from './signup/signup.component';
-import { CandidateComponent } from './candidate/candidate.component';
+import { SignupComponent } from './user/signup/signup.component';
+import { CandidateComponent } from './user/candidate/candidate.component';
 import { OrcreateComponent } from './orcreate/orcreate.component';
 import { JobformComponent } from './jobform/jobform.component';
 import { OrviewComponent } from './orview/orview.component';
 import { JobviewComponent } from './jobview/jobview.component';
-import { ResumeComponent } from './resume/resume.component';
 import { CandiviewComponent } from './candiview/candiview.component';
+import { UserComponent } from './user/user.component';
 
 
 const routes: Routes = [
@@ -27,19 +27,21 @@ const routes: Routes = [
   {path: 'job', component: JobsComponent},
   {path: 'level1', component: Level1Component},
   {path: 'level2', component: Level2Component},
-  {path: 'candidate', component: CandidateComponent},
+ //  {path: 'candidate', component: CandidateComponent},
   {path: 'jobForm', component: JobformComponent},
   {path: 'orview', component: OrviewComponent},
   {path: 'jobview', component: JobviewComponent},
-  {path: 'signup', component: SignupComponent},
-  {path: 'resume', component: ResumeComponent},
+   // {path: 'signup', component: SignupComponent},
   {path: 'canview', component: CandiviewComponent},
-
-
-
-
-
   {path: 'login', component: LoginComponent},
+  {
+    path: 'candidate', component: UserComponent,
+    children: [{ path: '', component: CandidateComponent }]
+},
+{
+    path: 'signup', component: UserComponent,
+    children: [{ path: '', component: SignupComponent }]
+},
   {path: '', redirectTo: '/quiz' , pathMatch: 'full' }
 ];
 

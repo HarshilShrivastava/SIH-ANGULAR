@@ -13,10 +13,10 @@
               <ng-container *ngFor ="let answer of question.Question; let i = index">
                <li>
                 <label>
-                  <input type="checkbox" class="filled-in" (click)="Answer(answer.Weightage, answer.from_Domain)"/>
+                  <input type="radio" class="filled-in" name="2" (click)="Answer(answer.Weightage, answer.from_Domain)"/>
                   <span>{{answer.Answer_text}}</span>
                 </label>
-               </li> 
+               </li>
               </ng-container>
             </ul>
           </div>

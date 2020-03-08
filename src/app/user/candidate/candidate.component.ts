@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../shared/user.model';
-import { QuizService } from '../shared/quiz.service';
+import { User } from '../../shared/user.model';
+import { QuizService } from '../../shared/quiz.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
@@ -11,13 +11,23 @@ import { NgForm } from '@angular/forms';
 })
 export class CandidateComponent implements OnInit {
   user: User;
-  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+  emailPattern = '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$';
   constructor(private quizService: QuizService, private router: Router) { }
 
   ngOnInit() {
     this.resetForm();
   }
+  check() {
+    // tslint:disable-next-line: max-line-length
+    if ((document.getElementById('password') as HTMLInputElement).value !== (document.getElementById('confirm_password')as HTMLInputElement).value) {
+      alert ('password dont match');
+    }
+  }
 
+  login() {
+    this.router.navigate(['/login']);
+
+  }
   resetForm(form?: NgForm) {
     if (form != null) {
       form.reset();
@@ -33,6 +43,7 @@ export class CandidateComponent implements OnInit {
     };
   }
   OnSubmit(form: NgForm) {
+      this.check();
       this.quizService.register(form.value).subscribe((data: any) => {
         if (data.response === 201) {
           console.log(data);

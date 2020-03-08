@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   // tslint:disable-next-line: no-inferrable-types
   isLoginError: boolean = false;
+  userpattern = '^[a-z0-9_-]{3,15}$';
+
   constructor(private quizService: QuizService, private router: Router) { }
 
   ngOnInit() {
