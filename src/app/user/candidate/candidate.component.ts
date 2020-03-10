@@ -44,21 +44,22 @@ export class CandidateComponent implements OnInit {
   }
   OnSubmit(form: NgForm) {
       this.check();
-      this.quizService.register(form.value).subscribe((data: any) => {
+      this.quizService.register(form.value)
+      .subscribe((data: any) => {
         if (data.response === 201) {
           console.log(data);
           this.resetForm();
           this.router.navigate(['/login']);
-          alert('User Registration Succeeded');
         } else {
           console.log(data);
           alert(data.error_message);
+
         }
       },
       err => {
         console.log(err.message);
-        alert('User Registration not  Successful');
-        }
+        alert('User Registration not Successful');
+      }
       );
     }
   }

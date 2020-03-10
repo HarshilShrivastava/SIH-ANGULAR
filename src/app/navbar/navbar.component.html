@@ -3,13 +3,18 @@
       <div class="nav-wrapper">
         <a href="#!" class="brand-logo">Logo</a>
         <ul class="right hide-on-med-and-down">
-          <li><a [routerLink]="['/candidate']">SignUp</a></li>
+          <li><a [routerLink]="['/candidate']">SignUp as Candidate</a></li>
+          <li><a [routerLink]="['/signup']">SignUp as Organisation</a></li>
+
           <li><a [routerLink]="['/login']">LogIn </a></li>
+          <li>
+            <a (click)="Logout()">Logout</a>
+          </li>
         </ul>
       </div>
     </nav>
 </div>
-  
+
 <!--div class="row">
   <div class="input-field col s12 offset-s1">
     <button class="btn-large waves-effect waves-light" type="submit" name="action" [routerLink]="['/signup']">SignUp as Organisation

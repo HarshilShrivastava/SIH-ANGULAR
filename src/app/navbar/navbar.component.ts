@@ -16,4 +16,9 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/register']);
 
   }
+  Logout() {
+    localStorage.removeItem('token');
+    console.log('You Are Logged Out');
+    this.router.navigate(['/quiz']);
+  }
 }

@@ -14,9 +14,12 @@ export class OrviewComponent implements OnInit {
     this.read();
   }
   read() {
+    if (localStorage.getItem('Is_Organization') === 'true') {
+
     this.quizService.orView().subscribe(data => {
       console.log(data);
       this.data = data;
     });
+  }
   }
 }

@@ -27,11 +27,11 @@ const routes: Routes = [
   {path: 'job', component: JobsComponent},
   {path: 'level1', component: Level1Component},
   {path: 'level2', component: Level2Component},
- //  {path: 'candidate', component: CandidateComponent},
+  {path: 'candidate', component: CandidateComponent},
   {path: 'jobForm', component: JobformComponent},
   {path: 'orview', component: OrviewComponent},
   {path: 'jobview', component: JobviewComponent},
-   // {path: 'signup', component: SignupComponent},
+  {path: 'signup', component: SignupComponent},
   {path: 'canview', component: CandiviewComponent},
   {path: 'login', component: LoginComponent},
   {

@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~8.2.3",
+    "@angular/animations": "^8.2.14",
     "@angular/common": "~8.2.3",
     "@angular/compiler": "~8.2.3",
     "@angular/core": "~8.2.3",
@@ -23,7 +23,6 @@
     "angular-password-strength-meter": "^1.0.2",
     "express": "^4.17.1",
     "firebase": "^7.8.0",
-    "ng-multiselect-dropdown": "^0.2.10",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1",
