@@ -25,6 +25,10 @@ export class LoginComponent implements OnInit {
       console.log(data);
       if (data.status === 200 ) {
         localStorage.setItem('token' , data.token );
+        localStorage.setItem('Is_Organization' , data.Is_Organization );
+        localStorage.setItem('Is_Candidate' , data.Is_Candidate );
+        localStorage.setItem('Is_University' , data.Is_University );
+
         this.router.navigate(['/quiz']);
         if (data.Is_Candidate === true) {
           this.router.navigate(['/create']);

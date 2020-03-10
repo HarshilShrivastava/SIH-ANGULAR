@@ -41,7 +41,7 @@ export class OrgcreateComponent implements OnInit {
     .subscribe(
       res => {
         console.log(res);
-        // this.router.navigate(['./read']);
+        this.router.navigate(['./quiz']);
       },
       err => {
         console.log(err.message);

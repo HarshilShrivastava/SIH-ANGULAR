@@ -16,14 +16,14 @@ import { OrviewComponent } from './orview/orview.component';
 import { JobviewComponent } from './jobview/jobview.component';
 import { CandiviewComponent } from './candiview/candiview.component';
 import { UserComponent } from './user/user.component';
-
+import { OrgcreateComponent } from './orgcreate/orgcreate.component';
 
 const routes: Routes = [
   {path: 'quiz' , component: QuizComponent},
   {path: 'tech' , component: TechnicalComponent},
   {path: 'mark' , component: MarketingComponent},
   {path: 'create', component: CreateviewComponent},
-  {path: 'organ', component: OrcreateComponent},
+  {path: 'organ', component: OrgcreateComponent},
   {path: 'job', component: JobsComponent},
   {path: 'level1', component: Level1Component},
   {path: 'level2', component: Level2Component},
