@@ -18,6 +18,10 @@ export class NavbarComponent implements OnInit {
   }
   Logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('Is_University');
+    localStorage.removeItem('Is_Candidate');
+    localStorage.removeItem('Is_Organization');
+
     console.log('You Are Logged Out');
     this.router.navigate(['/quiz']);
   }

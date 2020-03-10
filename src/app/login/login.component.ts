@@ -32,8 +32,12 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/quiz']);
         if (data.Is_Candidate === true) {
           this.router.navigate(['/create']);
-        } else {
+        }
+        if (data.Is_Organization === true) {
           this.router.navigate(['/organ']);
+        }
+        if (data.Is_University === true) {
+          this.router.navigate(['/university']);
         }
         // this.toastr.success(data.message);
       } else {

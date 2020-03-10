@@ -27,6 +27,7 @@ import { CandiviewComponent } from './candiview/candiview.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
 import { UserComponent } from './user/user.component';
 import { CommonModule } from '@angular/common';
+import { UniversityComponent } from './university/university.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { CommonModule } from '@angular/common';
     JobviewComponent,
     CandiviewComponent,
     MultiselectComponent,
-    UserComponent
+    UserComponent,
+    UniversityComponent
   ],
   imports: [
     BrowserModule,

@@ -37,15 +37,19 @@ export class OrgcreateComponent implements OnInit {
 
 
   OnSubmit(form: NgForm) {
-    this.quizService.createView(form.value)
-    .subscribe(
-      res => {
-        console.log(res);
-        this.router.navigate(['./quiz']);
-      },
-      err => {
-        console.log(err.message);
-      }
-    );
+    if (localStorage.getItem('token')) {
+      this.quizService.createView(form.value)
+      .subscribe(
+        (data: any) => {
+          console.log(data);
+          this.router.navigate(['./quiz']);
+        },
+        err => {
+          console.log(err.message);
+        }
+      );
+    } else {
+      this.router.navigate(['/signup']);
+    }
   }
 }

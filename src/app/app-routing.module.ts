@@ -17,6 +17,7 @@ import { JobviewComponent } from './jobview/jobview.component';
 import { CandiviewComponent } from './candiview/candiview.component';
 import { UserComponent } from './user/user.component';
 import { OrgcreateComponent } from './orgcreate/orgcreate.component';
+import { UniversityComponent } from './university/university.component';
 
 const routes: Routes = [
   {path: 'quiz' , component: QuizComponent},
@@ -34,6 +35,8 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'canview', component: CandiviewComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'university', component: UniversityComponent},
+
   {
     path: 'candidate', component: UserComponent,
     children: [{ path: '', component: CandidateComponent }]
