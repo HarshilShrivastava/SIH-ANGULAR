@@ -11,7 +11,9 @@ import { NgForm } from '@angular/forms';
 export class SignupComponent implements OnInit {
   user: User;
   emailPattern = '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$';
-
+  uni: boolean;
+  organ: boolean;
+  candi: boolean;
   constructor(private quizService: QuizService, private router: Router) { }
 
   ngOnInit() {
@@ -21,6 +23,24 @@ export class SignupComponent implements OnInit {
   login() {
     this.router.navigate(['/login']);
 
+  }
+
+  value() {
+    if ((document.getElementById('aradio')as HTMLInputElement).checked) {
+      this.quizService.Candidate = false;
+      this.quizService.Organization = false;
+      this.quizService.University = true;
+    }
+    if ((document.getElementById('bradio')as HTMLInputElement).checked) {
+      this.quizService.Candidate = true;
+      this.quizService.Organization = false;
+      this.quizService.University = false;
+    }
+    if ((document.getElementById('cradio')as HTMLInputElement).checked) {
+      this.quizService.Candidate = false;
+      this.quizService.Organization = true;
+      this.quizService.University = false;
+    }
   }
 
   check() {
@@ -51,7 +71,6 @@ export class SignupComponent implements OnInit {
           console.log(data);
           this.resetForm();
           this.router.navigate(['/login']);
-          alert('User Registration Succeeded');
         } else {
           console.log(data);
           alert(data.data.username);

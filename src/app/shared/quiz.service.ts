@@ -10,6 +10,9 @@ import { Job } from './job.model';
 export class QuizService {
   private apiUrl = 'https://harshraj.pythonanywhere.com/user/api/get-question/?format=json';
   qns: any[];
+  Candidate: boolean;
+  Organization: boolean;
+  University: boolean;
   Totalmarks: number;
   Marketing: number;
   Technical: number;
@@ -89,9 +92,9 @@ export class QuizService {
       email: user.email,
       password: user.password,
       confirm_password : user.confirm_password,
-      Is_University: user.Is_University,
-      Is_Candidate: user.Is_Candidate,
-      Is_Organization: user.Is_Organization
+      Is_University: this.University,
+      Is_Candidate: this.Candidate,
+      Is_Organization: this.Organization
 
     };
     const reqHeader = new HttpHeaders({'Content-Type': 'application/json'});

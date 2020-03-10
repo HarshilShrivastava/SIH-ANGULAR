@@ -33,7 +33,7 @@ export class CreateviewComponent implements OnInit {
    this.quizService.postFile(Name.value, Address.value, this.fileToUpload).subscribe(
      data => {
        console.log('done', data);
-       this.router.navigate(['/canview']);
+       this.router.navigate(['/quiz']);
        Name.value = null;
        Address.value = null;
        Image.value = null;
@@ -41,7 +41,7 @@ export class CreateviewComponent implements OnInit {
      }
    );
   } else {
-    this.router.navigate(['/candidate']);
+    this.router.navigate(['/signup']);
   }
   }
 

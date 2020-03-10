@@ -2,7 +2,7 @@
       <div class="col s8 offset-s2">
         <div class="card">
           <div class="sm-jumbotron center-align">
-            <h2>Register As Organisation</h2>
+            <h2>User Registration</h2>
           </div>
 
           <form class="col s12 white" #organRegistrationForm="ngForm" (ngSubmit)="OnSubmit(organRegistrationForm)">
@@ -31,29 +31,29 @@
                 </div>
             </div>
             <div class="row">
-              <h6>check these three option to confirm you are signing up as:</h6>
+              <h6>you are registering  as:</h6>
                 <p>
                   <label>
-                    <input name="Is_University" #Is_University="ngModel" type="radio" id="jradio" value="false" [(ngModel)]="user.Is_University" required/>
-                    <span>Not AS University</span>
+                    <input name="Is_Organization" #Is_Organization="ngModel" type="radio" id="aradio" value="false" (click)="value()" [(ngModel)]="user.Is_Organization" required/>
+                    <span>AS University</span>
                   </label>
                 </p>
                 <p>
                   <label>
-                    <input name="Is_Candidate" #Is_Candidate="ngModel" type="radio" id="tradio" value="false" [(ngModel)]="user.Is_Candidate" required/>
-                    <span>Not as Candidate</span>
+                    <input name="Is_Organization" #Is_Organization="ngModel" type="radio" id="bradio" value="true" (click)="value()" [(ngModel)]="user.Is_Organization" required/>
+                    <span>AS Candidate</span>
                   </label>
                 </p>
                 <p>
                   <label>
-                    <input name="Is_Organization" #Is_Organization="ngModel" type="radio" id="fradio" value="true" [(ngModel)]="user.Is_Organization" required/>
+                    <input name="Is_Organization" #Is_Organization="ngModel" type="radio" id="cradio" value="mid" (click)="value()" [(ngModel)]="user.Is_Organization" required/>
                     <span>As Organization</span>
                   </label>
                 </p>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                  <button [disabled]="!organRegistrationForm.valid" class="btn-large btn-submit" type="submit">Register As Organisation</button>
+                  <button [disabled]="!organRegistrationForm.valid" class="btn-large btn-submit" type="submit">Register</button>
                 </div>
 
             </div>
