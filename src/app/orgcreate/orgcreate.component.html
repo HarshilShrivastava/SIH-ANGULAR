@@ -2,7 +2,7 @@
   <div class="col s8 offset-s2">
     <div class="card">
       <div class="sm-jumbotron center-align">
-        <h2>User Registration</h2>
+        <h2>Organisation Form</h2>
       </div>
         <form class="col s12 white" #orgRegistrationForm="ngForm" (ngSubmit)="OnSubmit(orgRegistrationForm)">
           <div class="row">
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s6"> 
+            <div class="input-field col s12"> 
               <input id="website" type="url" class="validate" name="website" #website="ngModel" [(ngModel)]="organ.website" required >
               <label for="website">website</label>
               <span class="helper-text" data-error="Invalid Email!"></span>
@@ -51,7 +51,7 @@
           </div>
           <div class="row">
               <div class="input-field col s12">
-                <button [disabled]="!orgRegistrationForm.valid" class="btn-large btn-submit" type="submit">Submit</button>
+                <button [disabled]="!orgRegistrationForm.valid" class="btn-large btn-submit" type="submit">Create Form</button>
               </div>
           </div>
         </form>
