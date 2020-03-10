@@ -52,7 +52,7 @@ export class CandidateComponent implements OnInit {
           this.router.navigate(['/login']);
         } else {
           console.log(data);
-          alert(data.error_message);
+          alert(data.data.username);
 
         }
       },

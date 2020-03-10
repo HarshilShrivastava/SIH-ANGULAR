@@ -54,7 +54,7 @@ export class SignupComponent implements OnInit {
           alert('User Registration Succeeded');
         } else {
           console.log(data);
-          alert(data.error_message);
+          alert(data.data.username);
         }
       },
       err => {
