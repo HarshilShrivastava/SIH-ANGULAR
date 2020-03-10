@@ -23,6 +23,6 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('Is_Organization');
 
     console.log('You Are Logged Out');
-    this.router.navigate(['/quiz']);
+    this.router.navigate(['/login']);
   }
 }
