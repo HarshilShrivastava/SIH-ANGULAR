@@ -21,3 +21,9 @@ img{
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
+.col{
+    text-align: center;
+    float: none;
+    margin: auto;
+}

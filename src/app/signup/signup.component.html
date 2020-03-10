@@ -1,5 +1,3 @@
-<app-navbar></app-navbar>
-
 <div class="row">
     <div class="col s8 offset-s2">
       <div class="card">
@@ -35,19 +33,19 @@
               <h6>Select the profile you are signing up as:</h6>
                 <p>
                   <label>
-                    <input name="Is_University" #Is_University="ngModel" type="radio" id="jradio" value="false" [(ngModel)]="user.Is_University" required/>
+                    <input name="Is_University" class="with-gap" #Is_University="ngModel" type="radio" id="jradio" value="false" [(ngModel)]="user.Is_University" />
                     <span>University</span>
                   </label>
                 </p>
                 <p>
                   <label>
-                    <input name="Is_Candidate" #Is_Candidate="ngModel" type="radio" id="tradio" value="false" [(ngModel)]="user.Is_Candidate" required/>
+                    <input name="Is_Candidate" class="with-gap" #Is_Candidate="ngModel" type="radio" id="tradio" value="false" [(ngModel)]="user.Is_Candidate" />
                     <span>Candidate</span>
                   </label>
                 </p>
                 <p>
                   <label>
-                    <input name="Is_Organization" #Is_Organization="ngModel" type="radio" id="fradio" value="true" [(ngModel)]="user.Is_Organization" required/>
+                    <input name="Is_Organization" class="with-gap" #Is_Organization="ngModel" type="radio" id="fradio" value="true" [(ngModel)]="user.Is_Organization" />
                     <span>Organization</span>
                   </label>
                 </p>
@@ -55,7 +53,7 @@
             <div class="row">
                 <div class="input-field col s12">
                   <button [disabled]="!organRegistrationForm.valid" class="btn-large btn-submit" type="submit">
-                    <p>Register As Organisation</p>
+                    <p>Register As Organisation<i class="material-icons right">send</i></p>
                   </button>
                 </div>
             </div>

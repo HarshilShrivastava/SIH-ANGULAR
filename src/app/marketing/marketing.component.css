@@ -1,5 +1,6 @@
 p {
     color: #000000	;
+    margin-top: auto;
 }
 
 .card_content white_text{
@@ -36,6 +37,7 @@ input{
 .btn-large{
     background-color: #3bb78f;
     background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    margin-left: 475px;
 }
 
 /* li{

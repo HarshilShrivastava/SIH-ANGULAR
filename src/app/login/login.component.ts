@@ -25,13 +25,15 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token' , data.token );
         this.router.navigate(['/quiz']);
         if (data.Is_Candidate === true) {
-          this.router.navigate(['/create']);
+          this.router.navigate(['/canview']);
+        } else if(data.Is_Organisation === true) {
+          this.router.navigate(['/orview']);
         } else {
-          this.router.navigate(['/organ']);
+          this.router.navigate(['/organ'])
         }
         // this.toastr.success(data.message);
       } else {
-        alert('Not Successful');
+        alert('Unsuccessful');
       }
    },
    (err: HttpErrorResponse) => {

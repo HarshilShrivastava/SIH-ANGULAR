@@ -1,6 +1,7 @@
 .nav-wrapper{
     background-color: #3bb78f;
     background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    margin-bottom: 10px;
 }
 
 img{
@@ -10,4 +11,8 @@ img{
 
 a{
     color: #000000	;
+}
+
+.row{
+    margin-bottom: 0px;
 }
