@@ -16,13 +16,18 @@ import { OrviewComponent } from './orview/orview.component';
 import { JobviewComponent } from './jobview/jobview.component';
 import { ResumeComponent } from './resume/resume.component';
 import { CandiviewComponent } from './candiview/candiview.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SelectProfileComponent } from './select-profile/select-profile.component';
 
 
 const routes: Routes = [
+  {path: '', redirectTo: '/home' , pathMatch: 'full' },
+  {path: 'home' , component: LandingPageComponent},
   {path: 'quiz' , component: QuizComponent},
   {path: 'tech' , component: TechnicalComponent},
   {path: 'mark' , component: MarketingComponent},
   {path: 'create', component: CreateviewComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'organ', component: OrcreateComponent},
   {path: 'job', component: JobsComponent},
   {path: 'level1', component: Level1Component},
@@ -34,13 +39,8 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'resume', component: ResumeComponent},
   {path: 'canview', component: CandiviewComponent},
-
-
-
-
-
   {path: 'login', component: LoginComponent},
-  {path: '', redirectTo: '/quiz' , pathMatch: 'full' }
+  {path: 'profiles', component: SelectProfileComponent}
 ];
 
 @NgModule({

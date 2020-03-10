@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../shared/quiz.service';
 import { Router } from '@angular/router';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-quiz',
@@ -12,6 +13,7 @@ export class QuizComponent implements OnInit {
    tech = 0;
    mark = 0;
    marks = 0;
+   selectedEntry;
   constructor(private quizService: QuizService, private router: Router ) { }
   ngOnInit() {
     this.getContacts();
@@ -24,9 +26,13 @@ export class QuizComponent implements OnInit {
   }
 
   // tslint:disable-next-line: variable-name
-  Answer(Weightage, from_Domain) {
+  Answer(Weightage, from_Domain, id) {
     // console.log(Weightage);
     // console.log(qID);
+    // this.selectedEntry = Weightage;
+    // console.log(this.selectedEntry);
+    // var selectedOption = $("input:radio[name=selected_answer]:checked").value()
+    
       if (from_Domain === 1) {
         this.tech = this.tech + Weightage;
         this.quizService.Technical = this.tech;

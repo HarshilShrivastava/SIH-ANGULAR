@@ -28,6 +28,9 @@ import { JobviewComponent } from './jobview/jobview.component';
 import { ResumeComponent } from './resume/resume.component';
 import { CandiviewComponent } from './candiview/candiview.component';
 import { MultiselectComponent } from './multiselect/multiselect.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { SelectProfileComponent } from './select-profile/select-profile.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -52,7 +55,10 @@ import { MultiselectComponent } from './multiselect/multiselect.component';
     JobviewComponent,
     ResumeComponent,
     CandiviewComponent,
-    MultiselectComponent
+    MultiselectComponent,
+    LandingPageComponent,
+    SelectProfileComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

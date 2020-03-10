@@ -2,8 +2,12 @@
 div.sm-jumbotron{
     margin: 0px;
     padding: 1rem;
-    background-color: #02402E;
-    color: #fff;
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);  
+}   
+
+body{
+    background-color: #D3D3D3	;
 }
 
 button.btn-submit{
@@ -34,3 +38,29 @@ ul li.selected{
     background-color: #26a69a !important;
     color: #eafaf9 !important;
 }
+
+p {
+    color: #000000	;
+}
+
+.card{
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+}
+
+.card-title{
+    color: black;
+}
+
+.btn-large{
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+}
+
+/* li{
+    background-color: #81e4c5;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+} */
+
+
+
