@@ -1,33 +1,55 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../shared/user.model';
-import { QuizService } from '../../shared/quiz.service';
+import { User } from '../shared/user.model';
+import { QuizService } from '../shared/quiz.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-
 @Component({
-  selector: 'app-candidate',
-  templateUrl: './candidate.component.html',
-  styleUrls: ['./candidate.component.css']
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css']
 })
-export class CandidateComponent implements OnInit {
+export class SignupComponent implements OnInit {
   user: User;
   emailPattern = '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$';
+  uni: boolean;
+  organ: boolean;
+  candi: boolean;
   constructor(private quizService: QuizService, private router: Router) { }
 
   ngOnInit() {
     this.resetForm();
-  }
-  check() {
-    // tslint:disable-next-line: max-line-length
-    if ((document.getElementById('password') as HTMLInputElement).value !== (document.getElementById('confirm_password')as HTMLInputElement).value) {
-      alert ('password dont match');
-    }
   }
 
   login() {
     this.router.navigate(['/login']);
 
   }
+
+  value() {
+    if ((document.getElementById('aradio')as HTMLInputElement).checked) {
+      this.quizService.Candidate = false;
+      this.quizService.Organization = false;
+      this.quizService.University = true;
+    }
+    if ((document.getElementById('bradio')as HTMLInputElement).checked) {
+      this.quizService.Candidate = true;
+      this.quizService.Organization = false;
+      this.quizService.University = false;
+    }
+    if ((document.getElementById('cradio')as HTMLInputElement).checked) {
+      this.quizService.Candidate = false;
+      this.quizService.Organization = true;
+      this.quizService.University = false;
+    }
+  }
+
+  check() {
+    // tslint:disable-next-line: max-line-length
+    if ((document.getElementById('password') as HTMLInputElement).value !== (document.getElementById('confirm_password')as HTMLInputElement).value) {
+      alert ('password and confirm password donot match');
+    }
+  }
+
   resetForm(form?: NgForm) {
     if (form != null) {
       form.reset();
@@ -44,8 +66,7 @@ export class CandidateComponent implements OnInit {
   }
   OnSubmit(form: NgForm) {
       this.check();
-      this.quizService.register(form.value)
-      .subscribe((data: any) => {
+      this.quizService.register(form.value).subscribe((data: any) => {
         if (data.response === 201) {
           console.log(data);
           this.resetForm();
@@ -53,13 +74,12 @@ export class CandidateComponent implements OnInit {
         } else {
           console.log(data);
           alert(data.data.username);
-
         }
       },
       err => {
         console.log(err.message);
-        alert('User Registration not Successful');
-      }
+        alert('User Registration not  Successful');
+        }
       );
     }
   }

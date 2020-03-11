@@ -1,17 +1,15 @@
 <div class="row">
     <div class="col s12 " >
-        <div class="card blue-grey darken-1" >
+        <div class="card blue-grey darken-1" *ngIf="data.data" >
             <div class="card-content white-text">
-                <span class="card-title" *ngIf="data">Your Profile</span>
-                <p *ngIf="data.Name"><strong>{{data.Name}}</strong></p>
-                <p *ngIf="data.Address"><strong>Address : </strong>{{data.Address}}</p>
-                <p *ngIf="data.Email"><strong>Email : </strong>{{data.Email}}</p>
-                <p *ngIf="data.City"><strong>City : </strong>{{data.City}}</p>
-                <p *ngIf="data.State"><strong>State : </strong>{{data.State}}</p>
-                <p *ngIf="data.Registration_no"><strong>Registration_no : </strong>{{data.Registration_no}}</p>
-                <p *ngIf="data.website"><strong>website : </strong>{{data.website}}</p>
-
-
+                <span class="card-title" >Your Profile</span>
+                <p ><strong>{{data.data.Name}}</strong></p>
+                <p ><strong>Address : </strong>{{data.data.Address}}</p>
+                <p ><strong>Email : </strong>{{data.data.Email}}</p>
+                <p ><strong>City : </strong>{{data.data.City}}</p>
+                <p ><strong>State : </strong>{{data.data.State}}</p>
+                <p ><strong>Registration_no : </strong>{{data.data.Registration_no}}</p>
+                <p ><strong>website : </strong>{{data.data.website}}</p>
             </div>
         </div>
     </div>

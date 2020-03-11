@@ -4,6 +4,7 @@ import { Organ} from './organ.model';
 
 import { HttpClient , HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Job } from './job.model';
+import { University } from './university.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -69,6 +70,11 @@ export class QuizService {
     const Headers = new HttpHeaders().set('Authorization', 'token ' + localStorage.getItem('token'));
     return this.http.get('https://harshraj.pythonanywhere.com/candidate/create/', {headers: Headers} );
   }
+  uniView() {
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
+    return this.http.get('http://harshraj.pythonanywhere.com/University/Uprofile/', {headers: Headers} );
+  }
 
   jobView() {
     const Headers = new HttpHeaders()
@@ -132,6 +138,23 @@ export class QuizService {
     const Headers = new HttpHeaders({'Content-Type': 'application/json'})
       .set('Authorization', 'token ' + localStorage.getItem('token'));
     return this.http.post('https://harshraj.pythonanywhere.com/organization/create/', info, {headers: Headers});
+  }
+
+  createuniView(university: University) {
+    const info: University = {
+      Name: university.Name,
+      Address: university.Address,
+      Website: university.Website,
+      Conteact_no: university.Conteact_no,
+      Type: university.Type,
+      University: university.University,
+      AICTE_college_code: university.AICTE_college_code,
+      Email: university.Email
+
+    };
+    const Headers = new HttpHeaders({'Content-Type': 'application/json'})
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
+    return this.http.post('http://harshraj.pythonanywhere.com/University/Uprofile/', info, {headers: Headers});
   }
 
   jobview(job: Job) {

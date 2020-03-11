@@ -16,7 +16,7 @@
               <ng-container *ngFor ="let answer of question.Question_domain; let i = index">
                 <li>
                   <label>
-                    <input type="checkbox" class="filled-in" (click)="Answer(answer.Weightage, answer.Domain)"/>
+                    <input type="radio" class="filled-in" name={{question.id}} (click)="Answer(answer.Weightage, answer.Domain)"/>
                     <span>{{answer.Answer_text}}</span>
                   </label>
                  </li>

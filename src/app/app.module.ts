@@ -17,8 +17,7 @@ import { OrgcreateComponent } from './orgcreate/orgcreate.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { Level1Component } from './level1/level1.component';
 import { Level2Component } from './level2/level2.component';
-import { SignupComponent } from './user/signup/signup.component';
-import { CandidateComponent } from './user/candidate/candidate.component';
+import { SignupComponent } from './signup/signup.component';
 import { OrcreateComponent } from './orcreate/orcreate.component';
 import { JobformComponent } from './jobform/jobform.component';
 import { OrviewComponent } from './orview/orview.component';
@@ -28,6 +27,7 @@ import { MultiselectComponent } from './multiselect/multiselect.component';
 import { UserComponent } from './user/user.component';
 import { CommonModule } from '@angular/common';
 import { UniversityComponent } from './university/university.component';
+import { UniversityReadComponent } from './university-read/university-read.component';
 
 
 @NgModule({
@@ -45,7 +45,6 @@ import { UniversityComponent } from './university/university.component';
     Level1Component,
     Level2Component,
     SignupComponent,
-    CandidateComponent,
     OrcreateComponent,
     JobformComponent,
     OrviewComponent,
@@ -53,7 +52,8 @@ import { UniversityComponent } from './university/university.component';
     CandiviewComponent,
     MultiselectComponent,
     UserComponent,
-    UniversityComponent
+    UniversityComponent,
+    UniversityReadComponent
   ],
   imports: [
     BrowserModule,

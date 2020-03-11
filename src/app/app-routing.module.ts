@@ -8,8 +8,7 @@ import { CreateviewComponent } from './createview/createview.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { Level1Component } from './level1/level1.component';
 import { Level2Component } from './level2/level2.component';
-import { SignupComponent } from './user/signup/signup.component';
-import { CandidateComponent } from './user/candidate/candidate.component';
+import { SignupComponent } from './signup/signup.component';
 import { OrcreateComponent } from './orcreate/orcreate.component';
 import { JobformComponent } from './jobform/jobform.component';
 import { OrviewComponent } from './orview/orview.component';
@@ -18,7 +17,7 @@ import { CandiviewComponent } from './candiview/candiview.component';
 import { UserComponent } from './user/user.component';
 import { OrgcreateComponent } from './orgcreate/orgcreate.component';
 import { UniversityComponent } from './university/university.component';
-
+import { UniversityReadComponent } from './university-read/university-read.component';
 const routes: Routes = [
   {path: 'quiz' , component: QuizComponent},
   {path: 'tech' , component: TechnicalComponent},
@@ -28,7 +27,6 @@ const routes: Routes = [
   {path: 'job', component: JobsComponent},
   {path: 'level1', component: Level1Component},
   {path: 'level2', component: Level2Component},
-  {path: 'candidate', component: CandidateComponent},
   {path: 'jobForm', component: JobformComponent},
   {path: 'orview', component: OrviewComponent},
   {path: 'jobview', component: JobviewComponent},
@@ -36,11 +34,9 @@ const routes: Routes = [
   {path: 'canview', component: CandiviewComponent},
   {path: 'login', component: LoginComponent},
   {path: 'university', component: UniversityComponent},
+  {path: 'universityread', component: UniversityReadComponent},
 
-  {
-    path: 'candidate', component: UserComponent,
-    children: [{ path: '', component: CandidateComponent }]
-},
+
 {
     path: 'signup', component: UserComponent,
     children: [{ path: '', component: SignupComponent }]
