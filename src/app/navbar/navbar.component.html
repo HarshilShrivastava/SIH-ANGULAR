@@ -3,12 +3,15 @@
       <div class="nav-wrapper">
         <a [routerLink] = "['/quiz']" class="brand-logo"><img src="https://banner2.cleanpng.com/20180324/hrw/kisspng-steve-jobs-stay-hungry-stay-foolish-apple-worldwid-steve-jobs-5ab68b3a16ea91.4178725515219126340939.jpg" alt="Logo"/></a>
         <ul class="right hide-on-med-and-down">
-          <li><a [routerLink]="['/signup']">SignUp as Organisation</a></li>
-          <li><a [routerLink]="['/candidate']">SignUp as Candidate</a></li>
+          <!-- <li><a [routerLink]="['/signup']">SignUp as Organisation</a></li>
+          <li><a [routerLink]="['/candidate']">SignUp as Candidate</a></li> -->
           <!-- <li><a [routerLink]="['/organ']">Create profile as organisation</a></li> -->
+          <li><a [routerLink]="['/home']">Home</a></li>
           <li><a [routerLink]="['/jobForm']">Find a job</a></li>
-          <li><a [routerLink]="['/create']">Create profile as Candidate</a></li>
+          <li><a [routerLink]="['/profiles']">Sign Up</a></li>
+          <!-- <li><a [routerLink]="['/create']">Create profile as Candidate</a></li> -->
           <li><a [routerLink]="['/login']">Log In</a></li>
+          <li><a (click)="Logout()">Logout</a></li>
         </ul>
       </div>
     </nav>

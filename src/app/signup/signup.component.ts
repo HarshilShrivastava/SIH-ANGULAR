@@ -10,12 +10,49 @@ import { NgForm } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
   user: User;
-  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
-
+  emailPattern = '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$';
+  uni: boolean;
+  organ: boolean;
+  candi: boolean;
   constructor(private quizService: QuizService, private router: Router) { }
 
   ngOnInit() {
     this.resetForm();
+  }
+
+  login() {
+    this.router.navigate(['/login']);
+  }
+
+  value() {
+    if ((document.getElementById('aradio')as HTMLInputElement).checked) {
+      this.quizService.Candidate = false;
+      this.quizService.Organization = false;
+      this.quizService.University = true;
+      console.log(this.quizService.University);
+      
+    }
+    if ((document.getElementById('bradio')as HTMLInputElement).checked) {
+      this.quizService.Candidate = true;
+      this.quizService.Organization = false;
+      this.quizService.University = false;
+      console.log(this.quizService.Candidate);
+      
+    }
+    if ((document.getElementById('cradio')as HTMLInputElement).checked) {
+      this.quizService.Candidate = false;
+      this.quizService.Organization = true;
+      this.quizService.University = false;
+      console.log(this.quizService.Organization);
+      
+    }
+  }
+
+  check() {
+    // tslint:disable-next-line: max-line-length
+    if ((document.getElementById('password') as HTMLInputElement).value !== (document.getElementById('confirm_password')as HTMLInputElement).value) {
+      alert ('password and confirm password donot match');
+    }
   }
 
   resetForm(form?: NgForm) {
@@ -33,20 +70,29 @@ export class SignupComponent implements OnInit {
     };
   }
   OnSubmit(form: NgForm) {
+      this.check();
       this.quizService.register(form.value).subscribe((data: any) => {
         if (data.response === 201) {
           console.log(data);
           this.resetForm();
-          this.router.navigate(['/login']);
-          alert('User Registration Succeeded');
+          if(this.quizService.Candidate === true){
+            this.router.navigate(['/candidate']);
+          }
+          else if(this.quizService.University === true){
+            this.router.navigate(['/university']);
+          }
+          else if(this.quizService.Organization === true){
+            this.router.navigate(['/organ']);
+          }
+          // this.router.navigate(['/login']);
         } else {
           console.log(data);
-          alert(data.error_message);
+          alert(data.data.username);
         }
       },
       err => {
         console.log(err.message);
-        alert('User Registration not  Successful');
+        alert('User registration unsuccessful');
         }
       );
     }

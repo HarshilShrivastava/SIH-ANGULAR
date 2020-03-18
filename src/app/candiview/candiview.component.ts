@@ -14,9 +14,11 @@ export class CandiviewComponent implements OnInit {
     this.view();
   }
   view() {
+    if (localStorage.getItem('Is_Candidate') === 'true') {
     this.quizService.canView().subscribe(data => {
       console.log(data);
       this.data = data;
     });
+  }
   }
  }

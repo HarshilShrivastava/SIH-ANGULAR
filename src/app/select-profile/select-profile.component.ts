@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-select-profile',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectProfileComponent implements OnInit {
 
+  candidate: boolean= false;
+  university: boolean= false;
+  organization: boolean= false;
   constructor() { }
 
   ngOnInit() {
   }
+
+  onClick(){
+ }
 
 }

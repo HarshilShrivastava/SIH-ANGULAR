@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   // tslint:disable-next-line: no-inferrable-types
   isLoginError: boolean = false;
+  userpattern = '^[a-z0-9_-]{3,15}$';
+
   constructor(private quizService: QuizService, private router: Router) { }
 
   ngOnInit() {
@@ -23,17 +25,23 @@ export class LoginComponent implements OnInit {
       console.log(data);
       if (data.status === 200 ) {
         localStorage.setItem('token' , data.token );
+        localStorage.setItem('Is_Organization' , data.Is_Organization );
+        localStorage.setItem('Is_Candidate' , data.Is_Candidate );
+        localStorage.setItem('Is_University' , data.Is_University );
+
         this.router.navigate(['/quiz']);
         if (data.Is_Candidate === true) {
           this.router.navigate(['/canview']);
-        } else if(data.Is_Organisation === true) {
+        }
+        if (data.Is_Organization === true) {
           this.router.navigate(['/orview']);
-        } else {
-          this.router.navigate(['/organ'])
+        }
+        if (data.Is_University === true) {
+          this.router.navigate(['/university']);
         }
         // this.toastr.success(data.message);
       } else {
-        alert('Unsuccessful');
+        alert('Not Successful');
       }
    },
    (err: HttpErrorResponse) => {

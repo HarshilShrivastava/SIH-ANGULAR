@@ -31,23 +31,23 @@
                 </div>
             </div>
             <div class="row">
-              <h6>check these three option to confirm you are signing up as:</h6>
+              <h6>You are signing up as:</h6>
                 <p>
                   <label>
                     <input name="Is_University" #Is_University="ngModel" type="radio" id="jradio" value="false" [(ngModel)]="user.Is_University" required/>
-                    <span> Not As University</span>
+                    <span>University</span>
                   </label>
                 </p>
                 <p>
                   <label>
                     <input name="Is_Candidate" #Is_Candidate="ngModel" type="radio" id="tradio" value="true" [(ngModel)]="user.Is_Candidate" required/>
-                    <span> As  a Candidate</span>
+                    <span>Candidate</span>
                   </label>
                 </p>
                 <p>
                   <label>
                     <input name="#Is_Organization" #Is_Organization="ngModel" type="radio" id="fradio" value="false" [(ngModel)]="user.Is_Organization" required/>
-                    <span>Not as Organization</span>
+                    <span>Organization</span>
                   </label>
                 </p>
             </div>

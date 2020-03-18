@@ -1,32 +1,27 @@
-<div class="row">
-  <div class="col s8 offset-2">
-    <div class="card">
-      <div class="sm-jumbotron center-align">
-      <h2>Candidate Profile</h2>
+<div class="container">
+  <div class="row">
+    <div class="col s8 offset-2">
+      <div class="card-panel teal lighten-2">
+        <h4 class="center white-text">Candidate Profile</h4>
       </div>
-    </div>
-    <form class="col s12 white" #imageForm=ngForm (ngSubmit)="OnSubmit(Name,Address,Image)">
-      <div class="row">
-        <div class="input-field col s12">
-          <input type="text" #Name ngModel name="Name" id="Name" required>
-          <label for="Name">Name</label>
+      <form #imageForm=ngForm (ngSubmit)="OnSubmit(Name,Address,Image)">
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" #Name ngModel name="Name" id="Name" required>
+            <label for="Name">Name</label>
+          </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input type="text" #Address ngModel name="Address" id="Address" required>
-          <label for="Address">Address</label>
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" #Address ngModel name="Address" id="Address" required>
+            <label for="Address">Address</label>
+          </div>
         </div>
-      </div>
-      <!-- <img [src]="imageUrl"> -->
-      <span>
+        <img [src]="imageUrl"  style="width:250px;height:200px">
         <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
-      </span>
-      <button type="submit" class="btn-large btn-submit" [disabled]="Image.value=='' || !imageForm.valid">
-        <p>Submit<i class="material-icons right">send</i></p>
-      </button>
-    </form>
+        <button type="submit" class="btn-large btn-submit" [disabled]="Image.value=='' || !imageForm.valid">Submit</button>
+      </form>
+    </div>
   </div>
 </div>
-
 

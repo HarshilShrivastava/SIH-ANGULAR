@@ -6,27 +6,27 @@
         </div>
         <form class="col s12 white" #createForm="ngForm" (ngSubmit)="OnSubmit(createForm)">
             <div class="row">
-                <div class="input-field col s6"> 
-                    <input type="text" class="validate" name="job_title" #job_title="ngModel" [(ngModel)]="job.job_title"  required placeholder="Job name">
+                <div class="input-feild col s6"> 
+                    <input type="text" class="validate" name="job_title" #job_title="ngModel" [(ngModel)]="job.job_title"  required placeholder="NAME Of job">
                 </div>
-                <div class="input-field col s6">
-                    <input class="validate" type="text" name="Job_Descreption" #Job_Descreption="ngModel" [(ngModel)]="job.Job_Descreption" required  placeholder="Job descreption">
+                <div class="input-feild col s6">
+                    <input class="validate" type="text" name="Job_Descreption" #Job_Descreption="ngModel" [(ngModel)]="job.Job_Descreption" required  placeholder="Job_Descreption">
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s6"> 
+                <div class="input-feild col s6"> 
                     <input type="text" class="validate" name="Level" #Level="ngModel" [(ngModel)]="job.Level"  required placeholder="Level">
                 </div>
-                <div class="input-field col s6">
-                    <input class="validate" type="text" name="Minimum_experience" #Minimum_experience="ngModel" [(ngModel)]="job.Minimum_experience" required  placeholder="Minimum experience">
+                <div class="input-feild col s6">
+                    <input class="validate" type="text" name="Minimum_experience" #Minimum_experience="ngModel" [(ngModel)]="job.Minimum_experience" required  placeholder="Minimum_experience">
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s6"> 
-                    <input type="text" class="validate" name="prefered_city" #prefered_city="ngModel" [(ngModel)]="job.prefered_city" required placeholder="Prefered city">
+                <div class="input-feild col s6"> 
+                    <input type="text" class="validate" name="prefered_city" #prefered_city="ngModel" [(ngModel)]="job.prefered_city" required placeholder="prefered_city">
                 </div>
-                <div class="input-field col s6">
-                    <input class="validate" type="text" name="fields" #fields="ngModel" [(ngModel)]="job.fields" required  placeholder="Field code (1 for tech, 2 for marketing)">
+                <div class="input-feild col s6">
+                    <input class="validate" type="text" name="fields" #fields="ngModel" [(ngModel)]="job.fields" required  placeholder="fields NUMBER">
                 </div>
             </div>
             <div class="row">

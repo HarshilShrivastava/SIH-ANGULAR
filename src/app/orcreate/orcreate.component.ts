@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class OrcreateComponent implements OnInit {
   organ: Organ;
-  emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+  emailPattern = '^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$';
 
   constructor(private quizService: QuizService , private router: Router) { }
 
@@ -37,6 +37,7 @@ export class OrcreateComponent implements OnInit {
 
 
   OnSubmit(form: NgForm) {
+    if (localStorage.getItem('token')) {
     this.quizService.createView(form.value)
     .subscribe(
       res => {
@@ -47,5 +48,9 @@ export class OrcreateComponent implements OnInit {
         console.log(err.message);
       }
     );
+    } else {
+      this.router.navigate(['/signup']);
+    }
+
   }
 }

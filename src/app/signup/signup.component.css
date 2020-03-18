@@ -5,6 +5,9 @@ p {
     margin-bottom: auto;
 }
 
+.row{
+    margin-left: auto;
+}
 
 .card_content white_text{
     color: #b71c1c ;

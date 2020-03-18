@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col s8 offset-s2">
+      <div class="card">
+        <div class="sm-jumbotron center-align">
+          <h2>University Registration Form</h2>
+        </div>
+          <form class="col s12 white" #universityRegistrationForm="ngForm" (ngSubmit)="OnSubmit(universityRegistrationForm)">
+            <div class="row">
+              <div class="input-field col s6">
+                <input id="Name" class="validate" type="text" name="Name" #Name="ngModel" [(ngModel)]="university.Name" required >
+                <label for="Name">Name</label>
+                <span class="helper-text" data-error="Required Name !" ></span>
+              </div>  
+              <div class="input-field col s6">
+                <input id="Address" class="validate" type="text" name="Address" #Address="ngModel" [(ngModel)]="university.Address" required >
+                <label for="Address">Address</label>
+                <span class="helper-text" data-error="Required Address!" ></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6"> 
+                <input id="Website" type="url" class="validate" name="Website" #Website="ngModel" [(ngModel)]="university.Website" required >
+                <label for="Website">Website</label>
+                <span class="helper-text" data-error="Invalid Website!"></span>
+              </div>
+              <div class="input-field col s6"> 
+                <input id="Conteact_no" type="text" class="validate" name="Conteact_no" #Conteact_no="ngModel" [(ngModel)]="university.Conteact_no" required >
+                <label for="Conteact_no">Contact Number</label>
+                <span class="helper-text" data-error="Required Field"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6"> 
+                <input id="type" type="text" class="validate" name="Type" #Type="ngModel" [(ngModel)]="university.Type" required >
+                <label for="type">Type</label>
+                <span class="helper-text" data-error=" Required Field!"></span>
+              </div>
+              <div class="input-field col s6"> 
+                <input id="University" type="text" class="validate" name="University" #University="ngModel" [(ngModel)]="university.University"  required >
+                <label for="University">University</label>
+                <span class="helper-text" data-error="Required Feild!"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s6"> 
+                <input id="AICTE_college_code" type="text" class="validate" name="AICTE_college_code" #AICTE_college_code="ngModel" [(ngModel)]="university.AICTE_college_code" required >
+                <label for="AICTE_college_code">AICTE college code</label>
+                <span class="helper-text" data-error="Invalid Email!"></span>
+              </div>
+              <div class="input-field col s6"> 
+                <input id="Email" type="email" class="validate" name="Email" #Email="ngModel" [(ngModel)]="university.Email" required [pattern]="emailPattern" >
+                <label for="Email">Email</label>
+                <span class="helper-text" data-error="Invalid Email!"></span>
+              </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <button [disabled]="!universityRegistrationForm.valid" class="btn-large btn-submit" type="submit">Register as university</button>
+                </div>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div> 

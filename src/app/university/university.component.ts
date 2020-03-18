@@ -2,15 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../shared/quiz.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Organ } from '../shared/organ.model';
-
+import { University } from '../shared/university.model';
 @Component({
-  selector: 'app-orgcreate',
-  templateUrl: './orgcreate.component.html',
-  styleUrls: ['./orgcreate.component.css']
+  selector: 'app-university',
+  templateUrl: './university.component.html',
+  styleUrls: ['./university.component.css']
 })
-export class OrgcreateComponent implements OnInit {
-  organ: Organ;
+export class UniversityComponent implements OnInit {
+  university: University;
   emailPattern = '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
 
   constructor(private quizService: QuizService , private router: Router) { }
@@ -19,26 +18,25 @@ export class OrgcreateComponent implements OnInit {
     this.resetForm();
   }
 
-
   resetForm(form?: NgForm) {
     if (form != null) {
       form.reset();
     }
-    this.organ = {
+    this.university = {
       Name: '',
       Address: '',
-      Email: '',
-      City: '',
-      State: '',
-      Registration_no: null,
-      website: ''
+      Website: '',
+      Conteact_no: null,
+      Type: '',
+      University: '',
+      AICTE_college_code: null,
+      Email: ''
     };
   }
 
-
   OnSubmit(form: NgForm) {
     if (localStorage.getItem('token')) {
-      this.quizService.createView(form.value)
+      this.quizService.createuniView(form.value)
       .subscribe(
         (data: any) => {
           console.log(data);

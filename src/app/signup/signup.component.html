@@ -1,9 +1,10 @@
-<div class="row">
-    <div class="col s8 offset-s2">
-      <div class="card">
-        <div class="sm-jumbotron center-align">
-          <h2>Organisation Registration</h2>
-        </div>
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div class="card">
+          <div class="sm-jumbotron center-align">
+            <h2>User Registration</h2>
+          </div>
+
           <form class="col s12 white" #organRegistrationForm="ngForm" (ngSubmit)="OnSubmit(organRegistrationForm)">
             <div class="row">
                 <div class="input-field col s6">
@@ -30,34 +31,38 @@
                 </div>
             </div>
             <div class="row">
-              <h6>Select the profile you are signing up as:</h6>
+              <h6>You are signing up as:</h6>
                 <p>
                   <label>
-                    <input name="Is_University" class="with-gap" #Is_University="ngModel" type="radio" id="jradio" value="false" [(ngModel)]="user.Is_University" />
+                    <input name="Is_University" #Is_University="ngModel" type="radio" class="with-gap" id="aradio" value="false" (click)="value()" [(ngModel)]="user.Is_University" />
                     <span>University</span>
                   </label>
                 </p>
                 <p>
                   <label>
-                    <input name="Is_Candidate" class="with-gap" #Is_Candidate="ngModel" type="radio" id="tradio" value="false" [(ngModel)]="user.Is_Candidate" />
+                    <input name="Is_Candidate" #Is_Candidate="ngModel" type="radio" class="with-gap" id="bradio" value="true" (click)="value()" [(ngModel)]="user.Is_Candidate" />
                     <span>Candidate</span>
                   </label>
                 </p>
                 <p>
                   <label>
-                    <input name="Is_Organization" class="with-gap" #Is_Organization="ngModel" type="radio" id="fradio" value="true" [(ngModel)]="user.Is_Organization" />
+                    <input name="Is_Organization" #Is_Organization="ngModel" type="radio" class="with-gap" id="cradio" value="false" (click)="value()" [(ngModel)]="user.Is_Organization" />
                     <span>Organization</span>
                   </label>
                 </p>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                  <button [disabled]="!organRegistrationForm.valid" class="btn-large btn-submit" type="submit">
-                    <p>Register As Organisation<i class="material-icons right">send</i></p>
-                  </button>
+                  <button [disabled]="!organRegistrationForm.valid" class="btn-large btn-submit" type="submit">Register</button>
                 </div>
+
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <button class="btn-large btn-submit" type="submit" (click)="login()">Already a User, Login</button>
+              </div>
             </div>
           </form>
+        </div>
       </div>
     </div>
-  </div> 

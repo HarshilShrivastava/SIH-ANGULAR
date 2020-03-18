@@ -1,8 +1,19 @@
 <div class="header">
     <h3>Select the profile you wish to signup as:</h3>
     <ul class="link-buttons">
-        <li><a class="waves-effect waves-light btn-large" [routerLink]="['/organ']"><i class="material-icons right">fingerprint</i>Organisation</a></li>
-        <li><a class="waves-effect waves-light btn-large" [routerLink]="['/candidate']"><i class="material-icons right">fingerprint</i>Candidate</a></li>
-        <li><a class="waves-effect waves-light btn-large" [routerLink]="['/university']"><i class="material-icons right">fingerprint</i>University</a></li>
+        <!-- <div class="row">
+            <div>
+              <button class="btn-large btn-submit" type="submit" [(ngModel)]="organization" (click)="onClick()">Organisation</button>
+            </div>
+            <div>
+              <button class="btn-large btn-submit" type="submit" [(ngModel)]="candidate" (click)="onClick()">Candidate</button>
+            </div>
+            <div>
+              <button class="btn-large btn-submit" type="submit" [(ngModel)]="university" (click)="onClick()">University</button>
+            </div>
+          </div> -->
+        <li><a class="waves-effect waves-light btn-large" [routerLink]="['/signup']"><i class="material-icons right">fingerprint</i>Organisation</a></li>
+        <li><a class="waves-effect waves-light btn-large" [routerLink]="['/signup']"><i class="material-icons right">fingerprint</i>Candidate</a></li>
+        <li><a class="waves-effect waves-light btn-large" [routerLink]="['/signup']"><i class="material-icons right">fingerprint</i>University</a></li>
     </ul>
 </div>
