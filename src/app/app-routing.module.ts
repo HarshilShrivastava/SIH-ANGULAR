@@ -22,6 +22,7 @@ import { OrgcreateComponent } from './orgcreate/orgcreate.component';
 import { UniversityComponent } from './university/university.component';
 import { UniversityReadComponent } from './university-read/university-read.component';
 import { CandidateComponent } from './candidate/candidate.component';
+import { JobApplyComponent } from './job-apply/job-apply.component';
 const routes: Routes = [
   {path: '', redirectTo: '/home' , pathMatch: 'full' },
   {path: 'home' , component: LandingPageComponent},
@@ -36,7 +37,6 @@ const routes: Routes = [
   {path: 'level2', component: Level2Component},
   {path: 'candidate', component: CandidateComponent},
   {path: 'organ', component: OrgcreateComponent},
-  {path: 'job', component: JobsComponent},
   {path: 'level1', component: Level1Component},
   {path: 'level2', component: Level2Component},
   {path: 'jobForm', component: JobformComponent},
@@ -51,6 +51,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'university', component: UniversityComponent},
   {path: 'universityread', component: UniversityReadComponent},
+  {path: 'jobapply', component: JobApplyComponent},
 
 
 {

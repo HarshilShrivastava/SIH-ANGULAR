@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { User} from './user.model';
 import { Organ} from './organ.model';
 
-import { HttpClient , HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient , HttpHeaders, HttpResponse, HttpParams } from '@angular/common/http';
 import { Job } from './job.model';
 import { University } from './university.model';
+import { JobApply } from './jobapply.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -50,14 +51,20 @@ export class QuizService {
     return this.http.get('https://harshraj.pythonanywhere.com/user/api/get-domain-question/?Domain=2');
   }
   levelone() {
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
     return this.http.get('https://harshraj.pythonanywhere.com/organization/api/get-recomendedjob/?Level=1&fields=1');
   }
 
   leveltwo() {
-    return this.http.get('https://harshraj.pythonanywhere.com/organization/api/get-recomendedjob/?Level=2&fields=1');
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
+    return this.http.get('https://harshraj.pythonanywhere.com/organization/api/get-recomendedjob/?Level=2&field=1/', { headers: Headers } );
   }
 
   getJobs() {
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
     return this.http.get('https://harshraj.pythonanywhere.com/organization/api/get-recomendedjob/');
   }
 
@@ -164,11 +171,22 @@ export class QuizService {
       Level: job.Level,
       Minimum_experience: job.Minimum_experience,
       prefered_city: job.prefered_city,
-      fields: job.fields
+      fields: job.fields,
+      id: job.id
     };
     const Headers = new HttpHeaders({'Content-Type': 'application/json'})
     .set('Authorization', 'token ' + localStorage.getItem('token'));
     return this.http.post('https://harshraj.pythonanywhere.com/organization/api/get-job/', data, {headers: Headers});
+  }
+
+  jobapply(paramsObj) {
+    const data = {
+      id : paramsObj.id,
+      proposal: paramsObj.proposal
+    };
+    const Headers = new HttpHeaders({'Content-Type': 'application/json'})
+    .set('Authorization', 'token ' + localStorage.getItem('token'));
+    return this.http.post('http://harshraj.pythonanywhere.com/candidate/apply/', data, { headers: Headers});
   }
 
 

@@ -27,7 +27,8 @@ export class JobformComponent implements OnInit {
       Level: null,
       Minimum_experience: null,
       prefered_city: '',
-      fields: null
+      fields: null,
+      id: this.job.id
     };
   }
 

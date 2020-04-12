@@ -35,6 +35,12 @@ import { UserComponent } from './user/user.component';
 import { CommonModule } from '@angular/common';
 import { UniversityComponent } from './university/university.component';
 import { UniversityReadComponent } from './university-read/university-read.component';
+import { User } from './shared/user.model';
+import { JobApplyComponent } from './job-apply/job-apply.component';
+import { JobApplyDialogComponent } from './dialogs/job-apply-dialog/job-apply-dialog.component';
+import { MatDialogModule } from "@angular/material/dialog";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+
 
 
 @NgModule({
@@ -67,18 +73,24 @@ import { UniversityReadComponent } from './university-read/university-read.compo
     MultiselectComponent,
     UserComponent,
     UniversityComponent,
-    UniversityReadComponent
+    UniversityReadComponent,
+    JobApplyComponent,
+    JobApplyDialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
     NgMultiSelectDropDownModule.forRoot(),
     HttpClientModule,
     PasswordStrengthMeterModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
-  providers: [QuizService],
-  bootstrap: [AppComponent]
+  providers: [QuizService, User],
+  bootstrap: [AppComponent],
+  entryComponents: [JobApplyDialogComponent]
+
 })
 export class AppModule { }

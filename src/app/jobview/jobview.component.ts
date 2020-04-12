@@ -8,6 +8,7 @@ import { QuizService } from '../shared/quiz.service';
 })
 export class JobviewComponent implements OnInit {
   data: any = {};
+  status: number;
   constructor(private quizService: QuizService) { }
 
   ngOnInit() {
@@ -16,8 +17,20 @@ export class JobviewComponent implements OnInit {
 
   read() {
     this.quizService.jobView().subscribe(data => {
-      console.log(data);
-      this.data = data;
+      // if(data.data.length === 0){
+      //   // console.log(data.response);
+        
+      //   console.log('data is empty  ');
+      // }
+      // else 
+      if(data){
+        console.log(typeof data);
+        this.data = data;
+        // console.log(data.status);
+        // console.log(data.data.length);
+        console.log(data);
+        
+      }
     });
   }
 

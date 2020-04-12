@@ -5,4 +5,5 @@ export class Job {
     Minimum_experience: number;
     prefered_city: string;
     fields: number;
+    id: number;
 }
