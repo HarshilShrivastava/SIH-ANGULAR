@@ -6,7 +6,7 @@
                 <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search this page..">
             </mat-form-field>
         </div>
-        <div class="card blue-grey darken-1" *ngFor="let result of data.data" >
+        <div class="card blue-grey darken-1" *ngFor="let result of data" >
             <div class="card-content white-text">
                 <span class="card-title">Job Listing: </span>
                 <p style="text-shadow: 1px 2px 2px #CE5937;" ><strong>{{result.job_title}}</strong></p>

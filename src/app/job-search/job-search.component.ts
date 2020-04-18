@@ -10,7 +10,7 @@ import { JobApplyDialogComponent } from '../dialogs/job-apply-dialog/job-apply-d
 })
 export class JobSearchComponent implements OnInit {
 
-data: any = {};
+data: any;
 jobID: any;
 query: any;
 result: any;
@@ -26,16 +26,20 @@ result: any;
   }
 
   getListing(){
-    this.quizservice.leveltwo()
+    this.quizservice.getAllJobs()
     .subscribe((data) => {
       console.log(data);
       this.data = data;
+      console.log(this.data, "My Data");
+      
     });
   }
 
   getJobData(){
     let params = {};
     params["search"] = this.query;
+    console.log("My Data", this.data);
+    
     this.quizservice.getSearchedJob(params)
     .subscribe((res) => {
       console.log(res);

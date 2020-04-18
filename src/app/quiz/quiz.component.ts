@@ -18,6 +18,10 @@ export class QuizComponent implements OnInit {
    mark = 0;
    marks = 0;
    selectedEntry;
+  result_arr: any = [];
+  sum = 0;
+  check: boolean;
+
   constructor(private quizService: QuizService, private router: Router ) { }
   ngOnInit() {
     this.getContacts();
@@ -27,11 +31,29 @@ export class QuizComponent implements OnInit {
     this.quizService.getData().subscribe(data => {
       console.log(data);
       this.data = data;
+      this.data.Question_list.forEach(res =>{
+        this.result_arr.push([])
+      })
+
     });
   }
 
   // tslint:disable-next-line: variable-name
-  Answer(Weightage, from_Domain, id) {
+  Answer(Weightage, from_Domain, id, arr, index) {
+    // this.result_arr.insert(index, arr);
+    if(this.result_arr[index] == []){
+      this.result_arr[index] = arr;
+    }
+    else{
+      this.result_arr[index] = arr;
+    }
+    this.result_arr.forEach(res=>{
+      if(res.from_Domain == 1){
+        this.sum += res.Weightage
+      }
+    })
+    console.log(this.sum);
+    
     // console.log(Weightage);
     // console.log(qID);
     // this.selectedEntry = Weightage;
@@ -43,15 +65,15 @@ export class QuizComponent implements OnInit {
       if (from_Domain === 1) {
         this.tech = this.tech + Weightage;
         this.quizService.Technical = this.tech;
-        console.log(this.quizService.Technical, 'tech' , Weightage);
+        // console.log(this.quizService.Technical, 'tech' , Weightage);
       } else {
         this.mark = this.mark + Weightage;
         this.quizService.Marketing = this.mark;
-        console.log(this.quizService.Marketing, 'marketing' , Weightage);
+        // console.log(this.quizService.Marketing, 'marketing' , Weightage);
       }
       this.marks = this.marks + Weightage ;
       this.quizService.Totalmarks = this.marks;
-      console.log(this.quizService.Totalmarks, 'marks' , Weightage);
+      // console.log(this.quizService.Totalmarks, 'marks' , Weightage);
   }
 
   onChange(weightage, iden, domain){
