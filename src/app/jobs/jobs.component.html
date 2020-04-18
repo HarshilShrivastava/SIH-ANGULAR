@@ -7,6 +7,11 @@
                 <p><strong>Description : </strong>{{question.Job_Descreption}}</p>
                 <p><strong>Minimum experience : </strong>{{question.Minimum_experience}}</p>
                 <p><strong>Available at : </strong>{{question.prefered_city}}</p>
+                <p><strong>id : </strong>{{question.id}}</p>
+
+            </div>
+            <div class="apply">
+                <li><a (click) = "onSubmit(question.id)">Apply for job</a></li>
             </div>
         </div>
     </div>

@@ -65,7 +65,7 @@ export class QuizService {
   getJobs() {
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
-    return this.http.get('https://harshraj.pythonanywhere.com/organization/api/get-recomendedjob/');
+    return this.http.get('https://harshraj.pythonanywhere.com/organization/api/get-recomendedjob/', { headers: Headers });
   }
 
   getAllJobs() {
@@ -193,14 +193,14 @@ export class QuizService {
     return this.http.post('https://harshraj.pythonanywhere.com/organization/api/get-job/', data, {headers: Headers});
   }
 
-  jobapply(paramsObj) {
-    const data = {
-      id : paramsObj.id,
-      proposal: paramsObj.proposal
+  jobapply(jb: JobApply) {
+    const data: JobApply = {
+      proposal: jb.proposal
     };
     const Headers = new HttpHeaders({'Content-Type': 'application/json'})
     .set('Authorization', 'token ' + localStorage.getItem('token'));
-    return this.http.post('http://harshraj.pythonanywhere.com/candidate/apply/', data, { headers: Headers});
+    // tslint:disable-next-line: max-line-length
+    return this.http.post('http://harshraj.pythonanywhere.com/candidate/apply/' + localStorage.getItem('id') + '/', data, { headers: Headers});
   }
 
 

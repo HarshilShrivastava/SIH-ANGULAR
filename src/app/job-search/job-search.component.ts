@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../shared/quiz.service';
 import { MatDialog } from '@angular/material';
 import { JobApplyDialogComponent } from '../dialogs/job-apply-dialog/job-apply-dialog.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-job-search',
@@ -10,14 +11,15 @@ import { JobApplyDialogComponent } from '../dialogs/job-apply-dialog/job-apply-d
 })
 export class JobSearchComponent implements OnInit {
 
-data: any;
+data: any = {};
 jobID: any;
 query: any;
 result: any;
 
   constructor(
     private quizservice: QuizService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
 
   ) { }
 
@@ -62,21 +64,9 @@ result: any;
     this.data = input;
   }
 
-  onSubmit(){
-    let data = {
-      id: this.jobID,
-    }
-    let dialogRef = this.dialog.open(JobApplyDialogComponent, {
-      width: '800px',
-      data: data
-    });
-
-    dialogRef.afterClosed().subscribe(data => {
-      if (data) {
-        console.log("Applied!");
-      }
-
-    });
+  onSubmit(id) {
+    localStorage.setItem('id', id);
+    this.router.navigate(['/jobapply']);
   }
 
   
