@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+div.sm-jumbotron{
+    margin: 0px;
+    padding: 1rem;
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);  
+}   
+
+body{
+    background-color: #D3D3D3	;
+}
+
+button.btn-submit{
+    background-color: #02402E;
+    color: #fff;
+    width: 100%;
+}
+button.btn-submit:focus,button.btn-submit:hover{
+    background-color: #02402E;
+}
+
+input.ng-invalid.ng-dirty{
+    border-bottom-color : #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important;
+}
+
+button.btn-submit{
+    width: 100%;
+}
+
+ul.answer li:hover{
+    background-color: #ffffff;
+    color: #eafaf9;
+    cursor: pointer;
+}
+
+ul li.selected{
+    background-color: #26a69a !important;
+    color: #eafaf9 !important;
+}
+
+p {
+    color: #000000	;
+}
+
+.card{
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+}
+
+.card-title{
+    color: black;
+}
+
+.btn-large{
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+}
+
+/* li{
+    background-color: #81e4c5;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+} */
+
+
+
+.tabs{
+    height: 65px;
+}
+.tabs .tab{
+    text-transform : none !important;
+    line-height: 65px;
+    height: 65px;
+}
+.tabs .tab a{
+    font-size: 25px;
+    color: grey !important;
+}
+
+.tabs .tab a.active{
+    background-color: #fff !important;
+}

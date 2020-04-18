@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col s8 offset-s2">
+    <div class="card">
+      <div class="sm-jumbotron center-align">
+        <h2>Organisation Form</h2>
+      </div>
+        <form class="col s12 white" #orgRegistrationForm="ngForm" (ngSubmit)="OnSubmit(orgRegistrationForm)">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="Name" class="validate" type="text" name="Name" #Name="ngModel" [(ngModel)]="organ.Name" required >
+              <label for="Name">Name</label>
+              <span class="helper-text" data-error="Required Name !" ></span>
+            </div>
+            
+            <div class="input-field col s6">
+              <input id="Address" class="validate" type="text" name="Address" #Address="ngModel" [(ngModel)]="organ.Address" required >
+              <label for="Address">Address</label>
+              <span class="helper-text" data-error="Required Address !" ></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6"> 
+              <input id="Email" type="text" class="validate" name="Email" #Email="ngModel" [(ngModel)]="organ.Email" [pattern]="emailPattern" required >
+              <label for="Email">Email</label>
+              <span class="helper-text" data-error="Invalid Email!"></span>
+            </div>
+            <div class="input-field col s6"> 
+              <input id="City" type="text" class="validate" name="City" #City="ngModel" [(ngModel)]="organ.City" required >
+              <label for="City">City</label>
+              <span class="helper-text" data-error="Invalid Email!"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6"> 
+              <input id="State" type="text" class="validate" name="State" #State="ngModel" [(ngModel)]="organ.State" required >
+              <label for="State">State</label>
+              <span class="helper-text" data-error="Invalid State!"></span>
+            </div>
+            <div class="input-field col s6"> 
+              <input id="Registration_no" type="text" class="validate" name="Registration_no" #Registration_no="ngModel" [(ngModel)]="organ.Registration_no"  required >
+              <label for="Registration_no">Registration_no</label>
+              <span class="helper-text" data-error="Invalid Registration.no!"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12"> 
+              <input id="website" type="url" class="validate" name="website" #website="ngModel" [(ngModel)]="organ.website" required >
+              <label for="website">website</label>
+              <span class="helper-text" data-error="Invalid Email!"></span>
+            </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s12">
+                <button [disabled]="!orgRegistrationForm.valid" class="btn-large btn-submit" type="submit">Create Form</button>
+              </div>
+          </div>
+        </form>
+    </div>
+  </div>
+</div> 

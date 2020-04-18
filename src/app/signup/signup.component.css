@@ -1,0 +1,55 @@
+p {
+    color: #000000;
+    padding: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.row{
+    margin-left: auto;
+}
+
+.card_content white_text{
+    color: #b71c1c ;
+}
+
+.collection{
+    background-color: #deebdd;
+    background-image: linear-gradient(315deg, #deebdd 0%, #bbdbbe 74%);
+}
+
+.collection span{
+    color: #000000	;
+}
+
+.card_content {
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+}
+
+.card-title{
+    color: antiquewhite;
+}
+
+input{ 
+    background-color: #b71c1c;
+}
+
+.card{
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+}
+
+.btn-large{
+    background-color: #3bb78f;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    color: black;
+}
+
+/* li{
+    background-color: #81e4c5;
+    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+} */
+
+
+

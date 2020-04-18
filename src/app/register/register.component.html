@@ -1,0 +1,62 @@
+<div class="row">
+    <div class="col s8 offset-s2">
+      <div class="card">
+        <div class="sm-jumbotron center-align">
+          <h2> Candidate Registration</h2>
+        </div>
+          <form class="col s12 white" #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="username" class="validate" type="text" name="username" #username="ngModel" [(ngModel)]="user.username" required >
+                    <label for="username">Username</label>
+                    <span class="helper-text" data-error="Required Username !" ></span>
+                </div>
+                <div class="input-field col s6"> 
+                    <input id="email" type="text" class="validate" name="email" #email="ngModel" [(ngModel)]="user.email" [pattern]="emailPattern" required >
+                    <label for="email">Email</label>
+                    <span class="helper-text" data-error="Invalid Email!"></span>
+                </div>
+              
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="password" type="password" class="validate" name="password" #password="ngModel" [(ngModel)]="user.password"  required >
+                    <label for="password">Password</label>
+                    <span class="helper-text" data-error="Password requires uppercase lowercase symbols and numbers!"></span>
+                </div>
+                <div class="input-field col s6">
+                    <input id="confirm_password" type="password" class="validate" name="confirm_password" #confirm_password="ngModel" [(ngModel)]="user.confirm_password"  required >
+                    <label for="confirm_password">Confirm Password</label>
+                    <span class="helper-text" data-error="Password requires uppercase lowercase symbols and numbers!"></span>
+                </div>
+            </div>
+            <div class="row">
+              <h6>You are signing up as:</h6>
+                <p>
+                  <label>
+                    <input name="Is_University" #Is_University="ngModel" type="radio" id="jradio" value="false" [(ngModel)]="user.Is_University" required/>
+                    <span>University</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input name="Is_Candidate" #Is_Candidate="ngModel" type="radio" id="tradio" value="true" [(ngModel)]="user.Is_Candidate" required/>
+                    <span>Candidate</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input name="#Is_Organization" #Is_Organization="ngModel" type="radio" id="fradio" value="false" [(ngModel)]="user.Is_Organization" required/>
+                    <span>Organization</span>
+                  </label>
+                </p>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <button [disabled]="!userRegistrationForm.valid" class="btn-large btn-submit" type="submit">Register</button>
+                </div>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div> 
