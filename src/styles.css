@@ -62,7 +62,9 @@ p {
     background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
 } */
 
-
+.mat-form-field-infix{
+    height: 200px;
+}
 
 .tabs{
     height: 65px;
