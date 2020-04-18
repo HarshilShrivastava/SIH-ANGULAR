@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col s12 ">
+        <div class="search-filter">
+            <mat-form-field class="filter">
+                <mat-label>Search on this page</mat-label>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search this page..">
+            </mat-form-field>
+        </div>
+        <div class="card blue-grey darken-1" *ngFor="let result of data.data" >
+            <div class="card-content white-text">
+                <span class="card-title">Job Listing: </span>
+                <p style="text-shadow: 1px 2px 2px #CE5937;" ><strong>{{result.job_title}}</strong></p>
+                <p><strong>Description : </strong>{{result.Job_Descreption}}</p>
+                <p><strong>Minimum experience : </strong>{{result.Minimum_experience}}</p>
+                <p><strong>Available at : </strong>{{result.prefered_city}}</p>
+                <p><strong>Id: </strong>{{result.id}}</p>
+            </div>
+            <div>
+                <li><a (click) = "onSubmit()">Apply for job</a></li>
+            </div>
+        </div>
+    </div>
+</div>
+

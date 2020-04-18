@@ -23,6 +23,7 @@ import { UniversityComponent } from './university/university.component';
 import { UniversityReadComponent } from './university-read/university-read.component';
 import { CandidateComponent } from './candidate/candidate.component';
 import { JobApplyComponent } from './job-apply/job-apply.component';
+import { JobSearchComponent } from './job-search/job-search.component';
 const routes: Routes = [
   {path: '', redirectTo: '/home' , pathMatch: 'full' },
   {path: 'home' , component: LandingPageComponent},
@@ -52,7 +53,7 @@ const routes: Routes = [
   {path: 'university', component: UniversityComponent},
   {path: 'universityread', component: UniversityReadComponent},
   {path: 'jobapply', component: JobApplyComponent},
-
+  {path: 'jobsearch', component: JobSearchComponent},
 
 {
     path: 'signup', component: UserComponent,

@@ -11,7 +11,8 @@
               <ng-container *ngFor ="let answer of question.Question; let i = index">
                <li>
                 <label>
-                  <input name="selected_answer" type="radio" class="with-gap" name={{question.id}} (click)="Answer(answer.Weightage, answer.from_Domain, answer.id)" value="answer.id"/>
+                  <input name="selected_answer" type="radio" class="with-gap" name={{question.id}} (change) = "onChange(answer.Weightage , answer.id, answer.from_Domain)"
+                  (click)="Answer(answer.Weightage, answer.from_Domain, answer.id)" value="answer.id"/>
                   <!-- <span>{{answer.id}}</span> -->
                   <span>{{answer.Answer_text}}</span>
                 </label>

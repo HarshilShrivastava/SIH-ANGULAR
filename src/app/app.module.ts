@@ -40,6 +40,8 @@ import { JobApplyComponent } from './job-apply/job-apply.component';
 import { JobApplyDialogComponent } from './dialogs/job-apply-dialog/job-apply-dialog.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { JobSearchComponent } from './job-search/job-search.component';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
 
 
 
@@ -75,7 +77,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     UniversityComponent,
     UniversityReadComponent,
     JobApplyComponent,
-    JobApplyDialogComponent
+    JobApplyDialogComponent,
+    JobSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +89,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     HttpClientModule,
     PasswordStrengthMeterModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
   ],
   providers: [QuizService, User],
   bootstrap: [AppComponent],

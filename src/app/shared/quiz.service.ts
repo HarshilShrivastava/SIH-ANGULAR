@@ -68,6 +68,20 @@ export class QuizService {
     return this.http.get('https://harshraj.pythonanywhere.com/organization/api/get-recomendedjob/');
   }
 
+  getAllJobs() {
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
+    return this.http.get('http://harshraj.pythonanywhere.com/organization/list-of-job/', { headers: Headers } );
+  }
+
+  getSearchedJob(paramsObj){
+    let params = new HttpParams({ fromObject: paramsObj });
+
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
+    return this.http.get('http://harshraj.pythonanywhere.com/organization/list-of-job/', {params , headers: Headers} );
+  }
+
   orView() {
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
