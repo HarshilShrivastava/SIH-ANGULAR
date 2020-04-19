@@ -7,13 +7,15 @@
           <li><a [routerLink]="['/candidate']">SignUp as Candidate</a></li> -->
           <!-- <li><a [routerLink]="['/organ']">Create profile as organisation</a></li> -->
           <li><a [routerLink]="['/home']">Home</a></li>
-          <li *ngIf = "checkIfOrganization()"><a [routerLink]="['/jobForm']" *ngIf = "isOrganization">Create Job</a></li>
+          <li *ngIf = "checkIfOrganization() && checkifLoggedIn()"><a [routerLink]="['/jobForm']" *ngIf = "isOrganization">Create Job</a></li>
           <!-- <li *ngIf = "checkIfCandidate()"><a [routerLink]="['/jobapply']" *ngIf = "isCandidate">Apply for job</a></li> -->
-          <li *ngIf = "checkIfCandidate()"><a [routerLink]="['/jobsearch']" *ngIf = "isCandidate">Job Search</a></li>
-          <li><a [routerLink]="['/profiles']">Sign Up</a></li>
+          <li *ngIf = "checkIfCandidate() && checkifLoggedIn()"><a [routerLink]="['/jobsearch']" *ngIf = "isCandidate">Job Search</a></li>
+          <li *ngIf = "!checkifLoggedIn()"><a [routerLink]="['/profiles']">Sign Up</a></li>
           <!-- <li><a [routerLink]="['/create']">Create profile as Candidate</a></li> -->
           <li *ngIf = "!checkifLoggedIn()"><a [routerLink] = "['/login']">Log In</a></li>
           <li *ngIf = "checkifLoggedIn()"><a (click)="Logout()">Logout</a></li>
+          <!-- <li *ngIf = "checkifLoggedIn()"><a (click)="goToProfile()">Profile</a></li> -->
+
         </ul>
       </div>
     </nav>

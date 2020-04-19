@@ -47,6 +47,19 @@ export class NavbarComponent implements OnInit {
     return false;
   }
 
+  // goToProfile(){
+  //   if(this.isCandidate)
+  //   {
+  //     this.router.navigate(['/canview']);
+  //   }
+  //   else if(this.isOrganization)
+  //   {
+  //     this.router.navigate(['/orview']);
+  //   }
+  //   else
+  //     alert("Unsuccessful!")
+  // }
+
   SignOut() {
     this.router.navigate(['/register']);
 

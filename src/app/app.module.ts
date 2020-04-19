@@ -42,6 +42,8 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { JobSearchComponent } from './job-search/job-search.component';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatMenuModule} from '@angular/material/menu';
+
 
 
 
@@ -92,6 +94,7 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
+    MatMenuModule
   ],
   providers: [QuizService, User],
   bootstrap: [AppComponent],

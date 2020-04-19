@@ -7,7 +7,8 @@ div.sm-jumbotron{
 }   
 
 body{
-    background-color: #D3D3D3	;
+    background-color: #D3D3D3;
+    overflow-x: hidden;
 }
 
 button.btn-submit{
@@ -82,3 +83,5 @@ p {
 .tabs .tab a.active{
     background-color: #fff !important;
 }
+
+

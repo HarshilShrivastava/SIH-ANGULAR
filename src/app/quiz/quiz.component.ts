@@ -14,13 +14,16 @@ export class QuizComponent implements OnInit {
     "id": "999",
     "weight": "69"
   };
-   tech = 0;
-   mark = 0;
-   marks = 0;
-   selectedEntry;
+  tech = 0;
+  mark = 0;
+  marks = 0;
+  selectedEntry;
   result_arr: any = [];
   sum = 0;
   check: boolean;
+  techmarks = 0;
+  marketmarks = 0;
+  totalmarks = 0;
 
   constructor(private quizService: QuizService, private router: Router ) { }
   ngOnInit() {
@@ -47,57 +50,80 @@ export class QuizComponent implements OnInit {
     else{
       this.result_arr[index] = arr;
     }
-    this.result_arr.forEach(res=>{
-      if(res.from_Domain == 1){
-        this.sum += res.Weightage
-      }
-    })
-    console.log(this.sum);
+
+    
+    // this.result_arr.forEach(res=>{
+    //   if(res.from_Domain == 1){
+    //     this.sum += res.Weightage
+    //   }
+    // })
+    // console.log(this.sum);
     
     // console.log(Weightage);
     // console.log(qID);
     // this.selectedEntry = Weightage;
     // console.log(this.selectedEntry);
     // var selectedOption = $("input:radio[name=selected_answer]:checked").value()
-    this.id_obj.id = id;
-    this.id_obj.weight = Weightage;
+    // this.id_obj.id = id;
+    // this.id_obj.weight = Weightage;
 
-      if (from_Domain === 1) {
-        this.tech = this.tech + Weightage;
-        this.quizService.Technical = this.tech;
-        // console.log(this.quizService.Technical, 'tech' , Weightage);
-      } else {
-        this.mark = this.mark + Weightage;
-        this.quizService.Marketing = this.mark;
-        // console.log(this.quizService.Marketing, 'marketing' , Weightage);
-      }
-      this.marks = this.marks + Weightage ;
-      this.quizService.Totalmarks = this.marks;
+      // if (from_Domain === 1) {
+      //   this.tech = this.tech + Weightage;
+      //   this.quizService.Technical = this.tech;
+      //   // console.log(this.quizService.Technical, 'tech' , Weightage);
+      // } else {
+      //   this.mark = this.mark + Weightage;
+      //   this.quizService.Marketing = this.mark;
+      //   // console.log(this.quizService.Marketing, 'marketing' , Weightage);
+      // }
+      // this.marks = this.marks + Weightage ;
+      // this.quizService.Totalmarks = this.marks;
       // console.log(this.quizService.Totalmarks, 'marks' , Weightage);
   }
 
-  onChange(weightage, iden, domain){
-    if(domain === 1){
-      if(this.id_obj.id === iden){
-        this.tech = this.tech - weightage;
-      }
-      else{
-        this.id_obj.id = iden;
-        this.tech = this.tech + weightage
-      }
-    }
-    else if(domain === 2){
-      if(this.id_obj.id === iden){
-        this.mark = this.mark - weightage;
-      }
-      else{
-        this.id_obj.id = iden;
-        this.mark = this.mark + weightage
-      }
-    }
-  }
+  // onChange(weightage, iden, domain){
+  //   if(domain === 1){
+  //     if(this.id_obj.id === iden){
+  //       this.tech = this.tech - weightage;
+  //     }
+  //     else{
+  //       this.id_obj.id = iden;
+  //       this.tech = this.tech + weightage
+  //     }
+  //   }
+  //   else if(domain === 2){
+  //     if(this.id_obj.id === iden){
+  //       this.mark = this.mark - weightage;
+  //     }
+  //     else{
+  //       this.id_obj.id = iden;
+  //       this.mark = this.mark + weightage
+  //     }
+  //   }
+  // }
 
   Answers() {
+    
+    this.result_arr.forEach(res=>{
+      if(res.from_Domain == 1){
+        this.techmarks += res.Weightage
+      }
+    })
+    this.quizService.Technical = this.techmarks;
+    console.log("Technical" + this.techmarks);
+
+    this.result_arr.forEach(res=>{
+      if(res.from_Domain == 2){
+        this.marketmarks += res.Weightage
+      }
+    })
+    this.quizService.Marketing = this.marketmarks;
+    console.log("Marketing" + this.marketmarks);
+
+    this.totalmarks = this.techmarks + this.marketmarks;
+    console.log("Total marks: " + this.totalmarks);
+    
+
     this.quizService.getResult().subscribe(
       res => {
         console.log(res);

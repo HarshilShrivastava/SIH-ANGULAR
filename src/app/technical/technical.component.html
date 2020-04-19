@@ -1,7 +1,7 @@
 <div class="row" >
     <div class="col s8 offset-s2">
 
-        <div class="card darken-1" *ngFor="let question of data.data" >
+        <div class="card darken-1" *ngFor="let question of data.data; let ind = index" >
           <div class="card_content white_text" >
             <p>Q. {{question.Question_text}}</p>
           </div>
@@ -10,7 +10,7 @@
               <ng-container *ngFor ="let answer of question.Question_domain; let i = index">
                 <li>
                   <label>
-                    <input type="radio" class="with-gap" name = {{question.id}} (click)="Answer(answer.Weightage, answer.from_Domain)"/>
+                    <input type="radio" class="with-gap" name = {{question.id}} (click)="Answer(answer.Weightage, answer.from_Domain, answer.id, answer, ind)"  required/>
                     <span>{{answer.Answer_text}}</span>
                   </label>
                  </li>

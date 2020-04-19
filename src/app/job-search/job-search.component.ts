@@ -64,6 +64,12 @@ result: any;
     this.data = input;
   }
 
+  clear(){
+    this.query = "";
+    this.getListing();
+
+  }
+
   onSubmit(id) {
     localStorage.setItem('id', id);
     this.router.navigate(['/jobapply']);

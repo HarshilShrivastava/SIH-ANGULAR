@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/cor
 import { QuizService } from '../shared/quiz.service';
 import { JobApplyDialogComponent } from '../dialogs/job-apply-dialog/job-apply-dialog.component';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,7 +17,8 @@ export class Level2Component implements OnInit {
   data: any = {};
   constructor(
     private quizService: QuizService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router : Router
     ) { }
 
   ngOnInit() {
@@ -31,22 +33,10 @@ export class Level2Component implements OnInit {
     });
   }
 
-  onSubmit(){
-    let data = {
-      id: this.jobID,
+    onSubmit(id) {
+      localStorage.setItem('id', id);
+      this.router.navigate(['/jobapply']);
     }
-    let dialogRef = this.dialog.open(JobApplyDialogComponent, {
-      width: '800px',
-      data: data
-    });
-
-    dialogRef.afterClosed().subscribe(data => {
-      if (data) {
-        console.log("Applied!");
-      }
-
-    });
-  }
 
 }
 

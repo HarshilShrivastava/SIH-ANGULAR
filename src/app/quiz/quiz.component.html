@@ -11,9 +11,8 @@
           <ng-container *ngFor="let answer of question.Question; let i = index">
             <li>
               <label>
-                <input name="selected_answer" type="radio" class="with-gap" name={{question.id}}
-                  (change)="onChange(answer.Weightage , answer.id, answer.from_Domain)"
-                  (click)="Answer(answer.Weightage, answer.from_Domain, answer.id, answer, ind)" value="answer.id" />
+                <input name="selected_answer" type="radio" class="with-gap" name={{question.id}}  
+                  (click)="Answer(answer.Weightage, answer.from_Domain, answer.id, answer, ind)" value="answer.id" required/>
                 <!-- <span>{{answer.id}}</span> -->
                 <span>{{answer.Answer_text}}</span>
               </label>
@@ -26,7 +25,7 @@
 </div>
 <div class="row">
   <div class="input-field col s12">
-    <button class="btn-large" type="submit" name="action" (click)="Answers()">
+    <button class="btn-large" type="submit" name="action" (click)="Answers()" *ngIf = "bool">
       <p>Proceed to next round<i class="material-icons right">send</i></p>
     </button>
   </div>

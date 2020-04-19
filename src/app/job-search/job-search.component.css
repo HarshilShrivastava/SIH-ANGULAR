@@ -2,16 +2,48 @@ mat-form-field{
     height: 20px;
 }
 
+i{
+    margin-top: 5px;
+}
+
+h4{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+    margin-left: 20px !important;
+    margin-bottom: 0px;
+}
+
 .apply{
     cursor: pointer;
     color: black;
+}
+
+.input-field{
+    float: right;
+    right: 720px;
+    bottom: 55px;
 }
 
 a{
     color: black;
 }
 
+
 button{
     margin-left: 20px;
     margin-bottom: 10px;
+}
+
+#search-icon{
+    margin-top: 8px;
+    margin-right: 2px;
+}
+
+#search{
+    height: 40px;
+    width: 200px;
+    border: 1px solid;
+}
+
+#cross{
+    margin-right: 10px;
 }
