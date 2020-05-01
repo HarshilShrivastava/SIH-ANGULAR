@@ -47,6 +47,10 @@ export class NavbarComponent implements OnInit {
     return false;
   }
 
+  getAppliedJobs(){
+    this.router.navigate(['/applied-jobs'])
+  }
+
   // goToProfile(){
   //   if(this.isCandidate)
   //   {

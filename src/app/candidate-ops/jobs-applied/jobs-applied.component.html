@@ -1,0 +1,15 @@
+<div class="list-jobs">
+    <h4>Total jobs applied: {{data.count}}</h4>
+<div *ngFor="let job of data.data">
+    <ul class="collection">
+    <li class="collection-item avatar">
+        <img src="../../../assets/image/applied-job.jpg" alt="" class="circle">
+        <span class="title">Company: {{job.job_company}}</span>
+        <p> Role: {{job.job_name}} <br>
+            Applied at: {{job.At | date :'dd-MMM-yy h:mm:ss a '}}
+        </p>
+        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    </li>
+    </ul>
+</div>
+  </div>

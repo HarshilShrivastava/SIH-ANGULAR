@@ -28,8 +28,11 @@
                 <!-- <p><strong>Id: </strong>{{result.id}}</p> -->
             </div>
             <div class="apply-btn">
-            <button class="btn waves-effect waves-light" type="submit" name="action" (click) = "onSubmit(result.id)">
+            <button *ngIf = "isCandidate" class="btn waves-effect waves-light" type="submit" name="action" (click) = "onSubmit(result.id)">
                 Apply for this job<i class="material-icons right">send</i>
+            </button>
+            <button *ngIf = "isOrganization" class="btn waves-effect waves-light" type="submit" name="action" (click) = "onViewApplicant(result.id)">
+                View applicants<i class="material-icons right">send</i>
             </button>
             </div>
         </div>

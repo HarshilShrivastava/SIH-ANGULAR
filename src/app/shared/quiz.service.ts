@@ -203,6 +203,18 @@ export class QuizService {
     return this.http.post('http://harshraj.pythonanywhere.com/candidate/apply/' + localStorage.getItem('id') + '/', data, { headers: Headers});
   }
 
+  getAppliedJobs(){
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
+    return this.http.get('http://harshraj.pythonanywhere.com/candidate/get-application', {headers: Headers} );
+  }
+
+  viewAppliedCandidateList(){
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
+    return this.http.get('http://harshraj.pythonanywhere.com/organization/application-list/' + localStorage.getItem('id'), {headers: Headers} );
+  }
+
 
 
 }

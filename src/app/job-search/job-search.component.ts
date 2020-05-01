@@ -15,6 +15,8 @@ data: any = {};
 jobID: any;
 query: any;
 result: any;
+isOrganization = localStorage.getItem("Is_Organization");
+isCandidate = localStorage.getItem("Is_Candidate");
 
   constructor(
     private quizservice: QuizService,
@@ -32,8 +34,7 @@ result: any;
     .subscribe((data) => {
       console.log(data);
       this.data = data;
-      console.log(this.data, "My Data");
-      
+      console.log(this.data, "My Data");  
     });
   }
 
@@ -73,6 +74,11 @@ result: any;
   onSubmit(id) {
     localStorage.setItem('id', id);
     this.router.navigate(['/jobapply']);
+  }
+
+  onViewApplicant(id) {
+    localStorage.setItem('id', id);
+    this.router.navigate(['/applicant-list']);
   }
 
   

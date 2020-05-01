@@ -43,6 +43,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { JobSearchComponent } from './job-search/job-search.component';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatMenuModule} from '@angular/material/menu';
+import { JobsAppliedComponent } from './candidate-ops/jobs-applied/jobs-applied.component';
+import { ApplicantListComponent } from './organization-ops/applicant-list/applicant-list.component';
 
 
 
@@ -80,7 +82,9 @@ import { MatMenuModule} from '@angular/material/menu';
     UniversityReadComponent,
     JobApplyComponent,
     JobApplyDialogComponent,
-    JobSearchComponent
+    JobSearchComponent,
+    JobsAppliedComponent,
+    ApplicantListComponent
   ],
   imports: [
     BrowserModule,
