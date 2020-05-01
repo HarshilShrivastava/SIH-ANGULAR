@@ -45,6 +45,7 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatMenuModule} from '@angular/material/menu';
 import { JobsAppliedComponent } from './candidate-ops/jobs-applied/jobs-applied.component';
 import { ApplicantListComponent } from './organization-ops/applicant-list/applicant-list.component';
+import { SignupPageComponent } from './signup-page/signup-page.component';
 
 
 
@@ -64,6 +65,7 @@ import { ApplicantListComponent } from './organization-ops/applicant-list/applic
     Level1Component,
     Level2Component,
     SignupComponent,
+    SignupPageComponent,
     CandidateComponent,
     OrcreateComponent,
     JobformComponent,
