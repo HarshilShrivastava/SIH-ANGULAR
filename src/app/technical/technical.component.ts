@@ -15,6 +15,7 @@ export class TechnicalComponent implements OnInit {
   result_arr: any = [];
   techmarks = 0;
   totalmarks = 0;
+  rating = 0;
 
   constructor(private quizService: QuizService , private router: Router) { }
 
@@ -58,12 +59,21 @@ export class TechnicalComponent implements OnInit {
       }
     })
     this.quizService.Technical = this.techmarks;
-    console.log("Technical" + this.techmarks);
+    // console.log("Marks_tech_lvl2" + this.techmarks);
+    localStorage.setItem("Marks_tech_lvl2", JSON.stringify(this.techmarks))
 
     this.totalmarks = this.techmarks;
     console.log("Total marks: " + this.totalmarks);
 
     this.quizService.Totalmarks = this.totalmarks;
+
+    let x = JSON.parse(localStorage.getItem("Marks_tech_lvl1"));
+    let y = parseInt(x);
+    let g = JSON.parse(localStorage.getItem("Marks_tech_lvl2"));
+    let z = parseInt(g);
+    this.rating = (y + z) / 15;
+    console.log("Tech Rating: " + this.rating);
+    
 
     this.quizService.techResult().subscribe(
       res => {

@@ -15,6 +15,8 @@ export class MarketingComponent implements OnInit {
   result_arr: any = [];
   marketmarks = 0;
   totalmarks = 0;
+  rating = 0;
+
   constructor(private quizService: QuizService, private router: Router) { }
 
   ngOnInit() {
@@ -57,10 +59,19 @@ export class MarketingComponent implements OnInit {
     })
 
     this.quizService.Marketing = this.marketmarks;
-    console.log("Marketing" + this.marketmarks);
+    // console.log("Marks_marketing_lvl2" + this.marketmarks);
+    localStorage.setItem("Marks_marketing_lvl2", JSON.stringify(this.marketmarks))
+
 
     this.totalmarks = this.marketmarks;
     console.log("Total marks: " + this.totalmarks);
+
+    let x = JSON.parse(localStorage.getItem("Marks_marketing_lvl1"));
+    let y = parseInt(x);
+    let g = JSON.parse(localStorage.getItem("Marks_marketing_lvl2"));
+    let z = parseInt(g);
+    this.rating = (y + z) / 15;
+    console.log("Marketing Rating: " + this.rating);
 
     this.quizService.Totalmarks = this.totalmarks;
 

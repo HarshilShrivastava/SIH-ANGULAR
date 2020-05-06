@@ -110,7 +110,9 @@ export class QuizComponent implements OnInit {
       }
     })
     this.quizService.Technical = this.techmarks;
-    console.log("Technical" + this.techmarks);
+    console.log("Marks_tech_lvl1" + this.techmarks);
+    localStorage.setItem("Marks_tech_lvl1", JSON.stringify(this.techmarks))
+
 
     this.result_arr.forEach(res=>{
       if(res.from_Domain == 2){
@@ -119,6 +121,8 @@ export class QuizComponent implements OnInit {
     })
     this.quizService.Marketing = this.marketmarks;
     console.log("Marketing" + this.marketmarks);
+    localStorage.setItem("Marks_marketing_lvl1", JSON.stringify(this.marketmarks))
+
 
     this.totalmarks = this.techmarks + this.marketmarks;
     console.log("Total marks: " + this.totalmarks);
