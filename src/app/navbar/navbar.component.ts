@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from "../../../src/app/shared/user.model"
+import { MatSidenav } from '@angular/material';
 
 @Component({
   selector: 'app-navbar',
@@ -19,8 +20,26 @@ export class NavbarComponent implements OnInit {
   isOrganization = localStorage.getItem("Is_Organization");
   isCandidate = localStorage.getItem("Is_Candidate");
 
+  @ViewChild('sidenav', {static: true}) sidenav: MatSidenav;
+  isExpanded = true;
+  showSubmenu: boolean = false;
+  isShowing = false;
+  showSubSubMenu: boolean = false;
+
   ngOnInit() {
 
+  }
+
+  mouseenter() {
+    if (!this.isExpanded) {
+      this.isShowing = true;
+    }
+  }
+
+  mouseleave() {
+    if (!this.isExpanded) {
+      this.isShowing = false;
+    }
   }
 
   checkIfOrganization(){

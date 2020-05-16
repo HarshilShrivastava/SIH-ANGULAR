@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../shared/quiz.service';
 import { Router } from '@angular/router';
 import { $ } from 'protractor';
+import { MatDialog } from '@angular/material';
+import { ErrorDialogComponent } from '../shared/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-quiz',
@@ -25,7 +27,7 @@ export class QuizComponent implements OnInit {
   marketmarks = 0;
   totalmarks = 0;
 
-  constructor(private quizService: QuizService, private router: Router ) { }
+  constructor(private quizService: QuizService, private router: Router, private dialog: MatDialog ) { }
   ngOnInit() {
     this.getContacts();
   }
@@ -125,6 +127,7 @@ export class QuizComponent implements OnInit {
 
 
     this.totalmarks = this.techmarks + this.marketmarks;
+    this.quizService.Totalmarks = this.totalmarks
     console.log("Total marks: " + this.totalmarks);
     
 
@@ -139,6 +142,11 @@ export class QuizComponent implements OnInit {
       },
       err => {
         console.log(err.message);
+        let dialogRef = this.dialog.open(ErrorDialogComponent, {
+          height: '150px',
+          data: err.message
+          
+        });     
       }
     );
   }

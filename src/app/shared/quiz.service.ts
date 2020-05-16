@@ -31,7 +31,7 @@ export class QuizService {
       Total : this.Totalmarks
     };
     const reqheaders = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.http.post('https://harshraj.pythonanywhere.com/user/put-general-marks/' , body, {headers: reqheaders});
+    return this.http.post('https://harshraj.pythonanywhere.com/candidate/put-general-marks/' , body, {headers: reqheaders});
   }
 
   TechData() {
@@ -213,6 +213,12 @@ export class QuizService {
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
     return this.http.get('https://harshraj.pythonanywhere.com/organization/application-list/' + localStorage.getItem('id'), {headers: Headers} );
+  }
+
+  getSubDomainQuestions(){
+    let url = "http://harshraj.pythonanywhere.com/user/level3/" + localStorage.getItem('SD_1') + "/" + localStorage.getItem('SD_2')
+
+    return this.http.get(url);
   }
 
 

@@ -93,4 +93,9 @@ p {
     background-color: #fff !important;
 }
 
+.mat-dialog-container{
+    width: auto !important;
+    overflow: hidden !important;
+}
+
 

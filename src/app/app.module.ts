@@ -41,11 +41,14 @@ import { JobApplyDialogComponent } from './dialogs/job-apply-dialog/job-apply-di
 import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { JobSearchComponent } from './job-search/job-search.component';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatSidenav, MatSidenavContainer, MatIconModule, MatToolbarModule, MatListModule, MatSidenavModule } from '@angular/material';
 import { MatMenuModule} from '@angular/material/menu';
 import { JobsAppliedComponent } from './candidate-ops/jobs-applied/jobs-applied.component';
 import { ApplicantListComponent } from './organization-ops/applicant-list/applicant-list.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
+import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.component';
+import { QuizResultsComponent } from './quiz-ops/quiz-results/quiz-results.component';
+import { RoundThreeComponent } from './quiz-ops/round-three/round-three.component';
 
 
 
@@ -86,7 +89,10 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
     JobApplyDialogComponent,
     JobSearchComponent,
     JobsAppliedComponent,
-    ApplicantListComponent
+    ApplicantListComponent,
+    ErrorDialogComponent,
+    QuizResultsComponent,
+    RoundThreeComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,11 +106,15 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatListModule,
+    MatSidenavModule
   ],
   providers: [QuizService, User],
   bootstrap: [AppComponent],
-  entryComponents: [JobApplyDialogComponent]
+  entryComponents: [JobApplyDialogComponent, ErrorDialogComponent]
 
 })
 export class AppModule { }
