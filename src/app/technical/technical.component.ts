@@ -52,12 +52,14 @@ export class TechnicalComponent implements OnInit {
   ngOnInit() {
     this.TechContacts();
   }
+
   TechContacts() {
     this.quizService.TechData().subscribe(data => {
       console.log(data);
       this.data = data;
     });
   }
+  
   Answer(Weightage, from_Domain, id, arr, index) {
     // this.result_arr.insert(index, arr);
       if(this.result_arr[index] == []){
