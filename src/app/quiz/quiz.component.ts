@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../shared/quiz.service';
 import { Router } from '@angular/router';
 import { $ } from 'protractor';
+import { MatDialog } from '@angular/material';
+import { ErrorDialogComponent } from '../shared/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-quiz',
@@ -25,7 +27,7 @@ export class QuizComponent implements OnInit {
   marketmarks = 0;
   totalmarks = 0;
 
-  constructor(private quizService: QuizService, private router: Router ) { }
+  constructor(private quizService: QuizService, private router: Router, private dialog: MatDialog ) { }
   ngOnInit() {
     this.getContacts();
   }
@@ -110,7 +112,9 @@ export class QuizComponent implements OnInit {
       }
     })
     this.quizService.Technical = this.techmarks;
-    console.log("Technical" + this.techmarks);
+    console.log("Marks_tech_lvl1" + this.techmarks);
+    localStorage.setItem("Marks_tech_lvl1", JSON.stringify(this.techmarks))
+
 
     this.result_arr.forEach(res=>{
       if(res.from_Domain == 2){
@@ -119,8 +123,11 @@ export class QuizComponent implements OnInit {
     })
     this.quizService.Marketing = this.marketmarks;
     console.log("Marketing" + this.marketmarks);
+    localStorage.setItem("Marks_marketing_lvl1", JSON.stringify(this.marketmarks))
+
 
     this.totalmarks = this.techmarks + this.marketmarks;
+    this.quizService.Totalmarks = this.totalmarks
     console.log("Total marks: " + this.totalmarks);
     
 
@@ -135,6 +142,11 @@ export class QuizComponent implements OnInit {
       },
       err => {
         console.log(err.message);
+        let dialogRef = this.dialog.open(ErrorDialogComponent, {
+          height: '150px',
+          data: err.message
+          
+        });     
       }
     );
   }

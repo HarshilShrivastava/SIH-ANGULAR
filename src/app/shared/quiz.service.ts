@@ -31,7 +31,7 @@ export class QuizService {
       Total : this.Totalmarks
     };
     const reqheaders = new HttpHeaders({'Content-Type': 'application/json'});
-    return this.http.post('https://harshraj.pythonanywhere.com/user/put-general-marks/' , body, {headers: reqheaders});
+    return this.http.post('https://harshraj.pythonanywhere.com/candidate/put-general-marks/' , body, {headers: reqheaders});
   }
 
   TechData() {
@@ -53,7 +53,7 @@ export class QuizService {
   levelone() {
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
-    return this.http.get('https://harshraj.pythonanywhere.com/organization/api/get-recomendedjob/?Level=1&fields=1');
+    return this.http.get('https://harshraj.pythonanywhere.com/organization/api/get-recomendedjob/?Level=1&fields=1', { headers: Headers });
   }
 
   leveltwo() {
@@ -71,7 +71,7 @@ export class QuizService {
   getAllJobs() {
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
-    return this.http.get('http://harshraj.pythonanywhere.com/organization/list-of-job/', { headers: Headers } );
+    return this.http.get('https://harshraj.pythonanywhere.com/organization/list-of-job/', { headers: Headers } );
   }
 
   getSearchedJob(paramsObj){
@@ -79,7 +79,7 @@ export class QuizService {
 
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
-    return this.http.get('http://harshraj.pythonanywhere.com/organization/list-of-job/', {params , headers: Headers} );
+    return this.http.get('https://harshraj.pythonanywhere.com/organization/list-of-job/', {params , headers: Headers} );
   }
 
   orView() {
@@ -94,7 +94,7 @@ export class QuizService {
   uniView() {
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
-    return this.http.get('http://harshraj.pythonanywhere.com/University/Uprofile/', {headers: Headers} );
+    return this.http.get('https://harshraj.pythonanywhere.com/University/Uprofile/', {headers: Headers} );
   }
 
   jobView() {
@@ -175,7 +175,7 @@ export class QuizService {
     };
     const Headers = new HttpHeaders({'Content-Type': 'application/json'})
       .set('Authorization', 'token ' + localStorage.getItem('token'));
-    return this.http.post('http://harshraj.pythonanywhere.com/University/Uprofile/', info, {headers: Headers});
+    return this.http.post('https://harshraj.pythonanywhere.com/University/Uprofile/', info, {headers: Headers});
   }
 
   jobview(job: Job) {
@@ -200,19 +200,25 @@ export class QuizService {
     const Headers = new HttpHeaders({'Content-Type': 'application/json'})
     .set('Authorization', 'token ' + localStorage.getItem('token'));
     // tslint:disable-next-line: max-line-length
-    return this.http.post('http://harshraj.pythonanywhere.com/candidate/apply/' + localStorage.getItem('id') + '/', data, { headers: Headers});
+    return this.http.post('https://harshraj.pythonanywhere.com/candidate/apply/' + localStorage.getItem('id') + '/', data, { headers: Headers});
   }
 
   getAppliedJobs(){
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
-    return this.http.get('http://harshraj.pythonanywhere.com/candidate/get-application', {headers: Headers} );
+    return this.http.get('https://harshraj.pythonanywhere.com/candidate/get-application', {headers: Headers} );
   }
 
   viewAppliedCandidateList(){
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
-    return this.http.get('http://harshraj.pythonanywhere.com/organization/application-list/' + localStorage.getItem('id'), {headers: Headers} );
+    return this.http.get('https://harshraj.pythonanywhere.com/organization/application-list/' + localStorage.getItem('id'), {headers: Headers} );
+  }
+
+  getSubDomainQuestions(){
+    let url = "http://harshraj.pythonanywhere.com/user/level3/" + localStorage.getItem('SD_1') + "/" + localStorage.getItem('SD_2')
+
+    return this.http.get(url);
   }
 
 

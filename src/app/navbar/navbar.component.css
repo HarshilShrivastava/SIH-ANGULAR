@@ -85,3 +85,66 @@ a{
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+
+  /* sidenav css starts */
+  .feature-sidenav {
+    height: 500px !important;
+    margin-left: 0px !important;
+    left: 0px !important;
+}
+
+.example-app-name{
+    margin-top: 20px;
+}
+
+.example-toolbar{
+    margin-top: 394px;
+    left: 0px;
+    height: 85px;
+    background-color: #505464;
+    width: 10px;
+    padding-left: 12px;
+}
+
+.example-container {
+    height: 575px;
+    left: 0px !important;
+  }
+
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .example-sidenav {
+     user-select: none;
+     padding-top: 0px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .menu-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+  }
+
+  .menu-button.rotated {
+    transform: rotate(180deg);
+  }
+
+  .submenu {
+    overflow-y: hidden;
+    transition: transform 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 30px;
+  }
+  
+  .submenu.expanded {
+    transform: scaleY(1);
+  }

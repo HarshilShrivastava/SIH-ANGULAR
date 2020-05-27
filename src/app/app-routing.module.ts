@@ -26,6 +26,10 @@ import { JobApplyComponent } from './job-apply/job-apply.component';
 import { JobSearchComponent } from './job-search/job-search.component';
 import { JobsAppliedComponent } from './candidate-ops/jobs-applied/jobs-applied.component';
 import { ApplicantListComponent } from './organization-ops/applicant-list/applicant-list.component';
+import { QuizResultsComponent } from './quiz-ops/quiz-results/quiz-results.component';
+import { RoundThreeComponent } from './quiz-ops/round-three/round-three.component';
+
+
 const routes: Routes = [
   {path: '', redirectTo: '/home' , pathMatch: 'full' },
   {path: 'home' , component: LandingPageComponent},
@@ -58,7 +62,8 @@ const routes: Routes = [
   {path: 'jobsearch', component: JobSearchComponent},
   {path: 'applied-jobs', component: JobsAppliedComponent},
   {path: 'applicant-list', component: ApplicantListComponent},
-
+  {path: 'quiz-results', component: QuizResultsComponent},
+  {path: 'round-three', component: RoundThreeComponent},
 
 
 {

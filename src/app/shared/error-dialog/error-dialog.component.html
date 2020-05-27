@@ -1,0 +1,13 @@
+<h3 *ngIf="isPresent" mat-dialog-title>{{data}}</h3>
+
+<h3 *ngIf="!isPresent" mat-dialog-title>Oops! An error occured. Please give us some time and we'll get back to you.</h3>
+
+
+<mat-dialog-content class="admin-actions">
+
+    <div class="h-flex">
+
+      <button class="btn" (click)="proceed()" mat-raised-button color="warn">Okay</button>
+    </div>
+  
+</mat-dialog-content>
