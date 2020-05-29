@@ -49,6 +49,8 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.component';
 import { QuizResultsComponent } from './quiz-ops/quiz-results/quiz-results.component';
 import { RoundThreeComponent } from './quiz-ops/round-three/round-three.component';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 
@@ -110,7 +112,8 @@ import { RoundThreeComponent } from './quiz-ops/round-three/round-three.componen
     MatIconModule,
     MatToolbarModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTabsModule
   ],
   providers: [QuizService, User],
   bootstrap: [AppComponent],

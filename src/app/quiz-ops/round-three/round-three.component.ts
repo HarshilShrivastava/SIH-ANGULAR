@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from 'src/app/shared/quiz.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-round-three',
@@ -19,7 +19,8 @@ export class RoundThreeComponent implements OnInit {
 
   constructor(
     private quizService: QuizService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
     ) { }
 
   ngOnInit() {
@@ -164,7 +165,6 @@ export class RoundThreeComponent implements OnInit {
   Answers() {
     // this.getTopSubdomains();
 
-    // this.toRoundThree();
 
     this.result_arr.forEach(res=>{
       if(res.SubDomain === this.SD_1){
@@ -175,8 +175,10 @@ export class RoundThreeComponent implements OnInit {
     })
     // this.quizService.Technical = this.techmarks;
     // console.log("Marks_tech_lvl2" + this.techmarks);
-    localStorage.setItem("Final SD 1 marks", JSON.stringify(this.SD_1_marks))
-    localStorage.setItem("Final SD 2 marks", JSON.stringify(this.SD_2_marks))
+    localStorage.setItem("Final_SD1_Marks", JSON.stringify(this.SD_1_marks))
+    localStorage.setItem("Final_SD2_Marks", JSON.stringify(this.SD_2_marks))
+
+    this.toRoundThree();
 
 
     // this.totalmarks = this.techmarks;
@@ -208,12 +210,12 @@ export class RoundThreeComponent implements OnInit {
     // );
   }
 
-  // toRoundThree() {
-  //   // this.quizService.getSubDomainQuestions().subscribe(data => {
-  //   //   console.log(data);
-  //   // });
+  toRoundThree() {
+    // this.quizService.getSubDomainQuestions().subscribe(data => {
+    //   console.log(data);
+    // });
 
-  //   this.router.navigate(['/round-three']);
-  // }
+    this.router.navigate(['/quiz-results']);
+  }
 
 }

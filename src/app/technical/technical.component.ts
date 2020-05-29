@@ -178,6 +178,8 @@ export class TechnicalComponent implements OnInit {
     console.log("Sub domain no. 1 = " + this.max_sd + " from sub domain no. " + this.max_sd_id);
     localStorage.setItem("SD_1", JSON.stringify(this.max_sd_id))
     localStorage.setItem("SD_2", JSON.stringify(this.max2_sd_id))
+    localStorage.setItem("SD1_marks", JSON.stringify(this.max_sd))
+    localStorage.setItem("SD2_marks", JSON.stringify(this.max2_sd))
     
     console.log("Sub domain no. 2 = " + this.max2_sd + " from sub domain no. " + this.max2_sd_id);
 
@@ -203,12 +205,12 @@ export class TechnicalComponent implements OnInit {
 
     this.quizService.Totalmarks = this.totalmarks;
 
-    let x = JSON.parse(localStorage.getItem("Marks_tech_lvl1"));
-    let y = parseInt(x);
-    let g = JSON.parse(localStorage.getItem("Marks_tech_lvl2"));
-    let z = parseInt(g);
-    this.rating = (y + z) / 15;
-    console.log("Tech Rating: " + this.rating);
+    // let x = JSON.parse(localStorage.getItem("Marks_tech_lvl1"));
+    // let y = parseInt(x);
+    // let g = JSON.parse(localStorage.getItem("Marks_tech_lvl2"));
+    // let z = parseInt(g);
+    // this.rating = (y + z) / 15;
+    // console.log("Tech Rating: " + this.rating);
     
     // this.router.navigate(['/quiz-results']);
     
