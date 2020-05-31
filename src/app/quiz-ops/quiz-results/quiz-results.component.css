@@ -4,16 +4,21 @@
   }
 
 .btn-large{
+    margin: 20px;
     background-color: #3bb78f;
     background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
-    margin-left: 475px;
+    margin-left: 35%;
 }
 
+.jobs{
+    margin-left: 40%;
+}
 
 .btn-txt{
     display: contents;
 }
 
 .rating{
-    margin-left: 38%;
+    margin: 10px;
+    margin-left: 35%;
 }

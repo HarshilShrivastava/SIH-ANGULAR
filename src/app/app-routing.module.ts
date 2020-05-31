@@ -28,6 +28,7 @@ import { JobsAppliedComponent } from './candidate-ops/jobs-applied/jobs-applied.
 import { ApplicantListComponent } from './organization-ops/applicant-list/applicant-list.component';
 import { QuizResultsComponent } from './quiz-ops/quiz-results/quiz-results.component';
 import { RoundThreeComponent } from './quiz-ops/round-three/round-three.component';
+import { RecommendedJobsComponent } from './job-ops/recommended-jobs/recommended-jobs.component';
 
 
 const routes: Routes = [
@@ -64,6 +65,8 @@ const routes: Routes = [
   {path: 'applicant-list', component: ApplicantListComponent},
   {path: 'quiz-results', component: QuizResultsComponent},
   {path: 'round-three', component: RoundThreeComponent},
+  {path: 'get-recommended-jobs', component: RecommendedJobsComponent},
+
 
 
 {

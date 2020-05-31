@@ -30,23 +30,31 @@
     <mat-tab label="Round 2">
         <div *ngIf = "tech_lvl2">You scored: {{Marks_tech_lvl2}} in tech domain in round 2.</div>
         <div *ngIf = "marketing_lvl2">You scored: {{Marks_marketing_lvl2}} in marketing domain in round 2.</div>  
-        <div *ngIf = "sd_1">Your top sub-domain was {{SD_1}} in round 2 with a total score of {{SD_1_marks}}.</div>  
-        <div *ngIf = "sd_2">Your 2nd best sub-domain was {{SD_2}} in round 2 with a total score of {{SD_2_marks}}.</div>  
+        <div *ngIf = "sd_1">Your top sub-domain was {{SD_1_name}} in round 2 with a total score of {{SD_1_marks}}.</div>  
+        <div *ngIf = "sd_2">Your 2nd best sub-domain was {{SD_2_name}} in round 2 with a total score of {{SD_2_marks}}.</div>  
 
     </mat-tab>
     <mat-tab label="Round 3">
-        <div *ngIf = "sd_1">You scored: {{Final_SD1_Marks}} in sub-domain {{SD_1}} in round 3.</div>
-        <div *ngIf = "sd_2">You scored: {{Final_SD2_Marks}} in sub-domain {{SD_2}} in round 3.</div>
+        <div *ngIf = "sd_1">You scored: {{Final_SD1_Marks}} in sub-domain {{SD_1_name}} in round 3.</div>
+        <div *ngIf = "sd_2">You scored: {{Final_SD2_Marks}} in sub-domain {{SD_2_name}} in round 3.</div>
     </mat-tab>
     </mat-tab-group>  
 
     <div>
         <button class="btn-large" type="submit" name="action" (click)="OnClickRating()">
-            <p class="btn-txt">Click here to view your rating<i class="material-icons right">send</i></p>
+            <p *ngIf = "!display_rating" class="btn-txt">Click here to view your rating<i class="material-icons right">send</i></p>
+            <p *ngIf = "display_rating" class="btn-txt">Click here to hide your rating<i class="material-icons right">send</i></p>
         </button>
     </div>
 
+    <div>
+        <button class="btn-large jobs" type="submit" name="action" (click)="OnClickViewJobs()">
+            <p class="btn-txt">View jobs for me<i class="material-icons right">send</i></p>
+        </button>
+    </div>
 
     <div class="rating" *ngIf = "display_rating">
        <b>Your rating based on the quiz assessment is {{final_rating}}/5.</b>
     </div>
+
+    

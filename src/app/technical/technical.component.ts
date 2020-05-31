@@ -39,11 +39,16 @@ export class TechnicalComponent implements OnInit {
     qid: 0
   };                                 //data_science
   sd_marks_arr = new Array();
+  ascending_sd_marks = new Array();
 
   max_sd: any;
   max2_sd: any;
   max_sd_id: any;
   max2_sd_id: any;
+  max3_sd: any;
+  max3_sd_id: any;
+  max4_sd: any;
+  max4_sd_id: any;
   temp = 0;
   hold: any;
 
@@ -117,40 +122,40 @@ export class TechnicalComponent implements OnInit {
     //  console.log(this.quizService.Totalmarks, 'marks' , Weightage);
    }
 
-  getTopSubdomains(){
-    this.sd_marks_arr.push(this.sd_2, this.sd_3, this.sd_5, this.sd_7)
-    console.log("SD Array" + this.sd_marks_arr);
+  // getTopSubdomains(){
+  //   this.sd_marks_arr.push(this.sd_2, this.sd_3, this.sd_5, this.sd_7)
+  //   console.log("SD Array" + this.sd_marks_arr);
 
-    this.max_sd = this.sd_marks_arr[0].weightage;
-    this.max_sd_id = this.sd_marks_arr[0].id;
-    this.max2_sd = this.sd_marks_arr[1].weightage;
-    this.max2_sd_id = this.sd_marks_arr[1].id;
+  //   this.max_sd = this.sd_marks_arr[0].weightage;
+  //   this.max_sd_id = this.sd_marks_arr[0].id;
+  //   this.max2_sd = this.sd_marks_arr[1].weightage;
+  //   this.max2_sd_id = this.sd_marks_arr[1].id;
 
-    if(this.max_sd < this.max2_sd){
-      this.temp = this.max_sd;
-      this.max_sd = this.max2_sd;
-      this.max_sd_id = this.max2_sd_id;
-      this.max2_sd = this.temp;
-      this.max2_sd_id = this.max_sd_id;
-    }
+  //   if(this.max_sd < this.max2_sd){
+  //     this.temp = this.max_sd;
+  //     this.max_sd = this.max2_sd;
+  //     this.max_sd_id = this.max2_sd_id;
+  //     this.max2_sd = this.temp;
+  //     this.max2_sd_id = this.max_sd_id;
+  //   }
 
-    for (let i = 2; i < this.sd_marks_arr.length; i++)
-    {
-        if (this.sd_marks_arr[i].weightage > this.max_sd)
-        {
-            this.max2_sd = this.max_sd;
-            this.max2_sd_id = this.max_sd_id;
+  //   for (let i = 2; i < this.sd_marks_arr.length; i++)
+  //   {
+  //       if (this.sd_marks_arr[i].weightage > this.max_sd)
+  //       {
+  //           this.max2_sd = this.max_sd;
+  //           this.max2_sd_id = this.max_sd_id;
 
-            this.max_sd = this.sd_marks_arr[i].weightage; 
-            this.max_sd_id = this.sd_marks_arr[i].id;
+  //           this.max_sd = this.sd_marks_arr[i].weightage; 
+  //           this.max_sd_id = this.sd_marks_arr[i].id;
 
             // this.hold = i;
-        }
+        // }
         
-        else if (this.sd_marks_arr[i].weightage > this.max2_sd && this.sd_marks_arr[i].weightage != this.max_sd)
-        {
-            this.max2_sd = this.sd_marks_arr[i].weightage;
-            this.max2_sd_id = this.sd_marks_arr[i].id;
+        // else if (this.sd_marks_arr[i].weightage > this.max2_sd && this.sd_marks_arr[i].weightage != this.max_sd)
+        // {
+        //     this.max2_sd = this.sd_marks_arr[i].weightage;
+        //     this.max2_sd_id = this.sd_marks_arr[i].id;
             // if(i = 2)
             // console.log("Sub-domain 2nd maximumest is 2");
             // if(i = 3)
@@ -159,7 +164,7 @@ export class TechnicalComponent implements OnInit {
             // console.log("Sub-domain 2nd maximumest is 5");
             // if(i = 7)
             // console.log("Sub-domain 2nd maximumest is 7");
-        }
+        // }
 
         // while(i === this.sd_marks_arr.length){
         //   console.log("Sub domain maximumest is" + this.hold);
@@ -173,21 +178,82 @@ export class TechnicalComponent implements OnInit {
           // if(i = 7)
           // console.log("Sub-domain maximumest is 7");
       // }
-    }
+  //   }
+
+  //   console.log("Sub domain no. 1 = " + this.max_sd + " from sub domain no. " + this.max_sd_id);
+  //   sessionStorage.setItem("SD_1", JSON.stringify(this.max_sd_id))
+  //   sessionStorage.setItem("SD_2", JSON.stringify(this.max2_sd_id))
+  //   sessionStorage.setItem("SD1_marks", JSON.stringify(this.max_sd))
+  //   sessionStorage.setItem("SD2_marks", JSON.stringify(this.max2_sd))
+    
+  //   console.log("Sub domain no. 2 = " + this.max2_sd + " from sub domain no. " + this.max2_sd_id);
+
+  //   this.setName();
+  // } 
+
+  sortDomains(){
+
+    this.sd_marks_arr.push(this.sd_2, this.sd_3, this.sd_5, this.sd_7)
+
+    this.ascending_sd_marks = this.sd_marks_arr.sort(function(obj1, obj2){
+      return obj1.weightage - obj2.weightage
+    })
+    console.log(this.ascending_sd_marks);
+
+    this.max_sd = this.ascending_sd_marks[3].weightage;
+    this.max_sd_id = this.ascending_sd_marks[3].id;
+    sessionStorage.setItem("SD_1", JSON.stringify(this.max_sd_id))
+    sessionStorage.setItem("SD1_marks", JSON.stringify(this.max_sd))
+
+    this.max2_sd = this.ascending_sd_marks[2].weightage;
+    this.max2_sd_id = this.ascending_sd_marks[2].id;
+    sessionStorage.setItem("SD_2", JSON.stringify(this.max2_sd_id))
+    sessionStorage.setItem("SD2_marks", JSON.stringify(this.max2_sd))
+
+    this.max3_sd = this.ascending_sd_marks[1].weightage;
+    this.max3_sd_id = this.ascending_sd_marks[1].id;
+    sessionStorage.setItem("SD_3", JSON.stringify(this.max3_sd_id))
+
+    this.max4_sd = this.ascending_sd_marks[0].weightage;
+    this.max4_sd_id = this.ascending_sd_marks[0].id;
+    sessionStorage.setItem("SD_4", JSON.stringify(this.max4_sd_id))
 
     console.log("Sub domain no. 1 = " + this.max_sd + " from sub domain no. " + this.max_sd_id);
-    localStorage.setItem("SD_1", JSON.stringify(this.max_sd_id))
-    localStorage.setItem("SD_2", JSON.stringify(this.max2_sd_id))
-    localStorage.setItem("SD1_marks", JSON.stringify(this.max_sd))
-    localStorage.setItem("SD2_marks", JSON.stringify(this.max2_sd))
-    
+
     console.log("Sub domain no. 2 = " + this.max2_sd + " from sub domain no. " + this.max2_sd_id);
 
-  } 
+    console.log("Sub domain no. 3 = " + this.max3_sd + " from sub domain no. " + this.max3_sd_id);
 
+    console.log("Sub domain no. 4 = " + this.max4_sd + " from sub domain no. " + this.max4_sd_id);
+
+    this.setName();
+  }
+
+  setName(){
+    if(this.max_sd_id === 2)
+    sessionStorage.setItem("SD1_name", "Web-development")
+    else if(this.max_sd_id === 3)
+    sessionStorage.setItem("SD1_name", "Android-development")
+    else if(this.max_sd_id === 5)
+    sessionStorage.setItem("SD1_name", "Software-development")
+    else if(this.max_sd_id === 7)
+    sessionStorage.setItem("SD1_name", "Data Science")
+
+
+    if(this.max2_sd_id === 2)
+    sessionStorage.setItem("SD2_name", "Web-development")
+    else if(this.max2_sd_id === 3)
+    sessionStorage.setItem("SD2_name", "Android-development")
+    else if(this.max2_sd_id === 5)
+    sessionStorage.setItem("SD2_name", "Software-development")
+    else if(this.max2_sd_id === 7)
+    sessionStorage.setItem("SD2_name", "Data Science")
+  }
 
   Answers() {
-    this.getTopSubdomains();
+    // this.getTopSubdomains();
+
+    this.sortDomains();
 
     this.toRoundThree();
 
@@ -198,16 +264,16 @@ export class TechnicalComponent implements OnInit {
     })
     this.quizService.Technical = this.techmarks;
     // console.log("Marks_tech_lvl2" + this.techmarks);
-    localStorage.setItem("Marks_tech_lvl2", JSON.stringify(this.techmarks))
+    sessionStorage.setItem("Marks_tech_lvl2", JSON.stringify(this.techmarks))
 
     this.totalmarks = this.techmarks;
     console.log("Total marks: " + this.totalmarks);
 
     this.quizService.Totalmarks = this.totalmarks;
 
-    // let x = JSON.parse(localStorage.getItem("Marks_tech_lvl1"));
+    // let x = JSON.parse(sessionStorage.getItem("Marks_tech_lvl1"));
     // let y = parseInt(x);
-    // let g = JSON.parse(localStorage.getItem("Marks_tech_lvl2"));
+    // let g = JSON.parse(sessionStorage.getItem("Marks_tech_lvl2"));
     // let z = parseInt(g);
     // this.rating = (y + z) / 15;
     // console.log("Tech Rating: " + this.rating);

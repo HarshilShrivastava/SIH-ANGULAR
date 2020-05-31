@@ -82,6 +82,27 @@ export class QuizService {
     return this.http.get('https://harshraj.pythonanywhere.com/organization/list-of-job/', {params , headers: Headers} );
   }
 
+  getRecommendedJobs(){
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
+
+    // const formData: FormData = new FormData();
+    // formData.append('first', JSON.parse(sessionStorage.getItem("SD_1")));
+    // formData.append('Second', JSON.parse(sessionStorage.getItem("SD_2")));
+    // formData.append('third', JSON.parse(sessionStorage.getItem("SD_3")));
+    // formData.append('fourth', JSON.parse(sessionStorage.getItem("SD_4")));
+
+
+    const body = {
+      first: parseInt(JSON.parse(sessionStorage.getItem("SD_1"))),
+      Second: parseInt(JSON.parse(sessionStorage.getItem("SD_2"))),
+      third: parseInt(JSON.parse(sessionStorage.getItem("SD_3"))),
+      fourth: parseInt(JSON.parse(sessionStorage.getItem("SD_4"))),
+    };
+
+    return this.http.post('http://harshraj.pythonanywhere.com/organization/get-jobs', body, {headers: Headers});
+  }
+
   orView() {
     const Headers = new HttpHeaders()
       .set('Authorization', 'token ' + localStorage.getItem('token'));
@@ -216,7 +237,7 @@ export class QuizService {
   }
 
   getSubDomainQuestions(){
-    let url = "http://harshraj.pythonanywhere.com/user/level3/" + localStorage.getItem('SD_1') + "/" + localStorage.getItem('SD_2')
+    let url = "http://harshraj.pythonanywhere.com/user/level3/" + sessionStorage.getItem('SD_1') + "/" + sessionStorage.getItem('SD_2')
 
     return this.http.get(url);
   }

@@ -177,12 +177,37 @@ export class MarketingComponent implements OnInit {
     }
 
     console.log("Sub domain no. 1 = " + this.max_sd + " from sub domain no. " + this.max_sd_id);
-    localStorage.setItem("SD_1", JSON.stringify(this.max_sd_id))
-    localStorage.setItem("SD_2", JSON.stringify(this.max2_sd_id))
+    sessionStorage.setItem("SD_1", JSON.stringify(this.max_sd_id))
+    sessionStorage.setItem("SD_2", JSON.stringify(this.max2_sd_id))
+    sessionStorage.setItem("SD1_marks", JSON.stringify(this.max_sd))
+    sessionStorage.setItem("SD2_marks", JSON.stringify(this.max2_sd))
     
     console.log("Sub domain no. 2 = " + this.max2_sd + " from sub domain no. " + this.max2_sd_id);
 
+    this.setName();
   } 
+
+  setName(){
+    if(this.max_sd_id === 9)
+    sessionStorage.setItem("SD1_name", "Market Research & Analysis")
+    else if(this.max_sd_id === 10)
+    sessionStorage.setItem("SD1_name", "Public Relations")
+    else if(this.max_sd_id === 11)
+    sessionStorage.setItem("SD1_name", "Advertising")
+    else if(this.max_sd_id === 13)
+    sessionStorage.setItem("SD1_name", "Digital Marketing")
+
+
+    if(this.max2_sd_id === 9)
+    sessionStorage.setItem("SD2_name", "Market Research & Analysis")
+    else if(this.max2_sd_id === 10)
+    sessionStorage.setItem("SD2_name", "Public Relations")
+    else if(this.max2_sd_id === 11)
+    sessionStorage.setItem("SD2_name", "Advertising")
+    else if(this.max2_sd_id === 13)
+    sessionStorage.setItem("SD2_name", "Digital Marketing")
+  }
+
 
 
   Answers() {
@@ -199,18 +224,18 @@ export class MarketingComponent implements OnInit {
 
     this.quizService.Marketing = this.marketmarks;
     // console.log("Marks_marketing_lvl2" + this.marketmarks);
-    localStorage.setItem("Marks_marketing_lvl2", JSON.stringify(this.marketmarks))
+    sessionStorage.setItem("Marks_marketing_lvl2", JSON.stringify(this.marketmarks))
 
 
     this.totalmarks = this.marketmarks;
     console.log("Total marks: " + this.totalmarks);
 
-    let x = JSON.parse(localStorage.getItem("Marks_marketing_lvl1"));
-    let y = parseInt(x);
-    let g = JSON.parse(localStorage.getItem("Marks_marketing_lvl2"));
-    let z = parseInt(g);
-    this.rating = (y + z) / 15;
-    console.log("Marketing Rating: " + this.rating);
+    // let x = JSON.parse(sessionStorage.getItem("Marks_marketing_lvl1"));
+    // let y = parseInt(x);
+    // let g = JSON.parse(sessionStorage.getItem("Marks_marketing_lvl2"));
+    // let z = parseInt(g);
+    // this.rating = (y + z) / 15;
+    // console.log("Marketing Rating: " + this.rating);
 
     this.quizService.Totalmarks = this.totalmarks;
 

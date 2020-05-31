@@ -25,8 +25,8 @@ export class RoundThreeComponent implements OnInit {
 
   ngOnInit() {
     this.getQuestions();
-    this.SD_1 = Number(localStorage.getItem('SD_1'));
-    this.SD_2 = Number(localStorage.getItem('SD_2'));
+    this.SD_1 = Number(sessionStorage.getItem('SD_1'));
+    this.SD_2 = Number(sessionStorage.getItem('SD_2'));
   }
 
   getQuestions(){
@@ -154,8 +154,8 @@ export class RoundThreeComponent implements OnInit {
   //   }
 
   //   console.log("Sub domain no. 1 = " + this.max_sd + " from sub domain no. " + this.max_sd_id);
-  //   localStorage.setItem("SD_1", JSON.stringify(this.max_sd_id))
-  //   localStorage.setItem("SD_2", JSON.stringify(this.max2_sd_id))
+  //   sessionStorage.setItem("SD_1", JSON.stringify(this.max_sd_id))
+  //   sessionStorage.setItem("SD_2", JSON.stringify(this.max2_sd_id))
     
   //   console.log("Sub domain no. 2 = " + this.max2_sd + " from sub domain no. " + this.max2_sd_id);
 
@@ -175,10 +175,10 @@ export class RoundThreeComponent implements OnInit {
     })
     // this.quizService.Technical = this.techmarks;
     // console.log("Marks_tech_lvl2" + this.techmarks);
-    localStorage.setItem("Final_SD1_Marks", JSON.stringify(this.SD_1_marks))
-    localStorage.setItem("Final_SD2_Marks", JSON.stringify(this.SD_2_marks))
+    sessionStorage.setItem("Final_SD1_Marks", JSON.stringify(this.SD_1_marks))
+    sessionStorage.setItem("Final_SD2_Marks", JSON.stringify(this.SD_2_marks))
 
-    this.toRoundThree();
+    this.displayResults();
 
 
     // this.totalmarks = this.techmarks;
@@ -186,9 +186,9 @@ export class RoundThreeComponent implements OnInit {
 
     // this.quizService.Totalmarks = this.totalmarks;
 
-    // let x = JSON.parse(localStorage.getItem("Marks_tech_lvl1"));
+    // let x = JSON.parse(sessionStorage.getItem("Marks_tech_lvl1"));
     // let y = parseInt(x);
-    // let g = JSON.parse(localStorage.getItem("Marks_tech_lvl2"));
+    // let g = JSON.parse(sessionStorage.getItem("Marks_tech_lvl2"));
     // let z = parseInt(g);
     // this.rating = (y + z) / 15;
     // console.log("Tech Rating: " + this.rating);
@@ -210,7 +210,7 @@ export class RoundThreeComponent implements OnInit {
     // );
   }
 
-  toRoundThree() {
+  displayResults() {
     // this.quizService.getSubDomainQuestions().subscribe(data => {
     //   console.log(data);
     // });

@@ -50,6 +50,7 @@ import { ErrorDialogComponent } from './shared/error-dialog/error-dialog.compone
 import { QuizResultsComponent } from './quiz-ops/quiz-results/quiz-results.component';
 import { RoundThreeComponent } from './quiz-ops/round-three/round-three.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { RecommendedJobsComponent } from './job-ops/recommended-jobs/recommended-jobs.component';
 
 
 
@@ -95,6 +96,7 @@ import {MatTabsModule} from '@angular/material/tabs';
     ErrorDialogComponent,
     QuizResultsComponent,
     RoundThreeComponent,
+    RecommendedJobsComponent
   ],
   imports: [
     BrowserModule,
