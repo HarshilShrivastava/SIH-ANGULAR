@@ -13,6 +13,14 @@ ul{
     border: lightgray 1px solid;
 }
 
+.inst-title{
+    margin-left: 2%;
+}
+
+.btm-border{
+    border-bottom: lightgray 1px dashed;
+}
+
 .ul-parent{
     padding: 5px;
     display: block;
