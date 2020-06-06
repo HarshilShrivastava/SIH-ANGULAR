@@ -41,7 +41,7 @@ export class QuizResultsComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private userService: UserService,
+    public userService: UserService,
     private quizService: QuizService,
     private dialog: MatDialog,
   ) { }

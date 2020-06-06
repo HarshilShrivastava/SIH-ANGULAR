@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   constructor(
     private router: Router,
     public user: User,
-    private userService: UserService
+    public userService: UserService
     ) { }
 
   isLoggedIn:boolean;
