@@ -12,16 +12,12 @@ img{
 }
 
 .beta-vers{
-  max-width: 300px;
-  margin: 0;
-  margin-right: 0px !important;
-  display: inherit;
   margin-left: 15%;
   color: lightgray;
 }
 
 .right{
-  margin-left: 57.5%;
+  margin-left: auto;
 }
 
 a{

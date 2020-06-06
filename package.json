@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o",
+    "deploy": "ng build --prod --base-href https://HarshilShrivastava.github.io/SIH-ANGULAR/ && sudo npx ngh --dir=dist/app-name",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

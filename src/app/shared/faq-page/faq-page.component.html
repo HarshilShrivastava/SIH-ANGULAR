@@ -1,0 +1,48 @@
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Why are all the questions in the quiz not compulsory?
+      </mat-panel-title>
+      <mat-panel-description>
+        Quiz-related
+        <mat-icon>help</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <article>
+      Since this is the first beta release, we have not kept each question compulsory for testing purposes.
+      However this feature will be added in the upcoming releases.
+    </article>
+  </mat-expansion-panel>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Why can I not create a candidate account?
+      </mat-panel-title>
+      <mat-panel-description>
+        Account related
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <article>
+      Please make sure you have filled the first time user registration <a [routerLink]="['/candidate']">form</a> before trying to create a candidate profile.
+      If you are still facing issues, please let us know by either filling out the feedback form or getting in touch with either of us from the Contact Us page in the footer.
+    </article>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Where do I find the feedback form?
+      </mat-panel-title>
+      <mat-panel-description>
+        Feedback related
+      <mat-icon>feedback</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <article>
+      The feedback form link is provided in the footer in every page. However, you can also click <a href="https://forms.gle/AdVkfqPdwRnxLRVE8" target="_blank">here</a> for the same.
+    </article>
+  </mat-expansion-panel>
+</mat-accordion>

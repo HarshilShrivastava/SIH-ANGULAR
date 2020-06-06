@@ -108,9 +108,9 @@ export class QuizResultsComponent implements OnInit {
     }
   }
 
-  ngOnDestroy(){
-    sessionStorage.clear();
-  }
+  // ngOnDestroy(){
+  //   sessionStorage.clear();
+  // }
 
   OnClickRating(){
     this.final_rating = (this.Final_SD1_Marks + this.Final_SD2_Marks)/20 * 5;

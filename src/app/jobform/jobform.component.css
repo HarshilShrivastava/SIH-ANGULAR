@@ -1,12 +1,18 @@
 p {
-    color: #000000;
+    color: lightgray;
     padding: 0px;
     margin-top: auto;
     margin-bottom: auto;
 }
 
+h2{
+    color: lightgray;
+}
+
 .btn-large{
-    background-color: #3bb78f;
-    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
-    color: black;
+    background: linear-gradient(to top, #8e0e00, #1f1c18);
+}
+
+.btn-large:hover{
+    background: linear-gradient(to top, #8e0e00, #1f1c18);
 }

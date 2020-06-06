@@ -50,14 +50,14 @@
 
     <div>
         <button class="btn-large" type="submit" name="action" (click)="OnClickRating()">
-            <p *ngIf = "!display_rating" class="btn-txt">Click here to view your rating<i class="material-icons right">send</i></p>
-            <p *ngIf = "display_rating" class="btn-txt">Click here to hide your rating<i class="material-icons right">send</i></p>
+            <p *ngIf = "!display_rating" class="btn-txt">Click here to view your rating<i class="material-icons right">remove_red_eye</i></p>
+            <p *ngIf = "display_rating" class="btn-txt">Click here to hide your rating<i class="material-icons right">remove</i></p>
         </button>
     </div>
 
     <div *ngIf = "userService.isCandidate()">
         <button class="btn-large jobs" type="submit" name="action" (click)="OnClickViewJobs()">
-            <p class="btn-txt">View jobs for me<i class="material-icons right">send</i></p>
+            <p class="btn-txt">View jobs for me<i class="material-icons right">find_in_page</i></p>
         </button>
     </div>
 

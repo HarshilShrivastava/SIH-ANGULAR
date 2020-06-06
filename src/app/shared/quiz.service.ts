@@ -237,7 +237,7 @@ export class QuizService {
   }
 
   getSubDomainQuestions(){
-    let url = "http://harshraj.pythonanywhere.com/user/level3/" + sessionStorage.getItem('SD_1') + "/" + sessionStorage.getItem('SD_2')
+    let url = "https://harshraj.pythonanywhere.com/user/level3/" + sessionStorage.getItem('SD_1') + "/" + sessionStorage.getItem('SD_2')
 
     return this.http.get(url);
   }

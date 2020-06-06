@@ -56,6 +56,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { GeneralDialogBoxComponent } from './dialogs/general-dialog-box/general-dialog-box.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { InstructionsPageComponent } from './quiz-ops/instructions-page/instructions-page.component';
+import { FaqPageComponent } from './shared/faq-page/faq-page.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 @NgModule({
@@ -100,7 +103,8 @@ import { InstructionsPageComponent } from './quiz-ops/instructions-page/instruct
     RoundThreeComponent,
     RecommendedJobsComponent,
     GeneralDialogBoxComponent,
-    InstructionsPageComponent
+    InstructionsPageComponent,
+    FaqPageComponent
   ],
   imports: [
     BrowserModule,
@@ -122,7 +126,8 @@ import { InstructionsPageComponent } from './quiz-ops/instructions-page/instruct
     MatTabsModule,
     MatTooltipModule,
     MatCheckboxModule,
-    PdfViewerModule
+    PdfViewerModule,
+    MatExpansionModule
   ],
   providers: [QuizService, User],
   bootstrap: [AppComponent],

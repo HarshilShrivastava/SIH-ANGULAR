@@ -1,7 +1,21 @@
+.collection{
+    max-width: 90%;
+    margin-left: 5%;
+}
+
 .collection-item {
-    background-image: linear-gradient( 180.5deg,  rgba(0,128,128,1) 8.5%, rgba(174,206,100,1) 118.2% );
+    background: linear-gradient(to bottom, #41295a, #2f0743);
 }
 
 h4{
-    margin-left: 65px;
+    margin-left: 5%;
+    color: lightgray;
+}
+
+.title{
+    color: lightgray;
+}
+
+p{
+    color: lightgray;
 }
