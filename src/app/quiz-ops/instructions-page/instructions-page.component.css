@@ -1,0 +1,45 @@
+.main-container{
+    margin-left: 1.5%;
+    margin-right: 1.5%;
+    color: lightgray;
+}
+
+.checkbox{
+    margin-top: 1%;
+}
+
+ul{
+    display: flex;
+    border: lightgray 1px solid;
+}
+
+.ul-parent{
+    padding: 5px;
+    display: block;
+    border-inline-end: inherit;
+}
+
+.flow-diagram{
+    max-width: 800px;
+    max-height: 500px;
+    margin-left: 25%;
+    border-radius: 15px;
+    margin-top: 2%;
+}
+
+mat-checkbox strong{
+    font-size: large;
+    color: lightgray;
+}
+
+.continue-btn{
+    background-color: #083d77;
+    margin-top: 1%;
+    cursor: pointer;
+    margin-bottom: 2%;
+}
+
+.continue-btn p { 
+    color: lightgray;
+}
+

@@ -1,10 +1,10 @@
 p {
-    color: #000000	;
+    color: lightgray	;
     margin-top: auto;
 }
 
 .card_content white_text{
-    color: #b71c1c ;
+    color: #0b132b ;
 }
 
 .collection{
@@ -17,12 +17,11 @@ p {
 }
 
 .card_content {
-    background-color: #3bb78f;
-    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    background-color: #0b132b;
 }
 
 .card-title{
-    color: antiquewhite;
+    color: lightgray;
 }
 
 input{ 
@@ -30,13 +29,11 @@ input{
 }
 
 .card{
-    background-color: #3bb78f;
-    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    background: #0b132b;
 }
 
 .btn-large{
-    background-color: #3bb78f;
-    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    background-color: #0b132b;
     margin-left: 475px;
 }
 

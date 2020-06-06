@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/shared/user.service';
+import { QuizService } from 'src/app/shared/quiz.service';
+import { MatDialog } from '@angular/material';
+import { ErrorDialogComponent } from 'src/app/shared/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-quiz-results',
@@ -36,7 +40,10 @@ export class QuizResultsComponent implements OnInit {
   display_rating: boolean = false;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private userService: UserService,
+    private quizService: QuizService,
+    private dialog: MatDialog,
   ) { }
 
   ngOnInit() {
@@ -101,8 +108,16 @@ export class QuizResultsComponent implements OnInit {
     }
   }
 
+  ngOnDestroy(){
+    sessionStorage.clear();
+  }
+
   OnClickRating(){
     this.final_rating = (this.Final_SD1_Marks + this.Final_SD2_Marks)/20 * 5;
+    if(sessionStorage.getItem("Marks_tech_lvl2"))
+      sessionStorage.setItem("Final_Tech_Rating", JSON.stringify(this.final_rating))
+    if(sessionStorage.getItem("Marks_marketing_lvl2"))
+      sessionStorage.setItem("Final_Marketing_Rating", JSON.stringify(this.final_rating))
     if(this.display_rating === false)
       this.display_rating = true;
     else if(this.display_rating === true)
@@ -111,6 +126,61 @@ export class QuizResultsComponent implements OnInit {
 
   OnClickViewJobs(){
     this.router.navigate(['/get-recommended-jobs'])
+  }
+
+  // OnPostMarks(){
+  //   this.quizService.postAllMarks()
+  // }
+
+  OnPostRating(){
+    if(this.userService.isLoggedIn() === false){
+      let dialogRef = this.dialog.open(ErrorDialogComponent, {
+        height: '150px',
+        data: "Please login first to post rating to profile"
+      });
+    }
+    else if(localStorage.getItem("token")){
+      if(sessionStorage.getItem("Marks_tech_lvl2")){
+        this.quizService.postTechRating()
+        .subscribe((data: any) => {
+          console.log(data);
+          if(data.status === 200){
+            let dialogRef = this.dialog.open(ErrorDialogComponent, {
+              height: '150px',
+              data: "Posted to profile successfully"
+            });  
+          }
+          else {
+            let dialogRef = this.dialog.open(ErrorDialogComponent, {
+              height: '150px',
+              data: data.message
+            });  
+          }
+          
+        })
+      }
+      else if(sessionStorage.getItem("Marks_marketing_lvl2")){
+        this.quizService.postMarketingRating()
+        .subscribe((data: any) => {
+          console.log(data);
+          if(data.status === 200){
+            let dialogRef = this.dialog.open(ErrorDialogComponent, {
+              height: '150px',
+              data: "Posted to profile successfully!"
+            });  
+          }
+          else {
+            let dialogRef = this.dialog.open(ErrorDialogComponent, {
+              height: '150px',
+              data: "Failed to post rating"
+            });  
+          }
+          
+        })
+      }
+    }
+    
+    
   }
 
 }

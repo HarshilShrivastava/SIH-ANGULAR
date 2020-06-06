@@ -5,14 +5,43 @@ p {
     margin-bottom: auto;
 }
 
+.card-panel{
+    background: linear-gradient(to top, #8e0e00, #1f1c18);
+}
+
 .btn-large{
-    background-color: #3bb78f;
-    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    background: linear-gradient(to top, #8e0e00, #1f1c18);
     color: black;
+    margin-top: 50px;
+    width: 100%;
+}
+
+.btn-hide{
+    background: linear-gradient(to top, #8e0e00, #1f1c18);
+    color: lightgray;
+    margin-top: 150px !important;
+    width: 100%;
+}
+
+.btn-submit{
+    background: linear-gradient(to top, #8e0e00, #1f1c18);
+    color: lightgray;
+}
+
+.btn-submit:hover{
+    background: linear-gradient(to top, #8e0e00, #1f1c18) !important;
+    cursor: pointer;
+}
+
+.btn-hide:hover{
+    background: linear-gradient(to top, #8e0e00, #1f1c18) !important;
+    cursor: pointer;
+
 }
 
 input{
     margin-bottom: 10px;
+    color: lightgray;
 }
 
 img{
@@ -26,4 +55,8 @@ img{
     text-align: center;
     float: none;
     margin: auto;
+}
+
+.preview{
+    display: flex;
 }

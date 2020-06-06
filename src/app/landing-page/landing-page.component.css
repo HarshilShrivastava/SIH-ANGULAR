@@ -1,6 +1,6 @@
 .header{
     align-self: center;
-    background-image: linear-gradient( 180.5deg,  rgba(0,128,128,1) 8.5%, rgba(174,206,100,1) 118.2% );
+    background: linear-gradient(to bottom, #000428, #004e92);;
 }
 .waves-effect{
     margin: 10px;
@@ -8,6 +8,7 @@
 
 h2, h4{
     text-align: center;
+    color: lightgray;
 }
 
 .link-buttons{
@@ -22,5 +23,9 @@ li{
 }
 
 a{
-    color: black;
+    color: lightgray;
+}
+
+a:hover {
+    background-color: rgba(0, 0, 0, 0) !important;
 }

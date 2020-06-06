@@ -1,0 +1,13 @@
+h2 {
+    color: lightgray;
+}
+
+.btn-large{
+    background: linear-gradient(to top, #8e0e00, #1f1c18);
+    color: lightgray;
+}
+
+.btn-large:hover{
+    background: linear-gradient(to top, #8e0e00, #1f1c18);
+    color: lightgray;
+}

@@ -4,9 +4,12 @@
         <div class="card blue-grey darken-1" >
             <div class="card-content white-text">
                 <span class="card-title">Your Profile</span>
-                <p ><strong>Your Name : </strong>{{data.Name}}</p>
+                <p ><strong>Your Name : </strong>{{data.data.Name}}</p>
                 <!-- <p ><strong>Address : </strong>{{data.Address}}</p> -->
                 <p ><strong>Your Resume : </strong> <img src="https://harshraj.pythonanywhere.com{{data.data.Resume}}" style="width: 100px;" ></p>
+                <p><strong>Your rating in Technical domain : {{data.data.TechRating}}</strong></p>
+                <p><strong>Your rating in Marketing domain : {{data.data.MarketRating}}</strong></p>
+
             </div>
             <!--button type="submit" class="btn-large btn-submit" ng-hide="IsVisible" >Submit</button-->
 

@@ -1,7 +1,9 @@
 .nav-wrapper{
-    background-color: #3bb78f;
-    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    /* background-color: #222A68; */
+    /* background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%); */
+    background: #0b132b;
     margin-bottom: 10px;
+    display: flex;
 }
 
 img{
@@ -9,8 +11,25 @@ img{
     width: 150px;
 }
 
+.beta-vers{
+  max-width: 300px;
+  margin: 0;
+  margin-right: 0px !important;
+  display: inherit;
+  margin-left: 15%;
+  color: lightgray;
+}
+
+.right{
+  margin-left: 57.5%;
+}
+
 a{
     color: #000000	;
+}
+
+p{
+  color: lightgray;
 }
 
 .row{
@@ -31,6 +50,21 @@ a{
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+  }
+
+  ul {
+    border: lightgray 1px solid;
+    border-radius: 10px;
+  }
+
+  ul li {
+    border-inline-end: lightgray 1px solid;
+    border-radius: 10px;
+    color: lightgray;
+  }
+
+  ul li a{
+    color: lightgray;
   }
   
   /* The dropdown container */

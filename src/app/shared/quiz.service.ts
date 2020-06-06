@@ -110,7 +110,7 @@ export class QuizService {
   }
   canView() {
     const Headers = new HttpHeaders().set('Authorization', 'token ' + localStorage.getItem('token'));
-    return this.http.get('https://harshraj.pythonanywhere.com/candidate/create/', {headers: Headers} );
+    return this.http.get('http://harshraj.pythonanywhere.com/candidate/create/', {headers: Headers} );
   }
   uniView() {
     const Headers = new HttpHeaders()
@@ -241,6 +241,35 @@ export class QuizService {
 
     return this.http.get(url);
   }
+
+  postTechRating(){
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
+
+      const body = {
+        TechRating: sessionStorage.getItem("Final_Tech_Rating")
+      };
+
+      return this.http.post('http://harshraj.pythonanywhere.com/candidate/put-ratingT/', body, { headers: Headers});
+      
+  }
+
+  postMarketingRating(){
+    const Headers = new HttpHeaders()
+      .set('Authorization', 'token ' + localStorage.getItem('token'));
+
+      const body = {
+        MarketRating: sessionStorage.getItem("Final_Marketing_Rating")
+      };
+
+      return this.http.post('http://harshraj.pythonanywhere.com/candidate/put-ratingM/', body, { headers: Headers});
+  }
+
+  // postAllMarks(){
+  //   const body = {
+  //     Roundone: sessionStorage.getItem("Final_Marketing_Rating")
+  //   };
+  // }
 
 
 

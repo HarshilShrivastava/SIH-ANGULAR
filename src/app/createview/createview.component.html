@@ -8,18 +8,28 @@
         <div class="row">
           <div class="input-field col s12">
             <input type="text" #Name ngModel name="Name" id="Name" required>
-            <label for="Name">Name</label>
+            <label for="Name">Display name* (This name will be visible on your profile and to recruiters)</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <input type="text" #Address ngModel name="Address" id="Address" required>
-            <label for="Address">Address</label>
+            <label for="Address">Address*</label>
           </div>
         </div>
-        <img [src]="imageUrl"  style="width:250px;height:200px">
+        <label for="resume-upload">Upload resume (Please only upload a .pdf file for now)</label>
+        <!-- <img *ngIf="hide" [src]="imageUrl"  style="width:50px;height:50px"> -->
         <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
-        <button type="submit" class="btn-large btn-submit" [disabled]="Image.value=='' || !imageForm.valid">Submit</button>
+        <!-- <button class="btn-large btn-submit" (click)="preview()"></button> -->
+        <mat-checkbox (change)="preview()">I want a preview of my uploaded file</mat-checkbox>
+
+        <div *ngIf="!hide">
+          <div class="preview"> Preview: </div>
+          <pdf-viewer [src]="imageUrl" [render-text]="true" style="display: block;"></pdf-viewer> 
+
+        </div>
+
+        <button type="submit" [ngClass]="{'btn-large btn-submit' : hide, 'btn-large btn-hide' : !hide}" [disabled]="Image.value=='' || !imageForm.valid">Submit</button>
       </form>
     </div>
   </div>

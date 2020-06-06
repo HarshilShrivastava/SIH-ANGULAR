@@ -29,6 +29,7 @@ import { ApplicantListComponent } from './organization-ops/applicant-list/applic
 import { QuizResultsComponent } from './quiz-ops/quiz-results/quiz-results.component';
 import { RoundThreeComponent } from './quiz-ops/round-three/round-three.component';
 import { RecommendedJobsComponent } from './job-ops/recommended-jobs/recommended-jobs.component';
+import { InstructionsPageComponent } from './quiz-ops/instructions-page/instructions-page.component';
 
 
 const routes: Routes = [
@@ -55,7 +56,7 @@ const routes: Routes = [
   {path: 'canview', component: CandiviewComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profiles', component: SelectProfileComponent},
-  {path: 'canview', component: CandiviewComponent},
+  // {path: 'canview', component: CandiviewComponent},
   {path: 'login', component: LoginComponent},
   {path: 'university', component: UniversityComponent},
   {path: 'universityread', component: UniversityReadComponent},
@@ -66,6 +67,8 @@ const routes: Routes = [
   {path: 'quiz-results', component: QuizResultsComponent},
   {path: 'round-three', component: RoundThreeComponent},
   {path: 'get-recommended-jobs', component: RecommendedJobsComponent},
+  {path: 'instructions', component: InstructionsPageComponent},
+
 
 
 

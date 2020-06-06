@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('Is_Candidate' , data.Is_Candidate );
         localStorage.setItem('Is_University' , data.Is_University );
 
-        this.router.navigate(['/quiz']);
+        this.router.navigate(['instructions']);
         if (data.Is_Candidate === true) {
           this.router.navigate(['/canview']);
         }
@@ -47,7 +47,6 @@ export class LoginComponent implements OnInit {
         let dialogRef = this.dialog.open(ErrorDialogComponent, {
           height: '150px',
           data: data.error_message
-          
         });      
       }
     },

@@ -51,9 +51,11 @@ import { QuizResultsComponent } from './quiz-ops/quiz-results/quiz-results.compo
 import { RoundThreeComponent } from './quiz-ops/round-three/round-three.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { RecommendedJobsComponent } from './job-ops/recommended-jobs/recommended-jobs.component';
-
-
-
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { GeneralDialogBoxComponent } from './dialogs/general-dialog-box/general-dialog-box.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { InstructionsPageComponent } from './quiz-ops/instructions-page/instructions-page.component';
 
 
 @NgModule({
@@ -96,7 +98,9 @@ import { RecommendedJobsComponent } from './job-ops/recommended-jobs/recommended
     ErrorDialogComponent,
     QuizResultsComponent,
     RoundThreeComponent,
-    RecommendedJobsComponent
+    RecommendedJobsComponent,
+    GeneralDialogBoxComponent,
+    InstructionsPageComponent
   ],
   imports: [
     BrowserModule,
@@ -115,11 +119,14 @@ import { RecommendedJobsComponent } from './job-ops/recommended-jobs/recommended
     MatToolbarModule,
     MatListModule,
     MatSidenavModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTooltipModule,
+    MatCheckboxModule,
+    PdfViewerModule
   ],
   providers: [QuizService, User],
   bootstrap: [AppComponent],
-  entryComponents: [JobApplyDialogComponent, ErrorDialogComponent]
+  entryComponents: [JobApplyDialogComponent, ErrorDialogComponent, GeneralDialogBoxComponent]
 
 })
 export class AppModule { }

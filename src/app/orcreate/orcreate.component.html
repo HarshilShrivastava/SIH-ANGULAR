@@ -24,20 +24,20 @@
             
             <div class="row">
                 <div class="input-feild col s6"> 
-                  <input type="text" class="validate" name="Email" #Email="ngModel" [(ngModel)]="organ.Email" [pattern]="emailPattern" required placeholder=" MAIL ID">
+                  <input type="text" class="validate" name="Email" #Email="ngModel" [(ngModel)]="organ.Email" [pattern]="emailPattern" required placeholder="Email">
                 </div>
                 <div class="input-feild col s6">
-                    <input class="validate" type="text" name="Registration_no" #Registration_no="ngModel" [(ngModel)]="organ.Registration_no" required  placeholder="Registration NUMBER">
+                    <input class="validate" type="text" name="Registration_no" #Registration_no="ngModel" [(ngModel)]="organ.Registration_no" required  placeholder="Registeration Number (GSTIN)">
                 </div>
             </div>
             <div class="row">
                 <div class="input-feild col s12"> 
-                  <input type="url" class="validate" name="website" #website="ngModel" [(ngModel)]="organ.website" required placeholder="website">
+                  <input type="url" class="validate" name="website" #website="ngModel" [(ngModel)]="organ.website" required placeholder="Website URL">
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                  <button [disabled]="!createForm.valid" class="btn-large btn-submit" type="submit">create My Profile As Organisation</button>
+                  <button [disabled]="!createForm.valid" class="btn-large btn-submit" type="submit">Create My Profile As Organisation</button>
                 </div>
             </div>
           </form>

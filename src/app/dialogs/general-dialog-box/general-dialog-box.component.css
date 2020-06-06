@@ -22,7 +22,6 @@
   mat-dialog-container{
     /* height: 200px !important; */
     overflow: hidden !important;
-    max-width: 400px !important;
     /* .mat-dialog-title{
         margin-top: 20px;      
         display: block !important;

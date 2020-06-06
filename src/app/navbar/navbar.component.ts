@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from "../../../src/app/shared/user.model"
 import { MatSidenav } from '@angular/material';
+import { UserService } from '../shared/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +14,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    public user: User
+    public user: User,
+    private userService: UserService
     ) { }
 
   isLoggedIn:boolean;

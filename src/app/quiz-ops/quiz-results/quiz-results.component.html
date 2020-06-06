@@ -24,20 +24,28 @@
 
     <mat-tab-group mat-align-tabs="start">
     <mat-tab label="Round 1">
-        <div *ngIf = "tech_lvl1">You scored: {{Marks_tech_lvl1}} in tech domain in round 1.</div>
-        <div *ngIf = "marketing_lvl1">You scored: {{Marks_marketing_lvl1}} in marketing domain in round 1.</div>        
+        <div *ngIf = "tech_lvl1" class="results">You scored: {{Marks_tech_lvl1}} in tech domain in round 1.</div>
+        <div *ngIf = "marketing_lvl1" class="results">You scored: {{Marks_marketing_lvl1}} in marketing domain in round 1.</div>        
     </mat-tab>
     <mat-tab label="Round 2">
-        <div *ngIf = "tech_lvl2">You scored: {{Marks_tech_lvl2}} in tech domain in round 2.</div>
-        <div *ngIf = "marketing_lvl2">You scored: {{Marks_marketing_lvl2}} in marketing domain in round 2.</div>  
-        <div *ngIf = "sd_1">Your top sub-domain was {{SD_1_name}} in round 2 with a total score of {{SD_1_marks}}.</div>  
-        <div *ngIf = "sd_2">Your 2nd best sub-domain was {{SD_2_name}} in round 2 with a total score of {{SD_2_marks}}.</div>  
+        <div *ngIf = "tech_lvl2" class="results">You scored: {{Marks_tech_lvl2}} in tech domain in round 2.</div>
+        <div *ngIf = "marketing_lvl2" class="results">You scored: {{Marks_marketing_lvl2}} in marketing domain in round 2.</div>  
+        <div *ngIf = "sd_1" class="results">Your top sub-domain was {{SD_1_name}} in round 2 with a total score of {{SD_1_marks}}.</div>  
+        <div *ngIf = "sd_2" class="results">Your 2nd best sub-domain was {{SD_2_name}} in round 2 with a total score of {{SD_2_marks}}.</div>  
 
     </mat-tab>
     <mat-tab label="Round 3">
-        <div *ngIf = "sd_1">You scored: {{Final_SD1_Marks}} in sub-domain {{SD_1_name}} in round 3.</div>
-        <div *ngIf = "sd_2">You scored: {{Final_SD2_Marks}} in sub-domain {{SD_2_name}} in round 3.</div>
+        <div *ngIf = "sd_1" class="results">You scored: {{Final_SD1_Marks}} in sub-domain {{SD_1_name}} in round 3.</div>
+        <div *ngIf = "sd_2" class="results">You scored: {{Final_SD2_Marks}} in sub-domain {{SD_2_name}} in round 3.</div>
     </mat-tab>
+    <!-- <mat-tab label="Save data">
+        <button mat-raised-button class="btn-large post-marks" (click)="OnPostMarks()"
+            matTooltip="Click here to save this data to your profile"
+            position = "right"
+            aria-label="Tooltip to post marks to profile">
+            <p class="btn-txt">Save marks<i class="material-icons right">backup</i></p>        
+        </button>
+    </mat-tab> -->
     </mat-tab-group>  
 
     <div>
@@ -47,7 +55,7 @@
         </button>
     </div>
 
-    <div>
+    <div *ngIf = "userService.isCandidate()">
         <button class="btn-large jobs" type="submit" name="action" (click)="OnClickViewJobs()">
             <p class="btn-txt">View jobs for me<i class="material-icons right">send</i></p>
         </button>
@@ -55,6 +63,15 @@
 
     <div class="rating" *ngIf = "display_rating">
        <b>Your rating based on the quiz assessment is {{final_rating}}/5.</b>
+    </div>
+
+    <div *ngIf = "display_rating">
+        <button mat-raised-button class="btn-large post-rating" (click)="OnPostRating()"
+            matTooltip="Post this rating to your profile"
+            position = "right"
+            aria-label="Tooltip to post rating to profile">
+            <p class="btn-txt">Post to my profile<i class="material-icons right">backup</i></p>        
+        </button>
     </div>
 
     

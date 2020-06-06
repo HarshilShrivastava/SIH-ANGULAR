@@ -1,9 +1,13 @@
 .btn-large{
-    background-color: #3bb78f;
-    background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    background: linear-gradient(to top, #8e0e00, #1f1c18);
     color: black;
+}
+
+h2{
+    color: lightgray;
 }
 
 p{
 margin: auto;
+color: lightgray;
 }
