@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-level2',
   templateUrl: './level2.component.html',
-  styleUrls: ['./level2.component.css']
+  styleUrls: ['./level2.component.less']
 })
 export class Level2Component implements OnInit {
   @Output() obj = new EventEmitter<any>();

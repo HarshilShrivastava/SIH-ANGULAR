@@ -6,7 +6,7 @@ import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
 @Component({
   selector: 'app-technical',
   templateUrl: './technical.component.html',
-  styleUrls: ['./technical.component.css']
+  styleUrls: ['./technical.component.less']
 })
 export class TechnicalComponent implements OnInit {
   data: any = {};

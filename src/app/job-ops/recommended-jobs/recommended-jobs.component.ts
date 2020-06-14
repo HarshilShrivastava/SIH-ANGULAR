@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-recommended-jobs',
   templateUrl: './recommended-jobs.component.html',
-  styleUrls: ['./recommended-jobs.component.css']
+  styleUrls: ['./recommended-jobs.component.less']
 })
 export class RecommendedJobsComponent implements OnInit {
 

@@ -4,7 +4,7 @@ import { QuizService } from '../shared/quiz.service';
 @Component({
   selector: 'app-candiview',
   templateUrl: './candiview.component.html',
-  styleUrls: ['./candiview.component.css']
+  styleUrls: ['./candiview.component.less']
 })
 export class CandiviewComponent implements OnInit {
   data: any = {};

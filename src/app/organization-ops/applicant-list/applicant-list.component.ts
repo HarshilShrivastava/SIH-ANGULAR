@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-applicant-list',
   templateUrl: './applicant-list.component.html',
-  styleUrls: ['./applicant-list.component.css']
+  styleUrls: ['./applicant-list.component.less']
 })
 export class ApplicantListComponent implements OnInit {
 

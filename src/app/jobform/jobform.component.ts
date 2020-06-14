@@ -8,7 +8,7 @@ import { QuizService } from '../shared/quiz.service';
 @Component({
   selector: 'app-jobform',
   templateUrl: './jobform.component.html',
-  styleUrls: ['./jobform.component.css']
+  styleUrls: ['./jobform.component.less']
 })
 export class JobformComponent implements OnInit {
   job: Job;

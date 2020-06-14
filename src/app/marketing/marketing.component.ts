@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-marketing',
   templateUrl: './marketing.component.html',
-  styleUrls: ['./marketing.component.css']
+  styleUrls: ['./marketing.component.less']
 })
 export class MarketingComponent implements OnInit {
   data: any = {};

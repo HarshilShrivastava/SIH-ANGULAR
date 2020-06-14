@@ -12,7 +12,7 @@ import { GeneralDialogBoxComponent } from '../dialogs/general-dialog-box/general
 @Component({
   selector: 'app-createview',
   templateUrl: './createview.component.html',
-  styleUrls: ['./createview.component.css']
+  styleUrls: ['./createview.component.less']
 })
 export class CreateviewComponent implements OnInit {
   // tslint:disable-next-line: no-inferrable-types

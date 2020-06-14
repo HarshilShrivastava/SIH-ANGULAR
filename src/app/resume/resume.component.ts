@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-resume',
   templateUrl: './resume.component.html',
-  styleUrls: ['./resume.component.css']
+  styleUrls: ['./resume.component.less']
 })
 export class ResumeComponent implements OnInit {
 

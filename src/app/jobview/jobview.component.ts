@@ -4,7 +4,7 @@ import { QuizService } from '../shared/quiz.service';
 @Component({
   selector: 'app-jobview',
   templateUrl: './jobview.component.html',
-  styleUrls: ['./jobview.component.css']
+  styleUrls: ['./jobview.component.less']
 })
 export class JobviewComponent implements OnInit {
   data: any = {};

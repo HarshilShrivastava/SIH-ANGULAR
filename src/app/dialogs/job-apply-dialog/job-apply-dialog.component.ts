@@ -6,7 +6,7 @@ import { QuizService } from 'src/app/shared/quiz.service';
 @Component({
   selector: 'app-job-apply-dialog',
   templateUrl: './job-apply-dialog.component.html',
-  styleUrls: ['./job-apply-dialog.component.css']
+  styleUrls: ['./job-apply-dialog.component.less']
 })
 export class JobApplyDialogComponent implements OnInit {
   @ViewChild("proposal", null) proposal: any;

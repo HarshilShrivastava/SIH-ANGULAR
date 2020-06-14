@@ -24,7 +24,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.less"
             ],
             "scripts": []
           },
@@ -89,7 +89,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.less"
             ],
             "scripts": []
           }
@@ -126,5 +126,10 @@
       }
     }
   },
-  "defaultProject": "mcq2"
+  "defaultProject": "mcq2",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "less"
+    }
+  }
 }

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-job-search',
   templateUrl: './job-search.component.html',
-  styleUrls: ['./job-search.component.css']
+  styleUrls: ['./job-search.component.less']
 })
 export class JobSearchComponent implements OnInit {
 

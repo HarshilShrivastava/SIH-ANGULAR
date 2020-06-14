@@ -4,7 +4,7 @@ import { QuizService } from '../shared/quiz.service';
 @Component({
   selector: 'app-university-read',
   templateUrl: './university-read.component.html',
-  styleUrls: ['./university-read.component.css']
+  styleUrls: ['./university-read.component.less']
 })
 export class UniversityReadComponent implements OnInit {
   data: any = {};

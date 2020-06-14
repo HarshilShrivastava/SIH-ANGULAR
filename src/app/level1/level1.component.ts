@@ -4,7 +4,7 @@ import { QuizService } from '../shared/quiz.service';
 @Component({
   selector: 'app-level1',
   templateUrl: './level1.component.html',
-  styleUrls: ['./level1.component.css']
+  styleUrls: ['./level1.component.less']
 })
 export class Level1Component implements OnInit {
   data: any = {};

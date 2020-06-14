@@ -7,7 +7,7 @@ import { Organ } from '../shared/organ.model';
 @Component({
   selector: 'app-orgcreate',
   templateUrl: './orgcreate.component.html',
-  styleUrls: ['./orgcreate.component.css']
+  styleUrls: ['./orgcreate.component.less']
 })
 export class OrgcreateComponent implements OnInit {
   organ: Organ;
