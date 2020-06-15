@@ -9,7 +9,7 @@ import { JobApply } from '../shared/jobapply.model';
 @Component({
   selector: 'app-job-apply',
   templateUrl: './job-apply.component.html',
-  styleUrls: ['./job-apply.component.css']
+  styleUrls: ['./job-apply.component.less']
 })
 
 

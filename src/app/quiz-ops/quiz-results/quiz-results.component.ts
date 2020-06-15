@@ -8,7 +8,7 @@ import { ErrorDialogComponent } from 'src/app/shared/error-dialog/error-dialog.c
 @Component({
   selector: 'app-quiz-results',
   templateUrl: './quiz-results.component.html',
-  styleUrls: ['./quiz-results.component.css']
+  styleUrls: ['./quiz-results.component.less']
 })
 export class QuizResultsComponent implements OnInit {
 

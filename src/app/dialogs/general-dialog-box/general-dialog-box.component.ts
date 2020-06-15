@@ -4,7 +4,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 @Component({
   selector: 'app-general-dialog-box',
   templateUrl: './general-dialog-box.component.html',
-  styleUrls: ['./general-dialog-box.component.css']
+  styleUrls: ['./general-dialog-box.component.less']
 })
 export class GeneralDialogBoxComponent implements OnInit {
 

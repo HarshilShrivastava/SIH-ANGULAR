@@ -6,7 +6,7 @@ import { University } from '../shared/university.model';
 @Component({
   selector: 'app-university',
   templateUrl: './university.component.html',
-  styleUrls: ['./university.component.css']
+  styleUrls: ['./university.component.less']
 })
 export class UniversityComponent implements OnInit {
   university: University;

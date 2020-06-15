@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-jobs-applied',
   templateUrl: './jobs-applied.component.html',
-  styleUrls: ['./jobs-applied.component.css']
+  styleUrls: ['./jobs-applied.component.less']
 })
 export class JobsAppliedComponent implements OnInit {
 

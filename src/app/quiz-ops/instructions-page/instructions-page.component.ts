@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-instructions-page',
   templateUrl: './instructions-page.component.html',
-  styleUrls: ['./instructions-page.component.css']
+  styleUrls: ['./instructions-page.component.less']
 })
 export class InstructionsPageComponent implements OnInit {
 

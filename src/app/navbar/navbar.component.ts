@@ -8,7 +8,7 @@ import { UserService } from '../shared/user.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.less']
 })
 export class NavbarComponent implements OnInit {
 

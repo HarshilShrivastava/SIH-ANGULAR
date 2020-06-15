@@ -9,7 +9,7 @@ import { ErrorDialogComponent } from '../shared/error-dialog/error-dialog.compon
 @Component({
   selector: 'app-candidate',
   templateUrl: './candidate.component.html',
-  styleUrls: ['./candidate.component.css']
+  styleUrls: ['./candidate.component.less']
 })
 export class CandidateComponent implements OnInit {
   user: User;

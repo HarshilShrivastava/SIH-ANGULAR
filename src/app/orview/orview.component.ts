@@ -4,7 +4,7 @@ import { QuizService } from '../shared/quiz.service';
 @Component({
   selector: 'app-orview',
   templateUrl: './orview.component.html',
-  styleUrls: ['./orview.component.css']
+  styleUrls: ['./orview.component.less']
 })
 export class OrviewComponent implements OnInit {
   data: any = {};

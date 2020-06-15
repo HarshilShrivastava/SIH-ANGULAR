@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-round-three',
   templateUrl: './round-three.component.html',
-  styleUrls: ['./round-three.component.css']
+  styleUrls: ['./round-three.component.less']
 })
 export class RoundThreeComponent implements OnInit {
 

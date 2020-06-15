@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-orcreate',
   templateUrl: './orcreate.component.html',
-  styleUrls: ['./orcreate.component.css']
+  styleUrls: ['./orcreate.component.less']
 })
 export class OrcreateComponent implements OnInit {
   organ: Organ;
