@@ -1,26 +1,26 @@
 <div class="main-container">
     <div class="inst-title"><strong>Please read these instructions carefully before attempting the quiz:</strong></div>
     <ol>
-       <li>You can attempt this quiz even without signing up on our portal. However for viewing and applying for recommended jobs, you will need to have an account with us</li>
+       <li>You can attempt this quiz even without signing up on our portal. However for viewing and applying for recommended jobs, you should have an account with us</li>
         <li>The quiz consists of 3 rounds as follows:
             <ul>
                 <div class="ul-parent">
-                    <div class="btm-border"><li><strong>Round 1: Domain level round</strong></li></div>
-                        <div>
+                    <div class="btm-border"><li class="round-no">Round 1: Domain level round</li></div>
+                        <div class="btm-boder-txt">
                         In this round your knowledge in top level domains will be tested (Domains currently on our portal are technology and marketing). Your best performing domain will be forwarded to round 2 (say Domain X) 
                         Also you need to cross a threshold of 70% in a domain in this round for it to be your best performing domain, if not you will be asked to re-attempt round 1
                         </div>
                 </div>
                 <div class="ul-parent">
-                    <div class="btm-border"><li><strong>Round 2: General sub-domain level round</strong></li></div>
-                        <div>
-                        This round will test your knowledge in the sub-domains of Domain X. As of now, we have 4 sub domains for technology and marketing each. For tech we have: For marketing we have:
+                    <div class="btm-border"><li class="round-no">Round 2: General sub-domain level round</li></div>
+                        <div class="btm-boder-txt">
+                        This round will test your knowledge in the sub-domains of Domain X. As of now, we have 4 sub domains for technology and marketing each.
                         The 2 subdomains in which you perform best will be considered for the final round. Again, the threshold of 70% needs to be crossed in each of the top 2 sub-domains. If not, you will be redirected to the 2nd round of the 2nd best domain of round 1 (Eg: If in round 2, you could not clear the threshold for tech sub-domains you will be redirected to round 2 of marketing domain)
                         </div>
                 </div>
                 <div class="ul-parent">
-                    <div class="btm-border"><li><strong>Round 3: Sub-domain specific round</strong></li></div>
-                        <div>
+                    <div class="btm-border"><li class="round-no">Round 3: Sub-domain specific round</li></div>
+                        <div class="btm-boder-txt"> 
                         Congrats! You made it to the last round! In this round, we aim to dive deeper into your top 2 subdomains from round 2 and really test your knowledge. The reason we need to be so thorough is because post this round, you will be recommended jobs based on the marks you score here.
                         </div>    
                 </div>
@@ -33,17 +33,20 @@
             </div>
     </ol>
     
-    <strong><em>Our aim is to target your skillset as accurately as possible so that you can apply for jobs you may genuinely be interested in :) <br>
-    Hope you find what you’re looking for, best of luck!</em></strong>
+    <div class="bold-txt"><em>Our aim is to target your skillset as accurately as possible so that you can apply for jobs you may genuinely be interested in :) <br>
+    Hope you find what you’re looking for, best of luck!</em></div> 
 
     <div class="checkbox">
-    <mat-checkbox (change)="onClick()"><strong>I have read and understood the instructions</strong></mat-checkbox>
+    <mat-checkbox (change)="onClick()"><div class="bold-txt"> I have read and understood the instructions</div></mat-checkbox>
     </div>  
 
-    <div>
-    <button *ngIf="continue" class="continue-btn" type="submit" name="action" (click)="proceed()">
-        <p>Proceed to first round<i class="material-icons right">send</i></p>
-      </button>
+    <div *ngIf="continue"> 
+        <div class="my-btn"> 
+            <a class="btn-txt" [routerLink]="['/quiz']">Proceed<i class="material-icons right">send</i></a> 
+        </div> 
     </div>
     
 </div>
+
+
+

@@ -24,7 +24,7 @@ export class InstructionsPageComponent implements OnInit {
       this.continue = false
   }
 
-  proceed(){
-    this.router.navigate(['/quiz'])
-  }
+  // proceed(){
+  //   this.router.navigate(['/quiz'])
+  // }
 }
