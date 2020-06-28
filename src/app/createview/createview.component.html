@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <!-- <div class="col s8 offset-2">
+      <div class="card-panel teal lighten-2">
+        <h4 class="center white-text">Candidate Profile</h4>
+      </div> -->
+      <form #imageForm=ngForm class="form-style-9" (ngSubmit)="OnSubmit(Name,Address,Image)">
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">account_circle</i>
+
+            <input type="text" class="field-style field-split" #Name ngModel name="Name" id="Name" required>
+            <label for="Name">Display name* (This name will be visible on your profile and to recruiters)</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons icon-image-preview prefix">home</i>
+            <input type="text" class="field-style field-split" #Address ngModel name="Address" id="Address" required>
+            <label for="Address">Address*</label>
+          </div>
+        </div>
+        <label for="resume-upload">Upload resume (Please only upload a .pdf file for now)</label>
+        <!-- <img *ngIf="hide" [src]="imageUrl"  style="width:50px;height:50px"> -->
+        <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+        <!-- <button class="btn-large btn-submit" (click)="preview()"></button> -->
+        <mat-checkbox (change)="preview()">I want a preview of my uploaded file</mat-checkbox>
+
+        <div *ngIf="!hide">
+          <div class="preview"> Preview: </div>
+          <pdf-viewer [src]="imageUrl" [render-text]="true" style="display: block;"></pdf-viewer> 
+
+        </div>
+
+        <button type="submit" [ngClass]="{'btn-large btn-submit' : hide, 'btn-large btn-hide' : !hide}" [disabled]="Image.value=='' || !imageForm.valid">Submit</button>
+      </form>
+    <!-- </div> -->
+  </div>
+</div>
+

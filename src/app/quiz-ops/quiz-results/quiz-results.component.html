@@ -1,0 +1,77 @@
+<!-- <div>
+    Tech level 1 marks: {{Marks_tech_lvl1}}
+</div> -->
+
+<!-- <div class="card">
+    <div class="card-content">
+      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+    </div>
+    <div class="card-tabs">
+      <ul class="tabs tabs-fixed-width">
+        <li class="tab"><a href="#test4">Round 1</a></li>
+        <li class="tab"><a class="active" href="#test5">Round 2</a></li>
+        <li class="tab"><a href="#test6">Round 3</a></li>
+      </ul>
+    </div>
+    <div class="card-content grey lighten-4">
+      <div *ngIf = "tech_lvl1" id="test4">You scored: {{Marks_tech_lvl1}} in tech domain in round 1.</div>
+      <div *ngIf = "marketing_lvl1" id="test4">You scored: {{Marks_marketing_lvl1}} in marketing domain in round 1.</div>
+      <div *ngIf = "tech_lvl2" id="test5">You scored: {{Marks_tech_lvl2}} in tech domain in round 2.</div>
+      <div *ngIf = "marketing_lvl2" id="test5">You scored: {{Marks_marketing_lvl2}} in marketing domain in round 2.</div>
+
+    </div>
+</div> -->
+
+    <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Round 1">
+        <div *ngIf = "tech_lvl1" class="results">You scored: {{Marks_tech_lvl1}} in tech domain in round 1.</div>
+        <div *ngIf = "marketing_lvl1" class="results">You scored: {{Marks_marketing_lvl1}} in marketing domain in round 1.</div>        
+    </mat-tab>
+    <mat-tab label="Round 2">
+        <div *ngIf = "tech_lvl2" class="results">You scored: {{Marks_tech_lvl2}} in tech domain in round 2.</div>
+        <div *ngIf = "marketing_lvl2" class="results">You scored: {{Marks_marketing_lvl2}} in marketing domain in round 2.</div>  
+        <div *ngIf = "sd_1" class="results">Your top sub-domain was {{SD_1_name}} in round 2 with a total score of {{SD_1_marks}}.</div>  
+        <div *ngIf = "sd_2" class="results">Your 2nd best sub-domain was {{SD_2_name}} in round 2 with a total score of {{SD_2_marks}}.</div>  
+
+    </mat-tab>
+    <mat-tab label="Round 3">
+        <div *ngIf = "sd_1" class="results">You scored: {{Final_SD1_Marks}} in sub-domain {{SD_1_name}} in round 3.</div>
+        <div *ngIf = "sd_2" class="results">You scored: {{Final_SD2_Marks}} in sub-domain {{SD_2_name}} in round 3.</div>
+    </mat-tab>
+    <!-- <mat-tab label="Save data">
+        <button mat-raised-button class="btn-large post-marks" (click)="OnPostMarks()"
+            matTooltip="Click here to save this data to your profile"
+            position = "right"
+            aria-label="Tooltip to post marks to profile">
+            <p class="btn-txt">Save marks<i class="material-icons right">backup</i></p>        
+        </button>
+    </mat-tab> -->
+    </mat-tab-group>  
+
+    <div>
+        <button class="btn-large" type="submit" name="action" (click)="OnClickRating()">
+            <p *ngIf = "!display_rating" class="btn-txt">Click here to view your rating<i class="material-icons right">remove_red_eye</i></p>
+            <p *ngIf = "display_rating" class="btn-txt">Click here to hide your rating<i class="material-icons right">remove</i></p>
+        </button>
+    </div>
+
+    <div *ngIf = "userService.isCandidate()">
+        <button class="btn-large jobs" type="submit" name="action" (click)="OnClickViewJobs()">
+            <p class="btn-txt">View jobs for me<i class="material-icons right">find_in_page</i></p>
+        </button>
+    </div>
+
+    <div class="rating" *ngIf = "display_rating">
+       <b>Your rating based on the quiz assessment is {{final_rating}}/5.</b>
+    </div>
+
+    <div *ngIf = "display_rating">
+        <button mat-raised-button class="btn-large post-rating" (click)="OnPostRating()"
+            matTooltip="Post this rating to your profile"
+            position = "right"
+            aria-label="Tooltip to post rating to profile">
+            <p class="btn-txt">Post to my profile<i class="material-icons right">backup</i></p>        
+        </button>
+    </div>
+
+    

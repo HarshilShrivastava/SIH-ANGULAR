@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col s8 offset-s2">
+      <div class="card">
+        <div class="sm-jumbotron center-align">
+          <h2>Create Job Form</h2>
+        </div>
+        <form class="col s12 white" #createForm="ngForm" (ngSubmit)="OnSubmit(createForm)">
+            <div class="row">
+                <div class="input-feild col s6"> 
+                    <input type="text" class="validate" name="job_title" #job_title="ngModel" [(ngModel)]="job.job_title"  required placeholder="Name of job">
+                </div>
+                <div class="input-feild col s6">
+                    <input class="validate" type="text" name="Job_Descreption" #Job_Descreption="ngModel" [(ngModel)]="job.Job_Descreption" required  placeholder="Job Description">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-feild col s6"> 
+                    <input type="text" class="validate" name="Level" #Level="ngModel" [(ngModel)]="job.Level"  required placeholder="Level">
+                </div>
+                <div class="input-feild col s6">
+                    <input class="validate" type="text" name="Minimum_experience" #Minimum_experience="ngModel" [(ngModel)]="job.Minimum_experience" required  placeholder="Minimum experience">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-feild col s6"> 
+                    <input type="text" class="validate" name="prefered_city" #prefered_city="ngModel" [(ngModel)]="job.prefered_city" required placeholder="Preferred city">
+                </div>
+                <div class="input-feild col s6">
+                    <input class="validate" type="text" name="fields" #fields="ngModel" [(ngModel)]="job.fields" required  placeholder="Field associated with: 1-Tech | 2-Marketing">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                  <button [disabled]="!createForm.valid" class="btn-large btn-submit" type="submit">
+                      <p>Create job</p>
+                  </button>
+                </div>
+            </div>
+        </form>
+      </div>
+    </div>
+</div>

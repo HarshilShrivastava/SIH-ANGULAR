@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col s8 offset-s2">
+    <div class="card">
+      <div class="sm-jumbotron center-align">
+        <h2>Apply Now!</h2>
+      </div>
+      <form class="col s12 white" #createForm="ngForm" (ngSubmit)="OnSubmit(createForm)">
+          <div class="row">
+              <div class="proposal-field"> 
+                Tell us why you think you'll be a good fit for this job:
+                  <input type="text" name="proposal" #proposal="ngModel" [(ngModel)]="apply.proposal"  required placeholder="Explain in less than 300 words">
+              </div>
+          </div>
+          <div class="row">
+              <div class="input-field col s12">
+                <button [disabled]="!createForm.valid" class="btn-large btn-submit" type="submit">
+                    <div class="apply-btn">Apply now!</div>
+                </button>
+              </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

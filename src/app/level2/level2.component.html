@@ -1,0 +1,22 @@
+<div class="row">
+    <h4>Jobs recommended based on your performance in the quiz:</h4>
+    <div class="col s12 ">
+        <div class="card blue-grey darken-1" *ngFor="let question of data.data" >
+            <div class="card-content white-text">
+                <span class="card-title">Job Id: {{question.id}}</span>
+                <p style="text-shadow: 1px 2px 2px #CE5937;" ><strong>Posted by: {{question.Name}}</strong></p>
+                <p style="text-shadow: 1px 2px 2px #CE5937;" ><strong>Role: {{question.job_title}}</strong></p>
+                <p><strong>Description : </strong>{{question.Job_Descreption}}</p>
+                <p><strong>Minimum experience : </strong>{{question.Minimum_experience}}</p>
+                <p><strong>Available at : </strong>{{question.prefered_city}}</p>
+                <!-- <p><strong>Id: </strong>{{question.id}}</p> -->
+            </div>
+            <div class="apply-btn">
+                <button class="btn waves-effect waves-light" type="submit" name="action" (click) = "onSubmit(question.id)">
+                    Apply for this job<i class="material-icons right">send</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
