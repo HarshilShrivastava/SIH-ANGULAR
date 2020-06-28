@@ -75,10 +75,10 @@
 
   <div class="row">
     <div class="col s8 offset-s2">
-      <!-- <div class="card">
-        <div class="sm-jumbotron center-align">
-          <h2>First time user registeration</h2>
-        </div> -->
+      <!-- <div class="card"> -->
+        <!-- <div class="sm-jumbotron center-align"> -->
+          <h2>Help us get to know you better</h2>
+        <!-- </div> -->
           <form class="form-style-9" #organRegistrationForm="ngForm" (ngSubmit)="OnSubmit(organRegistrationForm)">
             <div class="row">
                 <div class="input-field col s6">
@@ -108,32 +108,7 @@
                     <span class="helper-text" data-error="Password requires uppercase lowercase symbols and numbers!"></span>
                 </div>
             </div>
-            <div class="row">
-              <h6>You are signing up as:</h6>
-                <!-- <p>
-                  <label>
-                    <input name="Is_University" #Is_University="ngModel" type="radio" id="jradio" value="false" [(ngModel)]="user.Is_University" />
-                    <span> University</span>
-                  </label>
-                </p> -->
-                <p>
-                  <label>
-                    <mat-checkbox class="btn-block" 
-                    labelPosition="after" 
-                    (change)="onChange($event)" 
-                    (click)="onClick($event)">
-                    Candidate
-                    </mat-checkbox>                    
-                    <!-- <span>Candidate</span> -->
-                  </label>
-                </p>
-                <!-- <p>
-                  <label>
-                    <input name="Is_Organization" #Is_Organization="ngModel" type="radio" id="fradio" value="false" [(ngModel)]="user.Is_Organization" />
-                    <span>Organization</span>
-                  </label>
-                </p> -->
-            </div>
+            
             <div class="row">
                 <div class="input-field col s12">
                   <button [disabled]="!organRegistrationForm.valid" class="btn-large btn-submit" type="submit">
