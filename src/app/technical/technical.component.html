@@ -1,4 +1,79 @@
-<div class="row" >
+<div>
+  <div>
+    <mat-horizontal-stepper #stepper labelPosition="bottom">
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Not answered."
+        *ngFor="let item of data.data; let i = index">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>
+            <div *ngIf="!item.active">
+              <img src="../../assets/icons/if_status_inactive.png" alt="unanswered" />
+            </div>
+            <div *ngIf="item.active">
+              <img src="../../assets/icons/if_status_active.png" alt="answered" />
+            </div>
+          </ng-template>
+          <p class="question_text">Q.{{ i + 1 }} {{ item.Question_text }}</p>
+          <div>
+            <ul class="collection answer">
+              <ng-container *ngFor="let answer of item.Question_domain; let ind = index">
+                <li>
+                  <label>
+                    <input name="selected_answer" type="radio" class="with-gap" name="{{ item.id }}" (click)="
+                        Answer(
+                          answer.Weightage,
+                          answer.from_Domain,
+                          answer.id,
+                          answer,
+                          i
+                        )
+                      " value="answer.id" required />
+                    <span>{{ answer.Answer_text }}</span>
+                  </label>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+          <div class="btn-class">
+            <button mat-button matStepperPrevious class="btn" *ngIf="i !== 0">
+              <i class="material-icons left">arrow_back_ios</i>Back
+            </button>
+            <button mat-button matStepperNext class="btn">
+              Next<i class="material-icons right">arrow_forward_ios</i>
+            </button>
+            <button mat-button class="btn" (click)="stepper.reset()" *ngIf="i === 20">
+              Go back to Q1
+            </button>
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>
+<div>Total answered: {{ totalAnswered }} / 40</div>
+<div class="row">
+  <div class="input-field col s12">
+    <button class="btn-large" type="submit" name="action" (click)="Answers()">
+      <p>
+        Submit and proceed to round 3<i class="material-icons right">send</i>
+      </p>
+    </button>
+  </div>
+</div>
+
+<!-- End quiz -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="row" >
     <div class="col s8 offset-s2">
 
         <div class="card darken-1" *ngFor="let question of data.data; let ind = index" >
@@ -26,4 +101,4 @@
       <p>Proceed to last round<i class="material-icons right">send</i></p>
     </button>
   </div>
-</div>
+</div> -->

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { QuizService } from 'src/app/shared/quiz.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
+
 
 @Component({
   selector: 'app-round-three',
@@ -8,6 +10,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./round-three.component.less']
 })
 export class RoundThreeComponent implements OnInit {
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
 
   data: any = {};
   SD_1 : any;
@@ -16,14 +20,22 @@ export class RoundThreeComponent implements OnInit {
   SD_1_marks = 0;
   SD_2_marks = 0;
 
+  totalAnswered = 0;
+
+
 
   constructor(
     private quizService: QuizService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private _formBuilder: FormBuilder 
     ) { }
 
   ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+
     this.getQuestions();
     this.SD_1 = Number(sessionStorage.getItem('SD_1'));
     this.SD_2 = Number(sessionStorage.getItem('SD_2'));
@@ -33,6 +45,11 @@ export class RoundThreeComponent implements OnInit {
     this.quizService.getSubDomainQuestions().subscribe(data => {
       // console.log(data);
       this.data = data;
+      this.data.data.forEach(function(element) {
+        element.active = false;
+      });
+      console.log(this.data);
+      
       // let g = this.route.snapshot.url;
       // console.log(g);
     });
@@ -40,6 +57,10 @@ export class RoundThreeComponent implements OnInit {
 
   Answer(Weightage, from_Domain, id, arr, index) {
     // this.result_arr.insert(index, arr);
+    if(this.data.data[index].active === false)
+      this.totalAnswered += 1;
+    this.data.data[index].active = true;
+    
       if(this.result_arr[index] == []){
         this.result_arr[index] = arr;
       }

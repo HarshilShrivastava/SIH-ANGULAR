@@ -1,10 +1,10 @@
-<div class="row">
-  <div class="col s8 offset-s2">
-    <div class="card darken-1" *ngFor="let question of data.Question_list; let ind = index">
-      <div class="card_content white_text">
+<div>
+  <div>
+    <!-- <div class="card darken-1" *ngFor="let question of data.Question_list; let ind = index">
+      <div class="card_content white_text"> -->
         <!-- <span class="card-title">Q.</span> -->
         <!-- <span>{{question.id}}</span> -->
-        <p>Q. {{question.Question_text}}</p>
+        <!-- <p>Q. {{question.Question_text}}</p>
       </div>
       <div class="card_action white white-text">
         <ul class="collection answer">
@@ -12,21 +12,85 @@
             <li>
               <label>
                 <input name="selected_answer" type="radio" class="with-gap" name={{question.id}}  
-                  (click)="Answer(answer.Weightage, answer.from_Domain, answer.id, answer, ind)" value="answer.id" required/>
+                  (click)="Answer(answer.Weightage, answer.from_Domain, answer.id, answer, ind)" value="answer.id" required/> -->
                 <!-- <span>{{answer.id}}</span> -->
-                <span>{{answer.Answer_text}}</span>
+                <!-- <span>{{answer.Answer_text}}</span>
               </label>
             </li>
           </ng-container>
         </ul>
       </div>
-    </div>
+    </div> -->
+    <mat-horizontal-stepper #stepper labelPosition="bottom">
+      <mat-step [stepControl]="firstFormGroup" errorMessage="Not answered." *ngFor="let item of data.Question_list; let i=index">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>
+            <div *ngIf="!item.active"> 
+            <img src="../../assets/icons/if_status_inactive.png" alt="unanswered">
+          </div>
+          <div *ngIf="item.active">
+            <img src="../../assets/icons/if_status_active.png" alt="answered">
+          </div>
+          </ng-template>
+          <!-- <mat-form-field> -->
+            <p class="question_text"> Q.{{i + 1}} {{item.Question_text}}</p>
+          <!-- </mat-form-field> -->
+          <div>
+            
+            <ul class="collection answer">
+              <ng-container *ngFor="let answer of item.Question; let ind = index">
+                <li>
+                  <label>
+                    <input name="selected_answer" type="radio" class="with-gap" name={{item.id}}  
+                      (click)="Answer(answer.Weightage, answer.from_Domain, answer.id, answer, i)" value="answer.id" required/>
+                    <!-- <span>{{answer.id}}</span> -->
+                    <span>{{answer.Answer_text}}</span>
+                  </label>
+                </li>
+              </ng-container>
+            </ul>
+          </div>
+          <div class="btn-class">
+            <button mat-button matStepperPrevious class="btn" *ngIf = "i !== 0"><i class="material-icons left">arrow_back_ios</i>Back</button>
+            <button mat-button matStepperNext class="btn">Next<i class="material-icons right">arrow_forward_ios</i></button>
+            <button mat-button class="btn" (click)="stepper.reset()" *ngIf = "i === 20">Go back to Q1</button>
+          </div>
+        </form>
+      </mat-step>
+      <!-- <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Fill out your address</ng-template>
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="Ex. 1 Main St, New York, NY" formControlName="secondCtrl"
+                   required>
+          </mat-form-field>
+          <div>
+            <p>Go to a different step to see the error state</p>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step> -->
+    </mat-horizontal-stepper>
+
   </div>
+</div>
+<div>
+  Total answered: {{totalAnswered}} / 40
 </div>
 <div class="row">
   <div class="input-field col s12">
     <button class="btn-large" type="submit" name="action" (click)="Answers()">
-      <p>Proceed to next round<i class="material-icons right">send</i></p>
+      <p>Submit and proceed to round 2<i class="material-icons right">send</i></p>
     </button>
   </div>
 </div>

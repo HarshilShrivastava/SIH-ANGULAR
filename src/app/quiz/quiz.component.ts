@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../shared/quiz.service';
 import { Router } from '@angular/router';
 import { $ } from 'protractor';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { ErrorDialogComponent } from '../shared/error-dialog/error-dialog.component';
 
@@ -11,6 +12,10 @@ import { ErrorDialogComponent } from '../shared/error-dialog/error-dialog.compon
   styleUrls: ['./quiz.component.less']
 })
 export class QuizComponent implements OnInit {
+
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
   data: any = {};
   id_obj: any = {
     "id": "999",
@@ -26,32 +31,64 @@ export class QuizComponent implements OnInit {
   techmarks = 0;
   marketmarks = 0;
   totalmarks = 0;
+  totalAnswered = 0;
 
-  constructor(private quizService: QuizService, private router: Router, private dialog: MatDialog ) { }
+  constructor(
+    private quizService: QuizService, 
+    private router: Router, 
+    private dialog: MatDialog, 
+    private _formBuilder: FormBuilder 
+    ) { }
   ngOnInit() {
+
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.secondFormGroup = this._formBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+
     this.getContacts();
+
+
+  //   this.firstFormGroup.patchValue({
+  //     firstCtrl: 0
+  //  });
+
+
+
   }
 
   getContacts() {
     this.quizService.getData().subscribe(data => {
       console.log(data);
       this.data = data;
+      this.data.Question_list.forEach(function(element) {
+        element.active = false;
+      });
       this.data.Question_list.forEach(res =>{
         this.result_arr.push([])
       })
-
+      
     });
+
   }
 
   // tslint:disable-next-line: variable-name
   Answer(Weightage, from_Domain, id, arr, index) {
     // this.result_arr.insert(index, arr);
-    if(this.result_arr[index] == []){
+    if(this.data.Question_list[index].active === false)
+      this.totalAnswered += 1;
+    this.data.Question_list[index].active = true;
+    if(this.result_arr[index] === []){
       this.result_arr[index] = arr;
     }
     else{
       this.result_arr[index] = arr;
     }
+    
+    console.log(this.result_arr[index]);
+    
 
     
     // this.result_arr.forEach(res=>{
@@ -112,7 +149,7 @@ export class QuizComponent implements OnInit {
       }
     })
     this.quizService.Technical = this.techmarks;
-    console.log("Marks_tech_lvl1" + this.techmarks);
+    console.log("Marks_tech_lvl1 = " + this.techmarks);
     sessionStorage.setItem("Marks_tech_lvl1", JSON.stringify(this.techmarks))
 
 
@@ -122,7 +159,7 @@ export class QuizComponent implements OnInit {
       }
     })
     this.quizService.Marketing = this.marketmarks;
-    console.log("Marketing" + this.marketmarks);
+    console.log("Marketing = " + this.marketmarks);
     sessionStorage.setItem("Marks_marketing_lvl1", JSON.stringify(this.marketmarks))
 
 

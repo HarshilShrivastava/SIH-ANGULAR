@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { QuizService } from '../shared/quiz.service';
 import { Router } from '@angular/router';
 import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
+import {FormBuilder, FormGroup, Validators, FormControl} from '@angular/forms';
+
 
 @Component({
   selector: 'app-technical',
@@ -9,6 +11,9 @@ import { TOUCH_BUFFER_MS } from '@angular/cdk/a11y';
   styleUrls: ['./technical.component.less']
 })
 export class TechnicalComponent implements OnInit {
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+
   data: any = {};
   tech = 0;
   mark = 0;
@@ -51,10 +56,20 @@ export class TechnicalComponent implements OnInit {
   max4_sd_id: any;
   temp = 0;
   hold: any;
+  totalAnswered = 0;
 
-  constructor(private quizService: QuizService , private router: Router) { }
+
+  constructor(
+    private quizService: QuizService , 
+    private router: Router,
+    private _formBuilder: FormBuilder 
+    ) { }
 
   ngOnInit() {
+    this.firstFormGroup = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+
     this.TechContacts();
   }
 
@@ -62,11 +77,18 @@ export class TechnicalComponent implements OnInit {
     this.quizService.TechData().subscribe(data => {
       console.log(data);
       this.data = data;
+      this.data.data.forEach(function(element) {
+        element.active = false;
+      });
     });
   }
   
   Answer(Weightage, from_Domain, id, arr, index) {
     // this.result_arr.insert(index, arr);
+      if(this.data.data[index].active === false)
+        this.totalAnswered += 1;
+      this.data.data[index].active = true;
+
       if(this.result_arr[index] == []){
         this.result_arr[index] = arr;
       }

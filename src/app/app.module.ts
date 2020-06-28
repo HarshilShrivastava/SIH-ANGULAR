@@ -58,6 +58,10 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { InstructionsPageComponent } from './quiz-ops/instructions-page/instructions-page.component';
 import { FaqPageComponent } from './shared/faq-page/faq-page.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatStepperModule} from '@angular/material/stepper';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 
@@ -127,7 +131,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatTooltipModule,
     MatCheckboxModule,
     PdfViewerModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatStepperModule,
+    ReactiveFormsModule
   ],
   providers: [QuizService, User],
   bootstrap: [AppComponent],
